@@ -1,9 +1,11 @@
 import React from 'react'
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Navbar, Container, Nav, Image } from 'react-bootstrap';
 
 function Home() {
     return (
         <Navbar bg="dark" variant="dark">
+            <Image src="img/studio.jpg" className="backgroun-size-contain" alt="logo"/>
+        {/* <img src="img/studio.jpg" className="App" alt="logo" /> */}
             <Container>
                 <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                 <Nav className="me-auto">
