@@ -1,9 +1,9 @@
-# 꿈이 많은 어른 아이
+## 꿈이 많은 어른 아이
 
-세상을 밝게 비추고 싶은 꿈이 많은 어른 아이입니다
+세상을 밝게 비추고 싶은 꿈이 많은 어른 아이🙏✌
 
-## 이 외 더 자세히 알아보기
-[티스토리 블로그](https://whothatsme.tistory.com/)
+### 이 외 더 자세히 알아보기
+[티스토리 블로그](https://whothatsme.tistory.com/) <br/>
 [노션](https://whosbax.notion.site/0d558da814ad41efbf31fede4f410a5a)
 
 <hr/>
