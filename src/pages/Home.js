@@ -1,31 +1,46 @@
-import React, { useRef } from "react";
-import { Container, Button, Navbar } from "react-bootstrap";
+import React, { useEffect, useRef } from "react";
+import { Container, Button } from "react-bootstrap";
 import "../css/Home.css";
 
-function Home(start) {
-    console.log(start)
+function Home({ props }) {
+  console.log(props);
   const homeStyle = {
     width: "100%",
     height: "100%",
     justifyContent: "center",
   };
 
+  const homeContainer = useRef();
   const useBlur = useRef();
+
+  useEffect(() => {
+    setTimeout(() => {
+        homeContainer.current.style.opacity = 1;
+        homeContainer.current.style.visibility = "visible";
+    }, 2000);
+    props
+      ? console.log(true)
+      : console.log("Home is false");
+    //   }, 00);
+    // setTimeout(() => {
+    //   useBlur.current.style.backdropFilter = "blur(10px)";
+    //   useBlur.current.style.opacity = 1;
+    //   useBlur.current.style.gap = "2rem";
+    // }, 500);
+  }, [props]);
 
   function clickMoreBtn() {
     useBlur.current.style.backdropFilter = "none";
     useBlur.current.style.display = "none";
   }
-  if (start) {
-    useBlur.current.style.backdropFilter = "blur(10px)";
-    useBlur.current.style.opacity = 1;
-    useBlur.current.style.gap = "2rem";
-  }
-
-  console.log();
 
   return (
-    <Container fluid className="backgroundStudio" style={homeStyle}>
+    <Container
+      fluid
+      className="backgroundStudio"
+      style={homeStyle}
+      ref={homeContainer}
+    >
       <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
         <p>

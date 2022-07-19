@@ -27,7 +27,7 @@ function App() {
     startBtn.current.style.height = 0;
     setTimeout(() => {
       startBtn.current.style.width = "100%";
-    }, 500);
+    }, 1000);
     setTimeout(() => {
       startBtn.current.style.opacity = 0;
       blackScreenUp.current.style.height = "0";
@@ -36,29 +36,29 @@ function App() {
     setTimeout(() => {
       blackScreenUp.current.style.height = "4rem";
       blackScreenDown.current.style.height = "4rem";
-      startBtn.current.style.display = "none";
-      startDiv.current.style.display = "none";
       setStart(true);
     }, 3800);
   }
 
   return (
     <div className="App">
-      <Navbar style={blackScreen} id="blackScreenUp" ref={blackScreenUp}></Navbar>
-      <div
-        style={{ width: "100%", height: "100%", display: "flex" }}
-        ref={startDiv}
-      >
-        <Button
-          className="startBtn"
-          variant="outline-light"
-          ref={startBtn}
-          onClick={clickStartBtn}
-        />
-      </div>
-      {/* <Home props={start} /> */}
-
-      <footer style={blackScreen} id="blackScreenDown" ref={blackScreenDown}></footer>
+      <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}></div>
+      {!start ? (
+        <div
+          style={{ width: "100%", height: "100%", display: "flex" }}
+          ref={startDiv}
+        >
+          <Button
+            className="startBtn"
+            variant="outline-light"
+            ref={startBtn}
+            onClick={clickStartBtn}
+          />
+        </div>
+      ) : (
+        <Home props={start} />
+      )}
+      <div style={blackScreen} id="blackScreenDown" ref={blackScreenDown}></div>
     </div>
   );
 }
