@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
-import { Button } from "react-bootstrap";
+import { Button, Navbar } from "react-bootstrap";
 
 function App() {
   const blackScreenUp = useRef();
@@ -18,6 +18,8 @@ function App() {
     backgroundColor: "#141414",
     height: "50vh",
     transition: "all 2s ease-in-out",
+    padding: 0,
+    margin: 0,
   };
 
   function clickStartBtn() {
@@ -42,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}></div>
+      <Navbar style={blackScreen} id="blackScreenUp" ref={blackScreenUp}></Navbar>
       <div
         style={{ width: "100%", height: "100%", display: "flex" }}
         ref={startDiv}
@@ -56,7 +58,7 @@ function App() {
       </div>
       {/* <Home props={start} /> */}
 
-      <div style={blackScreen} id="blackScreenDown" ref={blackScreenDown}></div>
+      <footer style={blackScreen} id="blackScreenDown" ref={blackScreenDown}></footer>
     </div>
   );
 }
