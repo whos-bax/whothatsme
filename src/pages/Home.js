@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import "../css/Home.css";
 
-function Home({ props }) {
+function Home({ start, sendBlurQuit }) {
+  console.log("Home", start, sendBlurQuit);
   const homeStyle = {
     width: "100%",
     height: "100%",
@@ -21,20 +22,14 @@ function Home({ props }) {
       useBlur.current.style.opacity = 1;
       useBlur.current.style.gap = "2rem";
     }, 1500);
-  }, [props]);
+  }, [start]);
 
-  function clickMoreBtn() {
-    setBlurQuit(true);
+  if (blurQuit) {
+    useBlur.current.style.backdropFilter = "none";
+    useBlur.current.style.opacity = 0;
+    useBlur.current.style.gap = 0;
   }
 
-  useEffect(() => {
-    setTimeout(() => {
-      useBlur.current.style.backdropFilter = "none";
-      useBlur.current.style.opacity = 0;
-      useBlur.current.style.gap = 0;
-    }, 1500);
-  }, [blurQuit]);
-  
   return (
     <Container
       fluid
@@ -51,7 +46,10 @@ function Home({ props }) {
         <Button
           variant="outline-light"
           className="moreBtn"
-          onClick={clickMoreBtn}
+          onClick={() => {
+            sendBlurQuit(true);
+            setBlurQuit(true);
+          }}
         >
           더 알아보기
         </Button>

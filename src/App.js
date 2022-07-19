@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
@@ -12,6 +12,7 @@ function App() {
 
   const [start, setStart] = useState(false);
   const [fontDel, setfontDel] = useState(true);
+  const [blurQuit, setBlurQuit] = useState(false);
 
   const blackScreen = {
     position: "absolute",
@@ -34,14 +35,18 @@ function App() {
       startBtn.current.style.opacity = 0;
       blackScreenUp.current.style.height = "0";
       blackScreenDown.current.style.height = "0";
-    }, 1800);
-    setTimeout(() => {
-      // blackScreenUp.current.style.height = "4rem";
-      // blackScreenDown.current.style.height = "4rem";
       setStart(true);
-    }, 3000);
+    }, 1800);
   }
 
+  if (blurQuit) {
+    setTimeout(() => {
+      blackScreenUp.current.style.height = "4rem";
+      blackScreenDown.current.style.height = "4rem";
+    }, 1000);
+  }
+
+  console.log("APP", start, blurQuit);
   return (
     <Container fluid className="App">
       <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}></div>
@@ -60,7 +65,7 @@ function App() {
           </Button>
         </div>
       ) : (
-        <Home props={start} />
+        <Home start={start} sendBlurQuit={setBlurQuit} />
       )}
 
       <div style={blackScreen} id="blackScreenDown" ref={blackScreenDown}></div>
