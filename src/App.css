@@ -39,7 +39,7 @@ div {
 }
 
 .homeContent {
-  display: flex;
+  padding: 1rem;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -49,10 +49,11 @@ div {
   color: white;
   opacity: 0;
   gap: 1rem;
+  display: hidden;
 }
 
 .homeContent h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .homeContent h1 p {
@@ -60,7 +61,7 @@ div {
 }
 
 .moreBtn {
-  transition: all 0.7s ease-out !important;
+  transition: all 0.3s ease-out !important;
 }
 
 .moreBtn:hover {
