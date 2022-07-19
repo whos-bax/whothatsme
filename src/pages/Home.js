@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import "../css/Home.css";
 
@@ -12,20 +12,29 @@ function Home({ props }) {
   const homeContainer = useRef();
   const useBlur = useRef();
 
+  const [blurQuit, setBlurQuit] = useState(false);
+
   useEffect(() => {
     homeContainer.current.style.opacity = 1;
     setTimeout(() => {
       useBlur.current.style.backdropFilter = "blur(10px)";
       useBlur.current.style.opacity = 1;
       useBlur.current.style.gap = "2rem";
-    }, 1000);
+    }, 1500);
   }, [props]);
 
   function clickMoreBtn() {
-    useBlur.current.style.backdropFilter = "none";
-    useBlur.current.style.display = "none";
+    setBlurQuit(true);
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      useBlur.current.style.backdropFilter = "none";
+      useBlur.current.style.opacity = 0;
+      useBlur.current.style.gap = 0;
+    }, 1500);
+  }, [blurQuit]);
+  
   return (
     <Container
       fluid
@@ -33,7 +42,7 @@ function Home({ props }) {
       style={homeStyle}
       ref={homeContainer}
     >
-      {/* <div className="d-flex m-auto homeContent" ref={useBlur}>
+      <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
         <p>
           반갑습니다. 꿈이 많은 어른 아이, 박상호입니다. <br />늘 새로운 도전을
@@ -46,7 +55,7 @@ function Home({ props }) {
         >
           더 알아보기
         </Button>
-      </div> */}
+      </div>
     </Container>
   );
 }

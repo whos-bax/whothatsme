@@ -29,7 +29,7 @@ p {
 
 
 .btn {
-  transition: all 0.5s ease-out !important;
+  transition: all 0.7s ease-out !important;
 }
 
 div {
@@ -82,6 +82,7 @@ div {
   border: 6px solid rgba(255, 255, 255, .3) !important;
   border-top-color: #fff !important;
   animation: spin 1.5s ease-in-out infinite;
+  box-shadow: none !important;
 }
 
 .startBtn:active,

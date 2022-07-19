@@ -29,7 +29,7 @@ function App() {
     setfontDel(false);
     setTimeout(() => {
       startBtn.current.style.width = "100%";
-    }, 1000);
+    }, 700);
     setTimeout(() => {
       startBtn.current.style.opacity = 0;
       blackScreenUp.current.style.height = "0";
@@ -39,7 +39,7 @@ function App() {
       // blackScreenUp.current.style.height = "4rem";
       // blackScreenDown.current.style.height = "4rem";
       setStart(true);
-    }, 5000);
+    }, 3000);
   }
 
   return (
