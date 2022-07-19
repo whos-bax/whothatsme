@@ -3,7 +3,6 @@ import { Container, Button } from "react-bootstrap";
 import "../css/Home.css";
 
 function Home({ props }) {
-  console.log(props);
   const homeStyle = {
     width: "100%",
     height: "100%",
@@ -34,7 +33,7 @@ function Home({ props }) {
       style={homeStyle}
       ref={homeContainer}
     >
-      <div className="d-flex m-auto homeContent" ref={useBlur}>
+      {/* <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
         <p>
           반갑습니다. 꿈이 많은 어른 아이, 박상호입니다. <br />늘 새로운 도전을
@@ -47,7 +46,7 @@ function Home({ props }) {
         >
           더 알아보기
         </Button>
-      </div>
+      </div> */}
     </Container>
   );
 }

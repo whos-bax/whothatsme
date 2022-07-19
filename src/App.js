@@ -11,13 +11,14 @@ function App() {
   const startBtn = useRef();
 
   const [start, setStart] = useState(false);
+  const [fontDel, setfontDel] = useState(true);
 
   const blackScreen = {
     position: "absolute",
     width: "100%",
     backgroundColor: "#141414",
     height: "50vh",
-    transition: "all 2s ease-in-out",
+    transition: "all 1s ease-in-out",
     padding: 0,
     margin: 0,
   };
@@ -25,6 +26,7 @@ function App() {
   function clickStartBtn() {
     startBtn.current.style.width = 0;
     startBtn.current.style.height = 0;
+    setfontDel(false);
     setTimeout(() => {
       startBtn.current.style.width = "100%";
     }, 1000);
@@ -53,7 +55,9 @@ function App() {
             variant="outline-light"
             ref={startBtn}
             onClick={clickStartBtn}
-          />
+          >
+            {fontDel ? <p>WELCOME</p> : null}
+          </Button>
         </div>
       ) : (
         <Home props={start} />
