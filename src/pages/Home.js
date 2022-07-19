@@ -4,7 +4,7 @@ import { Navbar, Container, Nav, Image } from 'react-bootstrap';
 function Home() {
     return (
         <Navbar bg="dark" variant="dark">
-            <Image src="img/studio.jpg" className="backgroun-size-contain" alt="logo"/>
+            <Image src="img/studio.jpg" style={{width: '18em'}} alt="logo"/>
         {/* <img src="img/studio.jpg" className="App" alt="logo" /> */}
             <Container>
                 <Navbar.Brand href="#home">Navbar</Navbar.Brand>
