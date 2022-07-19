@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Navbar, Container, Nav, Image, Alert, Button } from "react-bootstrap";
+import '../css/Home.css'
 
 function Home() {
   const homeStyle = {

@@ -1,0 +1,38 @@
+
+.backgroundStudio {
+    background-image: url("../img/studio.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 !important;
+  }
+  
+  .homeContent {
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s linear;
+    backdrop-filter: blur(10px) opacity(0);
+    color: white;
+    opacity: 0;
+    gap: 1rem;
+    display: hidden;
+  }
+  
+  .homeContent h1 {
+    font-size: 3rem;
+  }
+  
+  .homeContent h1 p {
+    font-size: 2rem;
+  }
+  
+  .moreBtn {
+    transition: all 0.3s ease-out !important;
+  }
+  
+  .moreBtn:hover {
+    color: #fff;
+  }
