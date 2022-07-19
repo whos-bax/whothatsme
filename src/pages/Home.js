@@ -7,6 +7,7 @@ function Home() {
     width: "100%",
     height: "100%",
     justifyContent: "center",
+    // overflow: "hidden"
   };
 
   const blackScreen = {
@@ -44,6 +45,8 @@ function Home() {
       useBlur.current.style.gap = "2rem";
     }, 3800);
   }
+
+  console.log()
 
   return (
     <Container fluid className="backgroundStudio" style={homeStyle}>
