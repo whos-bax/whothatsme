@@ -25,6 +25,7 @@ h1 {
 
 p {
   font-family: 'LeferiPoint-WhiteObliqueA';
+  margin: 0 !important;
 }
 
 
@@ -79,7 +80,7 @@ div {
 
 .startBtn:hover {
   background-color: #141414 !important;
-  border: 6px solid rgba(255, 255, 255, .3) !important;
+  border: 3px solid rgba(255, 255, 255, .3) !important;
   border-top-color: #fff !important;
   animation: spin 1.5s ease-in-out infinite;
   box-shadow: none !important;
@@ -89,4 +90,8 @@ div {
 .startBtn:focus {
   box-shadow: none !important;
   animation: none !important;
+}
+
+.footer p {
+  font-size: small;
 }

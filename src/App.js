@@ -3,6 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import { Button, Container, Navbar } from "react-bootstrap";
+import Footer from "./components/Footer";
 
 function App() {
   const blackScreenUp = useRef();
@@ -19,14 +20,17 @@ function App() {
     width: "100%",
     backgroundColor: "#141414",
     height: "50vh",
-    transition: "all 1s ease-in-out",
+    // transition: "all 1s ease-in-out",
     padding: 0,
     margin: 0,
+    border: "#141414",
   };
 
   function clickStartBtn() {
     startBtn.current.style.width = 0;
     startBtn.current.style.height = 0;
+    blackScreenUp.current.style.transition = "all 1s ease-in-out";
+    blackScreenDown.current.style.transition = "all 1s ease-in-out";
     setfontDel(false);
     setTimeout(() => {
       startBtn.current.style.width = "100%";
@@ -47,9 +51,12 @@ function App() {
   }
 
   console.log("APP", start, blurQuit);
+
   return (
     <Container fluid className="App">
-      <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}></div>
+      <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}>
+        {blurQuit ? <Navbar>hi</Navbar> : null}
+      </div>
       {!start ? (
         <div
           style={{ width: "100%", height: "100%", display: "flex" }}
@@ -68,7 +75,9 @@ function App() {
         <Home start={start} sendBlurQuit={setBlurQuit} />
       )}
 
-      <div style={blackScreen} id="blackScreenDown" ref={blackScreenDown}></div>
+      <div style={blackScreen} id="blackScreenDown" ref={blackScreenDown}>
+        {blurQuit ? <Footer /> : null}
+      </div>
     </Container>
   );
 }
