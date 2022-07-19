@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
-import { Button, Navbar } from "react-bootstrap";
+import { Button, Container, Navbar } from "react-bootstrap";
 
 function App() {
   const blackScreenUp = useRef();
@@ -34,14 +34,14 @@ function App() {
       blackScreenDown.current.style.height = "0";
     }, 1800);
     setTimeout(() => {
-      blackScreenUp.current.style.height = "4rem";
-      blackScreenDown.current.style.height = "4rem";
+      // blackScreenUp.current.style.height = "4rem";
+      // blackScreenDown.current.style.height = "4rem";
       setStart(true);
-    }, 3800);
+    }, 5000);
   }
 
   return (
-    <div className="App">
+    <Container fluid className="App">
       <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}></div>
       {!start ? (
         <div
@@ -58,8 +58,9 @@ function App() {
       ) : (
         <Home props={start} />
       )}
+
       <div style={blackScreen} id="blackScreenDown" ref={blackScreenDown}></div>
-    </div>
+    </Container>
   );
 }
 

@@ -14,19 +14,12 @@ function Home({ props }) {
   const useBlur = useRef();
 
   useEffect(() => {
+    homeContainer.current.style.opacity = 1;
     setTimeout(() => {
-        homeContainer.current.style.opacity = 1;
-        homeContainer.current.style.visibility = "visible";
-    }, 2000);
-    props
-      ? console.log(true)
-      : console.log("Home is false");
-    //   }, 00);
-    // setTimeout(() => {
-    //   useBlur.current.style.backdropFilter = "blur(10px)";
-    //   useBlur.current.style.opacity = 1;
-    //   useBlur.current.style.gap = "2rem";
-    // }, 500);
+      useBlur.current.style.backdropFilter = "blur(10px)";
+      useBlur.current.style.opacity = 1;
+      useBlur.current.style.gap = "2rem";
+    }, 1000);
   }, [props]);
 
   function clickMoreBtn() {
