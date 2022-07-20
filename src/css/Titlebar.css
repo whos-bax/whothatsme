@@ -7,7 +7,6 @@
 }
 
 #titleNameBtn {
-    /* width: 8rem; */
     font-family: 'LeferiPoint-WhiteObliqueA';
     height: 100%;
     color: white;
@@ -29,7 +28,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    transform: scale(0,1);
+    transform: scale(0, 1);
     opacity: 0;
     transition: all .4s ease-in-out
 }
@@ -38,7 +37,7 @@
     opacity: 1;
     border-top: 1px white solid !important;
     border-bottom: 1px white solid !important;
-    transform: scale(1,1);
+    transform: scale(1, 1);
     transition: transform .4s ease-in-out, opacity
 }
 
@@ -63,10 +62,26 @@
     border-bottom: 1px white solid !important;
     outline: 0;
 }
-/* 
-.dropdown-menu.show {
-    gap: 10rem;
-    display: flex !important;
-    flex-direction: row;
-    transform: translate(0, 4rem) !important;
-} */
+
+#menuList {
+    position: absolute;
+    padding: 4rem;
+    width: 100%;
+    transition: all .5s ease-in-out;
+    justify-content: space-evenly;
+    opacity: 0;
+}
+
+#menuList .list-group-item {
+    background-color: inherit;
+    border: 0;
+}
+
+#menuList .list-group-item button {
+    font-family: "LeferiPoint-BlackA";
+    border-top: 1px white solid !important;
+    border-bottom: 1px white solid !important;
+    border-radius: 0;
+    background-color: inherit;
+    color: white;
+}

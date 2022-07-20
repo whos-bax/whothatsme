@@ -12,11 +12,13 @@ import "../css/Titlebar.css";
 
 function Titlebar({ start }) {
   const titleRef = useRef();
+  const menu = useRef();
   if (start) {
     setTimeout(() => {
       titleRef.current.style.opacity = "1";
       titleRef.current.style.zIndex = "1";
-    }, 2000);
+      menu.current.style.opacity = "1";
+    }, 500);
   }
 
   const [titleClicked, setTitleClicked] = useState(false);
@@ -38,26 +40,14 @@ function Titlebar({ start }) {
         </Button>
       </ButtonGroup>
       {titleClicked ? (
-        <Nav
-          activeKey="/home"
-          onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}
-          style={{ display: "flex", flexDirection: "row", top: "4rem" }}
-        >
-          {/* <Nav.Item>
-            <Nav.Link href="/home">Active</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-1">Link</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-2">Link</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="disabled" disabled>
-              Disabled
-            </Nav.Link>
-          </Nav.Item> */}
-        </Nav>
+        <ListGroup horizontal id="menuList" ref={menu}>
+          <ListGroup.Item>
+            <Button variant="light">This</Button>
+          </ListGroup.Item>
+          <ListGroup.Item>ListGroup</ListGroup.Item>
+          <ListGroup.Item>renders</ListGroup.Item>
+          <ListGroup.Item>horizontally!</ListGroup.Item>
+        </ListGroup>
       ) : null}
     </Container>
   );

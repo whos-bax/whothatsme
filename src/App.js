@@ -37,13 +37,15 @@ function App() {
   // 블러 페이지 닫고 나서
   if (blurQuit) {
     setTimeout(() => {
-      blackScreenUp.current.style.height = "4rem";
-      blackScreenDown.current.style.height = "4rem";
+      blackScreenUp.current.style.height = "5rem";
+      blackScreenDown.current.style.height = "5rem";
     }, 1000);
+    const bodyOverFlow = document.querySelector("body")
+    bodyOverFlow.style.overflow = 'auto'
   }
 
   console.log("APP", start, blurQuit);
-
+  // console.log(document.querySelector("body").current);
   return (
     <Container fluid className="App">
       <div className="blackScreen" id="blackScreenUp" ref={blackScreenUp}>
@@ -64,13 +66,14 @@ function App() {
           </Button>
         </div>
       ) : (
-        <Home start={start} sendBlurQuit={setBlurQuit} />
+        <>
+          <Home start={start} sendBlurQuit={setBlurQuit} />
+          <Home start={start} sendBlurQuit={setBlurQuit} />
+        </>
       )}
 
       <div className="blackScreen" id="blackScreenDown" ref={blackScreenDown}>
-        {blurQuit ?
-        <Footer />
-        : null }
+        {blurQuit ? <Footer /> : null}
       </div>
     </Container>
   );
