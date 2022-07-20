@@ -1,5 +1,13 @@
 import React, { useRef, useState } from "react";
-import { Container, Dropdown, DropdownButton } from "react-bootstrap";
+import {
+  Button,
+  ButtonGroup,
+  Container,
+  Dropdown,
+  DropdownButton,
+  ListGroup,
+  Nav,
+} from "react-bootstrap";
 import "../css/Titlebar.css";
 
 function Titlebar({ start }) {
@@ -19,17 +27,38 @@ function Titlebar({ start }) {
 
   return (
     <Container className="titleBar" ref={titleRef}>
-      <DropdownButton
-        className={`${titleClicked ? "titleClick" : ""}`}
-        id="dropdown-title"
-        title="꿈이 많은 어른 아이"
-        onClick={handleClickTitle}
-        autoClose="inside"
-      >
-        <Dropdown.Item as="button">introduce</Dropdown.Item>
-        <Dropdown.Item as="button">project</Dropdown.Item>
-        <Dropdown.Item as="button">Something else</Dropdown.Item>
-      </DropdownButton>
+      <ButtonGroup id="titleNameDiv">
+        <Button
+          variant="outline-light"
+          className={`${titleClicked ? "titleClick" : ""}`}
+          id="titleNameBtn"
+          onClick={handleClickTitle}
+        >
+          <p>꿈이 많은 어른 아이</p>
+        </Button>
+      </ButtonGroup>
+      {titleClicked ? (
+        <Nav
+          activeKey="/home"
+          onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}
+          style={{ display: "flex", flexDirection: "row", top: "4rem" }}
+        >
+          {/* <Nav.Item>
+            <Nav.Link href="/home">Active</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-1">Link</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-2">Link</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="disabled" disabled>
+              Disabled
+            </Nav.Link>
+          </Nav.Item> */}
+        </Nav>
+      ) : null}
     </Container>
   );
 }

@@ -68,7 +68,9 @@ function App() {
       )}
 
       <div className="blackScreen" id="blackScreenDown" ref={blackScreenDown}>
+        {blurQuit ?
         <Footer />
+        : null }
       </div>
     </Container>
   );

@@ -2,18 +2,14 @@
     margin: auto;
     transition: all 2s ease-out;
     opacity: 0;
-}
-
-.dropdown {
     display: flex;
-    width: fit-content;
-    height: 100%;
-    margin: auto;
-    justify-content: center;
+    align-items: center;
 }
 
-#dropdown-title {
-    font-family: 'LeferiPoint-WhiteObliqueA';    
+#titleNameBtn {
+    /* width: 8rem; */
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    height: 100%;
     color: white;
     border: 0;
     font-size: x-large;
@@ -21,52 +17,56 @@
     background-color: inherit;
     border-radius: 0;
     letter-spacing: 2px;
+    z-index: 1;
 }
 
-.titleClick #dropdown-title {
-    letter-spacing: .5rem;
-    transition: all 1s ease-out !important;
-    border-top: 1px white solid !important;
-    border-bottom: 1px white solid !important;
-}
-
-#dropdown-title::before {
+#titleNameBtn::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: 0;
-    border-top: 1px white solid;
-    border-bottom: 1px white solid;
-    transform-origin: center;
-    transform: scale(0, 1);
-    transition: transform 1s
+    z-index: -1;
+    transform: scale(0,1);
+    opacity: 0;
+    transition: all .4s ease-in-out
 }
 
-#dropdown-title:hover::before {
-    transform-origin: center;
-    transform: scale(1, 1)
+#titleNameBtn:hover::before {
+    opacity: 1;
+    border-top: 1px white solid !important;
+    border-bottom: 1px white solid !important;
+    transform: scale(1,1);
+    transition: transform .4s ease-in-out, opacity
 }
 
-#dropdown-title::after {
+#titleNameBtn::after {
     display: none;
 }
 
-#dropdown-title:hover {
-    letter-spacing: .5rem;
+#titleNameBtn:hover {
+    letter-spacing: .4rem;
 }
 
-#dropdown-title:focus,
-#dropdown-title:active {
+#titleNameBtn:focus,
+#titleNameBtn:active {
     box-shadow: none;
+    outline: 0;
 }
 
+.titleClick#titleNameBtn {
+    letter-spacing: .5rem;
+    transition: all 1s ease-out !important;
+    border-top: 1px white solid !important;
+    border-bottom: 1px white solid !important;
+    outline: 0;
+}
+/* 
 .dropdown-menu.show {
     gap: 10rem;
     display: flex !important;
     flex-direction: row;
     transform: translate(0, 4rem) !important;
-}
+} */
