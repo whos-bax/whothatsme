@@ -13,6 +13,9 @@ import "../css/Titlebar.css";
 function Titlebar({ start }) {
   const titleRef = useRef();
   const menu = useRef();
+
+  // 값이 넘어오고 나서 title 보여주기
+  // 아래 titleClicked에 의해 메뉴 보이기 -> 처음부터 보이고 있으나 titleClicked에 따라 보이고 안보이고
   if (start) {
     setTimeout(() => {
       titleRef.current.style.opacity = "1";
@@ -21,6 +24,7 @@ function Titlebar({ start }) {
     }, 500);
   }
 
+  // 타이틀 클릭시 state 값 변화주기
   const [titleClicked, setTitleClicked] = useState(false);
 
   const handleClickTitle = () => {

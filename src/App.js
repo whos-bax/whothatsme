@@ -40,12 +40,11 @@ function App() {
       blackScreenUp.current.style.height = "5rem";
       blackScreenDown.current.style.height = "5rem";
     }, 1000);
+    // body 내 overflow 통제
     const bodyOverFlow = document.querySelector("body")
     bodyOverFlow.style.overflow = 'auto'
   }
 
-  console.log("APP", start, blurQuit);
-  // console.log(document.querySelector("body").current);
   return (
     <Container fluid className="App">
       <div className="blackScreen" id="blackScreenUp" ref={blackScreenUp}>

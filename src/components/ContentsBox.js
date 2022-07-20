@@ -4,6 +4,8 @@ import "../css/ContentsBox.css";
 
 function ContentsBox({ show }) {
   const btnGroup = useRef();
+
+  // 컨텐츠 보이기
   if (show) {
     setTimeout(() => {
       btnGroup.current.style.opacity = 1;

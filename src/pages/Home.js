@@ -11,6 +11,7 @@ function Home({ start, sendBlurQuit }) {
 
   const [blurQuit, setBlurQuit] = useState(false);
 
+  // start 에 따라 화면 변화
   useEffect(() => {
     homeContainer.current.style.opacity = 1;
     setTimeout(() => {
@@ -20,6 +21,7 @@ function Home({ start, sendBlurQuit }) {
     }, 1500);
   }, [start]);
 
+  // 더 알아보기 버튼 클릭 후 다시 닫기
   if (blurQuit) {
     useBlur.current.style.backdropFilter = "none";
     useBlur.current.style.opacity = 0;
