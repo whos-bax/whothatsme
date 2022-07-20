@@ -4,11 +4,6 @@ import "../css/ContentsBox.css"
 
 function ContentsBox() {
   const btnGroup = useRef();
-  const triangle = {
-    width: "6rem",
-    margin: "auto",
-    border: "6px solid",
-  };
   return (
     <ButtonGroup
       vertical
