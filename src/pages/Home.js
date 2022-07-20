@@ -5,15 +5,9 @@ import "../css/Home.css";
 
 function Home({ start, sendBlurQuit }) {
   console.log("Home", start, sendBlurQuit);
-  const homeStyle = {
-    width: "100%",
-    height: "100%",
-    justifyContent: "center",
-  };
 
   const homeContainer = useRef();
   const useBlur = useRef();
-//   const btnGroup = useRef();
 
   const [blurQuit, setBlurQuit] = useState(false);
 
@@ -30,20 +24,11 @@ function Home({ start, sendBlurQuit }) {
     useBlur.current.style.backdropFilter = "none";
     useBlur.current.style.opacity = 0;
     useBlur.current.style.gap = 0;
-    // setTimeout(() => {
-    //   btnGroup.current.style.opacity = 1;
-    // }, 3000);
+    window.scrollTo({ left: 0, bottom: 0, behavior: "smooth" });
   }
 
   return (
-    <Container
-      fluid
-      className="backgroundStudio"
-      style={homeStyle}
-      ref={homeContainer}
-    >
-      {blurQuit ? <ContentsBox /> : null}
-
+    <Container fluid className="backgroundStudio" ref={homeContainer}>
       <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
         <p>
@@ -61,6 +46,7 @@ function Home({ start, sendBlurQuit }) {
           더 알아보기
         </Button>
       </div>
+      {blurQuit ? <ContentsBox show={blurQuit} /> : null}
     </Container>
   );
 }
