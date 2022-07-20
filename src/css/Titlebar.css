@@ -1,0 +1,14 @@
+.container {
+    margin: auto;
+    transition: all 2s ease-out;
+    opacity: 0;
+}
+
+.dropdown {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    margin: auto;
+    justify-content: center;
+
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Container, Button, ButtonGroup } from "react-bootstrap";
+import ContentsBox from "../components/ContentsBox";
 import "../css/Home.css";
 
 function Home({ start, sendBlurQuit }) {
@@ -12,6 +13,7 @@ function Home({ start, sendBlurQuit }) {
 
   const homeContainer = useRef();
   const useBlur = useRef();
+//   const btnGroup = useRef();
 
   const [blurQuit, setBlurQuit] = useState(false);
 
@@ -28,12 +30,10 @@ function Home({ start, sendBlurQuit }) {
     useBlur.current.style.backdropFilter = "none";
     useBlur.current.style.opacity = 0;
     useBlur.current.style.gap = 0;
+    // setTimeout(() => {
+    //   btnGroup.current.style.opacity = 1;
+    // }, 3000);
   }
-
-  const triangle = {
-    width: "120px",
-    height: "120px",
-  };
 
   return (
     <Container
@@ -42,17 +42,9 @@ function Home({ start, sendBlurQuit }) {
       style={homeStyle}
       ref={homeContainer}
     >
-      <ButtonGroup
-        vertical
-        style={{ height: "100vh", gap: "20px", padding: "4rem" }}
-      >
-        <Button variant="outline-light" style={triangle} />
-        <Button variant="outline-light" style={triangle} />
-        <Button variant="outline-light" style={triangle} />
-        <Button variant="outline-light" style={triangle} />
-      </ButtonGroup>
+      {blurQuit ? <ContentsBox /> : null}
 
-      {/* <div className="d-flex m-auto homeContent" ref={useBlur}>
+      <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
         <p>
           반갑습니다. 꿈이 많은 어른 아이, 박상호입니다. <br />늘 새로운 도전을
@@ -68,7 +60,7 @@ function Home({ start, sendBlurQuit }) {
         >
           더 알아보기
         </Button>
-      </div> */}
+      </div>
     </Container>
   );
 }

@@ -19,7 +19,7 @@ function Footer() {
   return (
     <Container className="footer" style={footerStyle}>
       <div style={footerDiv}>
-        <p>© 2022 whosbax. All rights reserved. </p>
+        <p style={{fontSize: ".8rem"}}>© 2022 whosbax. All rights reserved. </p>
       </div>
     </Container>
   );
