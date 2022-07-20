@@ -20,11 +20,15 @@ function Home({ start, sendBlurQuit }) {
     }, 1500);
   }, [start]);
 
+  const test = useRef();
   if (blurQuit) {
     useBlur.current.style.backdropFilter = "none";
     useBlur.current.style.opacity = 0;
     useBlur.current.style.gap = 0;
-    window.scrollTo({ left: 0, bottom: 0, behavior: "smooth" });
+    // console.log(test.current)
+    test.current.scrollIntoView({behavior: "smooth"});
+    // useBlur.current = null;
+    window.scrollTo(0, "50%", { behavior: "smooth" });
   }
 
   return (
@@ -46,7 +50,12 @@ function Home({ start, sendBlurQuit }) {
           더 알아보기
         </Button>
       </div>
-      {blurQuit ? <ContentsBox show={blurQuit} /> : null}
+      {/* {blurQuit ? ( */}
+        <div ref={test}>
+            <img src='../img/studio.jpg'/>
+          <ContentsBox show={blurQuit} />
+        </div>
+      {/* ) : null} */}
     </Container>
   );
 }

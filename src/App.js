@@ -16,18 +16,6 @@ function App() {
   const [welcomeDel, setwelcomeDel] = useState(true);
   const [blurQuit, setBlurQuit] = useState(false);
 
-  const blackScreen = {
-    position: "absolute",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-    backgroundColor: "#141414",
-    height: "50vh",
-    padding: 0,
-    margin: 0,
-  };
-
   // start 버튼을 눌렀을 때
   function clickStartBtn() {
     startBtn.current.style.width = 0;
@@ -58,7 +46,7 @@ function App() {
 
   return (
     <Container fluid className="App">
-      <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}>
+      <div className="blackScreen" id="blackScreenUp" ref={blackScreenUp}>
         {blurQuit ? <Titlebar start={start} /> : null}
       </div>
       {!start ? (
@@ -79,7 +67,7 @@ function App() {
         <Home start={start} sendBlurQuit={setBlurQuit} />
       )}
 
-      <div style={blackScreen} id="blackScreenDown" ref={blackScreenDown}>
+      <div className="blackScreen" id="blackScreenDown" ref={blackScreenDown}>
         {blurQuit ? <Footer /> : null}
       </div>
     </Container>
