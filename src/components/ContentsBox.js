@@ -13,7 +13,8 @@ function ContentsBox({ show }) {
   }
   return (
     <ButtonGroup vertical ref={btnGroup}>
-      <Button variant="outline-light">introduce</Button>
+      <Button variant="outline-light">
+      </Button>
       <Button variant="outline-light">project</Button>
       <Button variant="outline-light" />
       <Button variant="outline-light" />
