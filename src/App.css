@@ -39,12 +39,13 @@ p {
   font-size: x-large;
   transition: all 0.3s ease-out !important;
   background-color: inherit;
+  border-radius: 0;
 }
 
 #dropdown-title:hover {
   letter-spacing: 5px;
-  border-top: 2px black;
-  border-bottom: 2px white;
+  border-top: 1px white solid;
+  border-bottom: 1px white solid;
 }
 
 #dropdown-title::after {
@@ -54,11 +55,13 @@ p {
 #dropdown-title:focus,
 #dropdown-title:active {
   box-shadow: none;
-  /* animation: none; */
 }
 
-.titleClick #dropdown-title {
-  color: yellow
+.dropdown-menu.show {
+  display: flex !important;
+  flex-direction: row;
+  /* width: max-content; */
+  transform: translate(0, 4rem) !important;
 }
 
 div {

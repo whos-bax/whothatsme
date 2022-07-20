@@ -3,9 +3,6 @@ import {
   Container,
   Dropdown,
   DropdownButton,
-  Nav,
-  Navbar,
-  NavDropdown,
 } from "react-bootstrap";
 
 function Titlebar({ start }) {

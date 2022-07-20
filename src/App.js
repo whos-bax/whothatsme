@@ -13,7 +13,7 @@ function App() {
   const startBtn = useRef();
 
   const [start, setStart] = useState(false);
-  const [fontDel, setfontDel] = useState(true);
+  const [welcomeDel, setwelcomeDel] = useState(true);
   const [blurQuit, setBlurQuit] = useState(false);
 
   const blackScreen = {
@@ -28,12 +28,13 @@ function App() {
     margin: 0,
   };
 
+  // start 버튼을 눌렀을 때
   function clickStartBtn() {
     startBtn.current.style.width = 0;
     startBtn.current.style.height = 0;
     blackScreenUp.current.style.transition = "all 1s ease-in-out";
     blackScreenDown.current.style.transition = "all 1s ease-in-out";
-    setfontDel(false);
+    setwelcomeDel(false);
     setTimeout(() => {
       startBtn.current.style.width = "100%";
     }, 700);
@@ -45,6 +46,7 @@ function App() {
     }, 1800);
   }
 
+  // 블러 페이지 닫고 나서
   if (blurQuit) {
     setTimeout(() => {
       blackScreenUp.current.style.height = "4rem";
@@ -70,7 +72,7 @@ function App() {
             ref={startBtn}
             onClick={clickStartBtn}
           >
-            {fontDel ? <p>WELCOME</p> : null}
+            {welcomeDel ? <p>WELCOME</p> : null}
           </Button>
         </div>
       ) : (
