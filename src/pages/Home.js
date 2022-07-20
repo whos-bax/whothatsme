@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Button, ButtonGroup } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import ContentsBox from "../components/ContentsBox";
 import "../css/Home.css";
 

@@ -1,4 +1,4 @@
-.container {
+.titleBar {
     margin: auto;
     transition: all 2s ease-out;
     opacity: 0;
@@ -13,7 +13,7 @@
 }
 
 #dropdown-title {
-    font-family: 'LeferiPoint-WhiteObliqueA';
+    font-family: 'LeferiPoint-WhiteObliqueA';    
     color: white;
     border: 0;
     font-size: x-large;
@@ -24,7 +24,7 @@
 }
 
 .titleClick #dropdown-title {
-    letter-spacing: 1rem !important;
+    letter-spacing: .5rem;
     transition: all 1s ease-out !important;
     border-top: 1px white solid !important;
     border-bottom: 1px white solid !important;
@@ -53,6 +53,10 @@
 
 #dropdown-title::after {
     display: none;
+}
+
+#dropdown-title:hover {
+    letter-spacing: .5rem;
 }
 
 #dropdown-title:focus,

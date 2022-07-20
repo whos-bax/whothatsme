@@ -4,11 +4,10 @@ import "../css/ContentsBox.css";
 
 function ContentsBox({ show }) {
   const btnGroup = useRef();
-  console.log(show)
   if (show) {
     setTimeout(() => {
       btnGroup.current.style.opacity = 1;
-    }, 3000);
+    }, 1500);
   }
   return (
     <ButtonGroup vertical ref={btnGroup}>

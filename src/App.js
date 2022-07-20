@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
-import { Button, Container, Navbar } from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import { Button, Container } from "react-bootstrap";
 import Footer from "./components/Footer";
 import Titlebar from "./components/Titlebar";
 
@@ -68,7 +68,7 @@ function App() {
       )}
 
       <div className="blackScreen" id="blackScreenDown" ref={blackScreenDown}>
-        {blurQuit ? <Footer /> : null}
+        <Footer />
       </div>
     </Container>
   );

@@ -18,7 +18,7 @@ function Titlebar({ start }) {
   };
 
   return (
-    <Container ref={titleRef}>
+    <Container className="titleBar" ref={titleRef}>
       <DropdownButton
         className={`${titleClicked ? "titleClick" : ""}`}
         id="dropdown-title"

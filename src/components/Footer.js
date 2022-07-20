@@ -7,7 +7,7 @@ function Footer() {
     color: "white",
     height: "4rem",
     justifyContent: "end",
-    cursor: "default"
+    cursor: "default",
   };
 
   const footerDiv = {
@@ -19,7 +19,9 @@ function Footer() {
   return (
     <Container className="footer" style={footerStyle}>
       <div style={footerDiv}>
-        <p style={{fontSize: ".8rem"}}>© 2022 whosbax. All rights reserved. </p>
+        <p style={{ fontSize: ".9rem" }}>
+          © 2022 whosbax. All rights reserved.{" "}
+        </p>
       </div>
     </Container>
   );
