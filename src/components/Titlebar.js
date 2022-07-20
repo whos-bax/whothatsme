@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import {
   Container,
   Dropdown,
@@ -8,12 +8,11 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 
-function Titlebar() {
+function Titlebar({ start }) {
   const headerStyle = {
-    display: "flex",
-    width: "100%",
-    height: "4rem",
-    justifyContent: "end",
+    margin: "auto",
+    transition: "all 0.5s ease-out",
+    opacity: 0,
   };
 
   const headerBtn = {
@@ -22,25 +21,36 @@ function Titlebar() {
     height: "100%",
     margin: "auto",
     justifyContent: "center",
-    backgroundColor: "transparent"
   };
+
+  const titleRef = useRef();
+  if (start) {
+    setTimeout(() => {
+      titleRef.current.style.opacity = "1";
+      titleRef.current.style.zIndex = "1";
+    }, 1500);
+  }
+
+  const [titleClicked, setTitleClicked] = useState(false);
+
+  const handleClickTitle = () => {
+    setTitleClicked(!titleClicked);
+  };
+  if (titleClicked) console.log(titleClicked);
+
   return (
-    <Container fluid style={headerStyle}>
+    <Container style={headerStyle} ref={titleRef}>
       <DropdownButton
-        id="dropdown-item-button"
+        className={`${titleClicked ? "titleClick" : ""}`}
+        id="dropdown-title"
         title="꿈이 많은 어른 아이"
         style={headerBtn}
+        onClick={handleClickTitle}
       >
-        <Dropdown.ItemText>Dropdown item text</Dropdown.ItemText>
         <Dropdown.Item as="button">Action</Dropdown.Item>
         <Dropdown.Item as="button">Another action</Dropdown.Item>
         <Dropdown.Item as="button">Something else</Dropdown.Item>
       </DropdownButton>
-      {/* <Dropdown.Menu show={true} style={headerBtn}>
-      <Dropdown.Header>Dropdown header</Dropdown.Header>
-      <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-      <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
-    </Dropdown.Menu> */}
     </Container>
   );
 }

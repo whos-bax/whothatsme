@@ -3,11 +3,11 @@ import { Container } from "react-bootstrap";
 
 function Footer() {
   const footerStyle = {
-    position: "flex",
     width: "100%",
     color: "white",
     height: "4rem",
-    justifyContent: "end"
+    justifyContent: "end",
+    cursor: "default"
   };
 
   const footerDiv = {

@@ -18,6 +18,9 @@ function App() {
 
   const blackScreen = {
     position: "absolute",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     width: "100%",
     backgroundColor: "#141414",
     height: "50vh",
@@ -54,7 +57,7 @@ function App() {
   return (
     <Container fluid className="App">
       <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}>
-        {blurQuit ? <Titlebar /> : null}
+        {blurQuit ? <Titlebar start={start} /> : null}
       </div>
       {!start ? (
         <div
