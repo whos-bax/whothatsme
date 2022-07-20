@@ -39,6 +39,7 @@ div {
 
 #blackScreenUp {
   top: 0;
+  z-index: 1;
 }
 
 #blackScreenDown {
@@ -90,8 +91,4 @@ div {
 .startBtn:focus {
   box-shadow: none !important;
   animation: none !important;
-}
-
-.footer p {
-  font-size: small;
 }

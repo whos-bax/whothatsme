@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import { Button, Container, Navbar } from "react-bootstrap";
 import Footer from "./components/Footer";
+import Titlebar from "./components/Titlebar";
 
 function App() {
   const blackScreenUp = useRef();
@@ -20,10 +21,8 @@ function App() {
     width: "100%",
     backgroundColor: "#141414",
     height: "50vh",
-    // transition: "all 1s ease-in-out",
     padding: 0,
     margin: 0,
-    border: "#141414",
   };
 
   function clickStartBtn() {
@@ -55,7 +54,7 @@ function App() {
   return (
     <Container fluid className="App">
       <div style={blackScreen} id="blackScreenUp" ref={blackScreenUp}>
-        {blurQuit ? <Navbar>hi</Navbar> : null}
+        {blurQuit ? <Titlebar /> : null}
       </div>
       {!start ? (
         <div
