@@ -15,9 +15,9 @@ function Home({ start, sendBlurQuit, contents }) {
   useEffect(() => {
     homeContainer.current.style.opacity = 1;
     setTimeout(() => {
-      useBlur.current.style.backdropFilter = "blur(10px)";
+      useBlur.current.style.backdropFilter = "blur(12px)";
       useBlur.current.style.opacity = 1;
-      useBlur.current.style.gap = "2rem";
+      useBlur.current.style.gap = "3rem";
     }, 1500);
   }, [start]);
 
@@ -35,9 +35,10 @@ function Home({ start, sendBlurQuit, contents }) {
     <Container fluid className="backgroundStudio" ref={homeContainer}>
       <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
-        <p>
-          반갑습니다. 꿈이 많은 어른 아이, 박상호입니다. <br />늘 새로운 도전을
-          추구하며 보다 더 세상에 영향을 주는 사람을 꿈꾸고 있습니다.
+        <p style={{ fontSize: "1.2rem" }}>
+          꿈이 많은 어른 아이, <b>박상호</b>입니다. <br />
+          <b>늘 새로운 도전을 추구하며, 세상에 좋은 영향을 주는 사람</b>을
+          꿈꾸고 있습니다.
         </p>
         <Button
           variant="outline-light"
