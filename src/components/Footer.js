@@ -14,9 +14,9 @@ function Footer({ start }) {
   }
 
   const handleScrollTop = () => {
-    window.scrollTo(0, 0);
+    window.location.href = "#home";
   };
-  
+
   return (
     <Container className="footer" ref={footerRef}>
       <div id="footerDiv">

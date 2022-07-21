@@ -19,6 +19,7 @@
   padding: 0 !important;
   overflow: hidden;
   scrollbar-width: none;
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
 .App::-webkit-scrollbar {

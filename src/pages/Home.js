@@ -31,7 +31,7 @@ function Home({ start, sendBlurQuit, contents }) {
   }
 
   return (
-    <Container fluid className="backgroundStudio" ref={homeContainer}>
+    <Container fluid className="backgroundStudio" ref={homeContainer} id='home'>
       <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
         <p style={{ fontSize: "1.2rem" }}>

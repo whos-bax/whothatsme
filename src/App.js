@@ -71,7 +71,7 @@ function App() {
         <>
           <Home start={start} sendBlurQuit={setBlurQuit} contents={contents} />
           <Introduce/>
-          <Introduce/>
+          <Introduce id="project"/>
           <Introduce/>
           <Introduce/>
           <Introduce/>
