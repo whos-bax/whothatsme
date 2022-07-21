@@ -37,11 +37,37 @@
     height: 60%;
 }
 
+#introduceBox {
+    background-color: #171717;
+    overflow: scroll;
+    gap: 2rem;
+}
+
+#moveBtn {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    bottom: 0;
+}
+#moveBtn button {
+    background-color: #171717;
+    border: none;
+    box-shadow: none;
+}
+
 @media (min-width: 768px) {
 
     .col-md-5,
     .col-md-7 {
         height: 100% !important;
+    }
+
+    #introduceBox {
+        display: flex;
+        flex-direction: column;
+
     }
 }
 
@@ -50,13 +76,6 @@
     height: 100%;
     object-fit: cover;
     object-position: 25% center;
-}
-
-#introduceBox {
-    display: flex;
-    flex-direction: column;
-    background-color: #171717;
-    justify-content: space-evenly;
 }
 
 #introduceFirst {
