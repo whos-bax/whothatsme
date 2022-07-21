@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Container } from "react-bootstrap";
 import "../css/Introduce.css";
 
