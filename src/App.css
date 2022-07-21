@@ -22,6 +22,7 @@
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
+
 .App::-webkit-scrollbar {
   display: none;
 }
@@ -55,10 +56,13 @@ p {
 .btn {
   transition: all 0.5s ease-out !important;
 }
-/* 
-div {
-  flex-direction: column;
-} */
+
+
+.row,
+.col {
+  padding: 0;
+  margin: 0;
+}
 
 #blackScreenUp {
   top: 0;
@@ -75,8 +79,6 @@ div {
   z-index: 10;
   margin: auto;
   padding: 0 !important;
-
-  /* text-decoration: blink; */
   animation: blinker 1s infinite ease-in-out alternate;
 }
 
