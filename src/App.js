@@ -8,6 +8,9 @@ import Titlebar from "./components/Titlebar";
 import Introduce from "./pages/Introduce";
 
 function App() {
+  const contents = ["introduce", "project"];
+  const locationAddress = "http://localhost:3000/";
+
   const blackScreenUp = useRef();
   const blackScreenDown = useRef();
   const startDiv = useRef();
@@ -16,8 +19,6 @@ function App() {
   const [start, setStart] = useState(false);
   const [welcomeDel, setwelcomeDel] = useState(true);
   const [blurQuit, setBlurQuit] = useState(false);
-
-  const contents = ["introduce", "project"];
 
   // start 버튼을 눌렀을 때
   function clickStartBtn() {
@@ -70,11 +71,7 @@ function App() {
       ) : (
         <>
           <Home start={start} sendBlurQuit={setBlurQuit} contents={contents} />
-          <Introduce/>
-          <Introduce id="project"/>
-          <Introduce/>
-          <Introduce/>
-          <Introduce/>
+          <Introduce address={locationAddress} />
         </>
       )}
 

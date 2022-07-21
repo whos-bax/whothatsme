@@ -4,11 +4,11 @@ import ContentsBox from "../components/ContentsBox";
 import "../css/Home.css";
 
 function Home({ start, sendBlurQuit, contents }) {
-
   const homeContainer = useRef();
   const useBlur = useRef();
 
   const [blurQuit, setBlurQuit] = useState(false);
+  const [contentClick, setContentClick] = useState(false);
 
   // start 에 따라 화면 변화
   useEffect(() => {
@@ -30,8 +30,11 @@ function Home({ start, sendBlurQuit, contents }) {
     }, 1000);
   }
 
+  if (contentClick) {
+    // homeContainer.current.style.filter = "brightness(0%)";
+  }
   return (
-    <Container fluid className="backgroundStudio" ref={homeContainer} id='home'>
+    <Container fluid className="backgroundStudio" ref={homeContainer} id="home">
       <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
         <p style={{ fontSize: "1.2rem" }}>
@@ -50,7 +53,11 @@ function Home({ start, sendBlurQuit, contents }) {
           더 알아보기
         </Button>
       </div>
-      <ContentsBox show={blurQuit} contents={contents} />
+      <ContentsBox
+        show={blurQuit}
+        contents={contents}
+        sendContentClick={setContentClick}
+      />
     </Container>
   );
 }
