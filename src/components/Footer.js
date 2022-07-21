@@ -4,6 +4,7 @@ import "../css/Footer.css";
 
 function Footer({ start }) {
   const footerRef = useRef();
+
   // 값이 넘어오고 나서 footer 보여주기
   if (start) {
     setTimeout(() => {
@@ -11,10 +12,17 @@ function Footer({ start }) {
       footerRef.current.style.zIndex = "1";
     }, 1500);
   }
+
+  const handleScrollTop = () => {
+    window.scrollTo(0, 0);
+  };
+  
   return (
     <Container className="footer" ref={footerRef}>
       <div id="footerDiv">
-        <Button id="scrollTopBtn">↑</Button>
+        <Button id="scrollTopBtn" onClick={handleScrollTop}>
+          ↑
+        </Button>
         <p style={{ fontSize: "1rem" }}>
           © 2022 whosbax. All rights reserved.{" "}
         </p>
