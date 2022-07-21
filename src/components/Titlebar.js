@@ -33,30 +33,29 @@ function Titlebar({ start }) {
       : (menu.current.style.opacity = "1");
   };
 
-  // console.log(menu.current.style.cursor)
-  // menu.current.style.opacity == "0" && (menu.current.style.cursor = "default");
-
-  titleClicked ? console.log("yes") : console.log(false);
-
   return (
     <Container
       className={"titleBar " + `${titleClicked ? "titleClick" : ""}`}
       ref={titleRef}
     >
-      <ButtonGroup id="titleNameDiv">
-        <Button
-          variant="outline-light"
-          id="titleNameBtn"
-          onClick={handleClickTitle}
-        >
-          <p>꿈이 많은 어른 아이</p>
-        </Button>
-      </ButtonGroup>
+      <Dropdown
+        onClick={(e) => {
+          if (e.target.id === "titleNameBtn") {
+            handleClickTitle();
+          }
+        }}
+        style={{width: "100%"}}
+      >
+        <Dropdown.Toggle variant="outline-light" id="titleNameBtn">
+          꿈이 많은 어른 아이
+        </Dropdown.Toggle>
 
-      <ButtonGroup id="menuList" ref={menu}>
-        <Button variant="outline-light">introduce</Button>
-        <Button variant="outline-light">project</Button>
-      </ButtonGroup>
+        <Dropdown.Menu id="menuList" ref={menu}>
+          <Dropdown.Item href="#/action-1">introduce</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">project</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
     </Container>
   );
 }

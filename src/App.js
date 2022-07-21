@@ -42,7 +42,7 @@ function App() {
     }, 1000);
     // body 내 overflow 통제
     const bodyOverFlow = document.querySelector("body")
-    bodyOverFlow.style.overflow = 'auto'
+    bodyOverFlow.style.overflowY = 'scroll'
   }
 
   return (
