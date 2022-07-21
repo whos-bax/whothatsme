@@ -16,7 +16,7 @@ function ContentsBox({ show, contents, sendContentClick }) {
       {contents.map((content) => (
         <ListGroup.Item
           action
-          // href={`#${content}`}
+          href={`#${content}`}
           onClick={() => sendContentClick(true)}
         >
           <p style={{ textAlign: "center" }}>{`${content}`}</p>

@@ -13,6 +13,7 @@
 
 .homeContent {
   padding: 1rem;
+  margin: auto !important;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -22,6 +23,7 @@
   opacity: 0;
   gap: 0;
   display: hidden;
+  flex-direction: column;
 }
 
 .homeContent h1 {

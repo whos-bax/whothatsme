@@ -55,10 +55,10 @@ p {
 .btn {
   transition: all 0.5s ease-out !important;
 }
-
+/* 
 div {
   flex-direction: column;
-}
+} */
 
 #blackScreenUp {
   top: 0;
