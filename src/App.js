@@ -5,6 +5,7 @@ import React, { useRef, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import Footer from "./components/Footer";
 import Titlebar from "./components/Titlebar";
+import Introduce from "./pages/Introduce";
 
 function App() {
   const blackScreenUp = useRef();
@@ -43,8 +44,8 @@ function App() {
       blackScreenDown.current.style.height = "5rem";
     }, 1000);
     // body 내 overflow 통제
-    const bodyOverFlow = document.querySelector("body");
-    bodyOverFlow.style.overflowY = "scroll";
+    const bodyOverFlow = document.querySelector(".App");
+    bodyOverFlow.style.overflowY = "auto";
   }
 
   return (
@@ -69,7 +70,11 @@ function App() {
       ) : (
         <>
           <Home start={start} sendBlurQuit={setBlurQuit} contents={contents} />
-          <Home start={start} sendBlurQuit={setBlurQuit} contents={contents} />
+          <Introduce/>
+          <Introduce/>
+          <Introduce/>
+          <Introduce/>
+          <Introduce/>
         </>
       )}
 

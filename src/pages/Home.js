@@ -4,7 +4,6 @@ import ContentsBox from "../components/ContentsBox";
 import "../css/Home.css";
 
 function Home({ start, sendBlurQuit, contents }) {
-  console.log("Home", start, sendBlurQuit);
 
   const homeContainer = useRef();
   const useBlur = useRef();
