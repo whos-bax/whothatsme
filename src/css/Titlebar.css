@@ -18,6 +18,8 @@
     border-radius: 0;
     letter-spacing: 2px;
     z-index: 1;
+    display: flex;
+    justify-content: center;
 }
 
 #titleNameBtn::before {
@@ -36,10 +38,8 @@
 
 #titleNameBtn:hover::before {
     opacity: 1;
-    border-top: 1px white solid !important;
-    border-bottom: 1px white solid !important;
     transform: scale(1, 1);
-    transition: transform .4s ease-in-out, opacity
+    transition: transform .4s ease-in-out;
 }
 
 #titleNameBtn:hover {
@@ -57,7 +57,9 @@
 }
 
 .titleClick #titleNameBtn {
-    letter-spacing: .5rem;
+    letter-spacing: .4rem;
+    margin: auto;
+    width: fit-content;
     transition: all 1s ease-out !important;
     border-top: 1px white solid !important;
     border-bottom: 1px white solid !important;
@@ -68,13 +70,16 @@
     margin: auto;
     transform: translate(0, 4.5rem) !important;
     border-radius: 0;
+    border: 0;
     transition: all .5s ease-in-out;
     gap: 2rem;
     flex-direction: row;
     display: flex;
+    background-color: inherit;
 }
 
 #menuList a {
+    color: white;
     width: 100%;
     padding: auto;
     border: 0;
@@ -86,35 +91,14 @@
     justify-content: center;
 }
 
-
-#menuList a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transform: scale(0, 1);
-    opacity: 0;
-    transition: all .4s ease-in-out
-}
-
-#menuList a:hover::before {
-    opacity: 1;
-    background-color: white;
-    color: black;
-    transform: scale(1, 1);
-    transition: transform .4s ease-in-out, opacity
-}
-
 #menuList a:hover {
     letter-spacing: .4rem;
+    background-color: inherit;
 }
 
 #menuList a:focus,
 #menuList a:active {
     box-shadow: none;
     outline: 0;
+    background-color: inherit;
 }

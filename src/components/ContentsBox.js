@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Button, ButtonGroup, ListGroup } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 import "../css/ContentsBox.css";
 
 function ContentsBox({ show, contents }) {
@@ -11,12 +11,13 @@ function ContentsBox({ show, contents }) {
       btnGroup.current.style.opacity = 1;
     }, 1500);
   }
+
   return (
     <ListGroup ref={btnGroup}>
       {contents.map((content) => (
-        <ListGroup.Item
-          href={`#${content}`}
-        >{`${content}`}</ListGroup.Item>
+        <ListGroup.Item action href={`#${content}`}>
+          <p style={{textAlign: "center"}}>{`${content}`}</p>
+        </ListGroup.Item>
       ))}
     </ListGroup>
   );
