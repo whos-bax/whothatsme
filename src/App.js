@@ -16,7 +16,7 @@ function App() {
   const [welcomeDel, setwelcomeDel] = useState(true);
   const [blurQuit, setBlurQuit] = useState(false);
 
-  const contents = ["introduce", "project"]
+  const contents = ["introduce", "project"];
 
   // start 버튼을 눌렀을 때
   function clickStartBtn() {
@@ -43,8 +43,8 @@ function App() {
       blackScreenDown.current.style.height = "5rem";
     }, 1000);
     // body 내 overflow 통제
-    const bodyOverFlow = document.querySelector("body")
-    bodyOverFlow.style.overflowY = 'scroll'
+    const bodyOverFlow = document.querySelector("body");
+    bodyOverFlow.style.overflowY = "scroll";
   }
 
   return (
@@ -74,7 +74,7 @@ function App() {
       )}
 
       <div className="blackScreen" id="blackScreenDown" ref={blackScreenDown}>
-        {blurQuit ? <Footer /> : null}
+        {blurQuit ? <Footer start={start} /> : null}
       </div>
     </Container>
   );

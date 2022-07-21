@@ -27,13 +27,12 @@ function Titlebar({ start, contents }) {
 
   const handleClickTitle = () => {
     setTitleClicked(!titleClicked);
+    
     // 아래 titleClicked에 의해 메뉴 보이기
     titleClicked
       ? (menu.current.style.opacity = "0")
       : (menu.current.style.opacity = "1");
   };
-
-  console.log(contents);
 
   return (
     <Container
@@ -53,7 +52,7 @@ function Titlebar({ start, contents }) {
         </Dropdown.Toggle>
 
         <Dropdown.Menu id="menuList" ref={menu}>
-          {["introduce", "project"].map((content) => (
+          {contents.map((content) => (
             <Dropdown.Item href={`#${content}`}>{`${content}`}</Dropdown.Item>
           ))}
         </Dropdown.Menu>
