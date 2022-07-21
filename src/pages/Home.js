@@ -3,7 +3,7 @@ import { Container, Button } from "react-bootstrap";
 import ContentsBox from "../components/ContentsBox";
 import "../css/Home.css";
 
-function Home({ start, sendBlurQuit }) {
+function Home({ start, sendBlurQuit, contents }) {
   console.log("Home", start, sendBlurQuit);
 
   const homeContainer = useRef();
@@ -50,7 +50,7 @@ function Home({ start, sendBlurQuit }) {
           더 알아보기
         </Button>
       </div>
-      <ContentsBox show={blurQuit} />
+      <ContentsBox show={blurQuit} contents={contents} />
     </Container>
   );
 }

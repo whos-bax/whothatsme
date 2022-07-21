@@ -16,6 +16,8 @@ function App() {
   const [welcomeDel, setwelcomeDel] = useState(true);
   const [blurQuit, setBlurQuit] = useState(false);
 
+  const contents = ["introduce", "project"]
+
   // start 버튼을 눌렀을 때
   function clickStartBtn() {
     startBtn.current.style.width = 0;
@@ -48,7 +50,7 @@ function App() {
   return (
     <Container fluid className="App">
       <div className="blackScreen" id="blackScreenUp" ref={blackScreenUp}>
-        {blurQuit ? <Titlebar start={start} /> : null}
+        {blurQuit ? <Titlebar start={start} contents={contents} /> : null}
       </div>
       {!start ? (
         <div
@@ -66,8 +68,8 @@ function App() {
         </div>
       ) : (
         <>
-          <Home start={start} sendBlurQuit={setBlurQuit} />
-          <Home start={start} sendBlurQuit={setBlurQuit} />
+          <Home start={start} sendBlurQuit={setBlurQuit} contents={contents} />
+          <Home start={start} sendBlurQuit={setBlurQuit} contents={contents} />
         </>
       )}
 

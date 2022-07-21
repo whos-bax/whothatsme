@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button, ButtonGroup, ListGroup } from "react-bootstrap";
 import "../css/ContentsBox.css";
 
-function ContentsBox({ show }) {
+function ContentsBox({ show, contents }) {
   const btnGroup = useRef();
 
   // 컨텐츠 보이기
@@ -12,13 +12,13 @@ function ContentsBox({ show }) {
     }, 1500);
   }
   return (
-    <ButtonGroup vertical ref={btnGroup}>
-      <Button variant="outline-light">
-      </Button>
-      <Button variant="outline-light">project</Button>
-      <Button variant="outline-light" />
-      <Button variant="outline-light" />
-    </ButtonGroup>
+    <ListGroup ref={btnGroup}>
+      {contents.map((content) => (
+        <ListGroup.Item
+          href={`#${content}`}
+        >{`${content}`}</ListGroup.Item>
+      ))}
+    </ListGroup>
   );
 }
 

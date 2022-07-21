@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import "../css/Titlebar.css";
 
-function Titlebar({ start }) {
+function Titlebar({ start, contents }) {
   const titleRef = useRef();
   const menu = useRef();
 
@@ -33,6 +33,8 @@ function Titlebar({ start }) {
       : (menu.current.style.opacity = "1");
   };
 
+  console.log(contents);
+
   return (
     <Container
       className={"titleBar " + `${titleClicked ? "titleClick" : ""}`}
@@ -44,16 +46,16 @@ function Titlebar({ start }) {
             handleClickTitle();
           }
         }}
-        style={{width: "100%"}}
+        style={{ width: "100%" }}
       >
         <Dropdown.Toggle variant="outline-light" id="titleNameBtn">
           꿈이 많은 어른 아이
         </Dropdown.Toggle>
 
         <Dropdown.Menu id="menuList" ref={menu}>
-          <Dropdown.Item href="#/action-1">introduce</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">project</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          {["introduce", "project"].map((content) => (
+            <Dropdown.Item href={`#${content}`}>{`${content}`}</Dropdown.Item>
+          ))}
         </Dropdown.Menu>
       </Dropdown>
     </Container>
