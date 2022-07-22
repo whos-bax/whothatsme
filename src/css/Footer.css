@@ -12,8 +12,8 @@
 .footer #footerDiv {
     display: flex;
     height: 100%;
-    justify-content: center;
-    text-align: right;
+    justify-content: end;
+    align-items: center;
 }
 
 #scrollTopBtn {

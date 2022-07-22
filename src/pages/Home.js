@@ -33,6 +33,12 @@ function Home({ start, sendBlurQuit, contents }) {
   if (contentClick) {
     // homeContainer.current.style.filter = "brightness(0%)";
   }
+
+  // const isHome = homeContainer.current;
+  // if (isHome) {
+  //   console.log("check", homeContainer.current.getBoundingClientRect());
+  // }
+
   return (
     <Container fluid className="backgroundStudio" ref={homeContainer} id="home">
       <div className="d-flex m-auto homeContent" ref={useBlur}>

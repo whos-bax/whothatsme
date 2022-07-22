@@ -49,6 +49,10 @@ function App() {
     bodyOverFlow.style.overflowY = "auto";
   }
 
+  // const scrollHome = useRef();
+  // const isHome = scrollHome;
+  // console.log("check", isHome);
+
   return (
     <Container fluid className="App">
       <div className="blackScreen" id="blackScreenUp" ref={blackScreenUp}>
@@ -70,7 +74,12 @@ function App() {
         </div>
       ) : (
         <>
-          <Home start={start} sendBlurQuit={setBlurQuit} contents={contents} />
+          <Home
+            start={start}
+            sendBlurQuit={setBlurQuit}
+            contents={contents}
+            // ref={scrollHome}
+          />
           <Introduce address={locationAddress} />
         </>
       )}
