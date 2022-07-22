@@ -1,10 +1,37 @@
-import React from "react";
-import { Col, Image, Row, Table } from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import {
+  Button,
+  Col,
+  Image,
+  Overlay,
+  OverlayTrigger,
+  Popover,
+  ProgressBar,
+  Row,
+  Table,
+  Tooltip,
+} from "react-bootstrap";
+
 import introduceImg from "../img/introduce.jpg";
 import IntroduceButton from "./IntroduceButton";
 import * as Icon from "../utils/Icon";
+import Introduce02skills from "./Introduce02skills";
 
 function Introduce02({ setMoveTo }) {
+  const [show, setShow] = useState(false);
+  const test = useRef();
+
+  const languages = Icon.proficient;
+  const langKeys = Object.keys(languages);
+
+  const betteryVariant = (key) => {
+    if (languages[key] > 60) {
+      return "success";
+    } else if (languages[key] > 40) {
+      return "warning";
+    } else return "danger";
+  };
+
   return (
     <Row id="introduceContent">
       <Col md="5">
@@ -14,29 +41,11 @@ function Introduce02({ setMoveTo }) {
         <div style={{ padding: "1rem" }}>
           <h1>꿈이 많은 어른 아이</h1>
         </div>
-        <div id="introduceFirst">
+        <div id="introduceFirst" ref={test}>
           <p id="impactText">SKILLS</p>
-          <Table>
-            <tbody>
-              <tr>
-                <td><Icon.Html5 /></td>
-                <td>{/* <Icon icon="Html5" /> */}</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td colSpan={2}>Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </Table>
+
+          <Introduce02skills />
+
           <div
             style={{
               maxWidth: "28rem",
