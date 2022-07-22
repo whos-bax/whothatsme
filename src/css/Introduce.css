@@ -24,12 +24,12 @@
     transition: all 0.8s linear;
     color: white;
     /* opacity: 0; */
-
 }
 
 .col-md-5 {
     height: 40%;
-    padding: 0;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
 }
 
 .col-md-7 {
@@ -41,25 +41,31 @@
     background-color: #171717;
     overflow-y: scroll;
     overflow-x: hidden;
-    /* justify-content: space-around; */
+    padding: 1rem;
+    justify-content: space-around;
 }
 
 .progress {
     display: flex;
-    margin: auto;
+    margin: .5rem auto auto auto;
     width: 3rem;
     border: 2px white solid;
     transition: all .3s ease-out;
 }
 
+
 @media (min-width: 768px) {
     .progress {
-        margin-top: .5rem;
         width: 4rem;
+    }
+
+    #progressFont {
+        font-size: 1rem;
     }
 
     .col-md-5,
     .col-md-7 {
+        padding: 0;
         height: 100% !important;
     }
 
@@ -120,10 +126,14 @@
     gap: 2rem;
 }
 
+#skillsContainer .row {
+    gap: 1rem;
+}
+
 #svgBtnGroup {
     display: flex;
     justify-content: center;
-    gap: .5rem
+    gap: .5rem;
 }
 
 #svgBtn {
@@ -151,16 +161,25 @@
     font-size: small;
 }
 
-#help-tooltip {
-    position: absolute;
+.modal-dialog {
+    top: 50%;
+    margin: auto;
     background-color: white;
     border: 2px #FFC54D solid;
     border-radius: 10px;
-    transform: translate(115px, -10px) !important;
-    padding: .5rem;
+    width: fit-content;
 }
 
-#help-tooltip .progress {
-    height: fit-content;
+.modal-dialog .progress {
     cursor: default;
+    width: 6rem;
+    height: 2rem;
+    font-size: smaller;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        top: 38%;
+        left: 19%;
+    }
 }

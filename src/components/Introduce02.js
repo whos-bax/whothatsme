@@ -3,26 +3,22 @@ import {
   Button,
   Col,
   Image,
-  Overlay,
-  OverlayTrigger,
-  Popover,
   ProgressBar,
   Row,
-  Table,
-  Tooltip,
+  Container,
+  Modal,
 } from "react-bootstrap";
 
 import introduceImg from "../img/introduce.jpg";
 import IntroduceButton from "./IntroduceButton";
 import * as Icon from "../utils/Icon";
-import Introduce02skills from "./Introduce02skills";
 
 function Introduce02({ setMoveTo }) {
   const [show, setShow] = useState(false);
+  const [help, setHelp] = useState(false);
   const test = useRef();
 
   const languages = Icon.proficient;
-  const langKeys = Object.keys(languages);
 
   const betteryVariant = (key) => {
     if (languages[key] > 60) {
@@ -43,36 +39,194 @@ function Introduce02({ setMoveTo }) {
         </div>
         <div id="introduceFirst" ref={test}>
           <p id="impactText">SKILLS</p>
+          <Container id="skillsContainer">
+            <Row style={{ gap: ".5rem" }}>
+              <Col>
+                <p id="progressFont">Html5</p>
+                <Icon.HtmlSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("HtmlSvg")}
+                  now={languages["HtmlSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Css3</p>
+                <Icon.CssSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("CssSvg")}
+                  now={languages["CssSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Javascript</p>
+                <Icon.JavascriptSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("JavascriptSvg")}
+                  now={languages["JavascriptSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">React</p>
+                <Icon.ReactSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("ReactSvg")}
+                  now={languages["ReactSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Gitlab</p>
+                <Icon.GitlabSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("GitlabSvg")}
+                  now={languages["GitlabSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Github</p>
+                <Icon.GithubSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("GithubSvg")}
+                  now={languages["GithubSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Typescript</p>
+                <Icon.TypescriptSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("TypescriptSvg")}
+                  now={languages["TypescriptSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Vue</p>
+                <Icon.VueSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("VueSvg")}
+                  now={languages["VueSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Python</p>
+                <Icon.PythonSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("PythonSvg")}
+                  now={languages["PythonSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Php</p>
+                <Icon.PhpSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("PhpSvg")}
+                  now={languages["PhpSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">MySQL</p>
+                <Icon.MysqlSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("MysqlSvg")}
+                  now={languages["MysqlSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">PostgreSQL</p>
+                <Icon.PostgresqlSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("PostgresqlSvg")}
+                  now={languages["PostgresqlSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Photoshop</p>
+                <Icon.PhotoshopSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("PhotoshopSvg")}
+                  now={languages["PhotoshopSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Premire Pro</p>
+                <Icon.PremierproSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("PremierproSvg")}
+                  now={languages["PremierproSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">Ableton Live</p>
+                <Icon.AbletonSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("AbletonSvg")}
+                  now={languages["AbletonSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+            </Row>
 
-          <Introduce02skills />
+            <Col id="svgBtnGroup">
+              <Button id="svgBtn" onClick={() => setShow(!show)}>
+                {!show ? <p>숙련도 보기</p> : <p>숙련도 닫기</p>}
+              </Button>
 
-          <div
-            style={{
-              maxWidth: "28rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-            }}
-          >
-            <p id="impactText">저를 짧게 소개하면요,</p>
-            <p>→ 새로운 도전과 변화를 가지는 것을 두려워 하지 않아요.</p>
-
-            <p>
-              → 빠르게 학습하고 이해하며, 흥미를 느끼는 분야에서는 뛰어난
-              집중력과 성장력을 보여요.
-            </p>
-
-            <p>→ 보기가 아닌 본질을 알기를 원해요.</p>
-
-            <p>
-              → 사색에 잠겨 있을 때가 종종 있으며, 생각을 정리하는 것을
-              좋아해요.
-            </p>
-
-            <p>→ 음악을 좋아하고, 만드는 재주가 있어요.</p>
-
-            <p>→ MBTI 는 ENFP이에요.</p>
-          </div>
+              <Button id="svgHelpBtn" onClick={() => setHelp(true)}>
+                ?
+              </Button>
+              <Modal show={help} onHide={() => setHelp(false)}>
+                <Modal.Body>
+                  <p>
+                    <ProgressBar
+                      animated
+                      variant={"success"}
+                      now={100}
+                      label="능숙"
+                    />
+                    <ProgressBar
+                      animated
+                      variant={"warning"}
+                      now={100}
+                      label="보통"
+                    />
+                    <ProgressBar
+                      animated
+                      variant={"danger"}
+                      now={100}
+                      label="미흡"
+                    />
+                  </p>
+                </Modal.Body>
+              </Modal>
+            </Col>
+          </Container>
         </div>
         <IntroduceButton clickMove={setMoveTo} />
       </Col>
