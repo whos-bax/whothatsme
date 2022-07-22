@@ -65,14 +65,15 @@ p {
 }
 
 #blackScreenUp {
-  top: 0;
+  top: 0 !important;
+  
 }
 
 #blackScreenDown {
   bottom: 0;
 }
 
-.startBtn {
+#startBtn {
   width: 120px;
   height: 120px;
   border-radius: 50% !important;
@@ -82,7 +83,7 @@ p {
   animation: blinker 1s infinite ease-in-out alternate;
 }
 
-.startBtn p {
+#startBtn p {
   color: #fff;
   margin: auto;
 }
@@ -103,7 +104,7 @@ p {
   }
 }
 
-.startBtn:hover {
+#startBtn:hover {
   background-color: #171717 !important;
   border: 3px solid rgba(255, 255, 255, .3) !important;
   border-top-color: #fff !important;
@@ -111,8 +112,8 @@ p {
   box-shadow: none !important;
 }
 
-.startBtn:active,
-.startBtn:focus {
+#startBtn:active,
+#startBtn:focus {
   box-shadow: none !important;
   animation: none !important;
 }
