@@ -11,8 +11,8 @@ function Introduce({ address }) {
   console.log(moveTo, introRef);
   return (
     <Container fluid id="introduce" ref={introRef}>
-      <Introduce01 setMoveTo={setMoveTo} introRef={introRef.current} />
-      {/* <Introduce02 setMoveTo={setMoveTo} /> */}
+      {/* <Introduce01 setMoveTo={setMoveTo} introRef={introRef.current} /> */}
+      <Introduce02 setMoveTo={setMoveTo} />
     </Container>
   );
 }

@@ -40,7 +40,7 @@ function Introduce02({ setMoveTo }) {
         <div id="introduceFirst" ref={test}>
           <p id="impactText">SKILLS</p>
           <Container id="skillsContainer">
-            <Row style={{ gap: ".5rem" }}>
+            <Row style={{ gap: "1rem" }}>
               <Col>
                 <p id="progressFont">Html5</p>
                 <Icon.HtmlSvg id="iconBlack" />
