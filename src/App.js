@@ -9,7 +9,6 @@ import Introduce from "./pages/Introduce";
 
 function App() {
   const contents = ["introduce", "project", "contact"];
-  const locationAddress = "http://localhost:3000/";
 
   const blackScreenUp = useRef();
   const blackScreenDown = useRef();
@@ -17,16 +16,20 @@ function App() {
   const startBtn = useRef();
 
   const [start, setStart] = useState(false);
-  const [welcomeDel, setwelcomeDel] = useState(true);
+  const [welcomeDel, setWelcomeDel] = useState(true);
   const [blurQuit, setBlurQuit] = useState(false);
 
+  const [test, setTest] = useState(false);
+
+  console.log("out", test);
   // start 버튼을 눌렀을 때
   function clickStartBtn() {
+    console.log("in", test);
     startBtn.current.style.width = 0;
     startBtn.current.style.height = 0;
     blackScreenUp.current.style.transition = "all 1s ease-in-out";
     blackScreenDown.current.style.transition = "all 1s ease-in-out";
-    setwelcomeDel(false);
+    setWelcomeDel(false);
     setTimeout(() => {
       startBtn.current.style.width = "100%";
     }, 700);
@@ -49,10 +52,6 @@ function App() {
     bodyOverFlow.style.overflowY = "auto";
   }
 
-  // const scrollHome = useRef();
-  // const isHome = scrollHome;
-  // console.log("check", isHome);
-
   return (
     <Container fluid className="App">
       <div className="blackScreen" id="blackScreenUp" ref={blackScreenUp}>
@@ -67,7 +66,10 @@ function App() {
             className="startBtn"
             variant="outline-light"
             ref={startBtn}
-            onClick={clickStartBtn}
+            onClick={() => {
+              clickStartBtn();
+              setTest(true);
+            }}
           >
             {welcomeDel ? <p>WELCOME</p> : null}
           </Button>
@@ -80,7 +82,7 @@ function App() {
             contents={contents}
             // ref={scrollHome}
           />
-          <Introduce address={locationAddress} />
+          <Introduce />
         </>
       )}
 
