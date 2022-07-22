@@ -1,17 +1,19 @@
-import React, { useRef } from "react";
+import React, { useCallback } from "react";
 import { Button, Container } from "react-bootstrap";
 import "../css/Footer.css";
 
 function Footer({ start }) {
-  const footerRef = useRef();
-
-  // 값이 넘어오고 나서 footer 보여주기
-  if (start) {
-    setTimeout(() => {
-      footerRef.current.style.opacity = "1";
-      footerRef.current.style.zIndex = "1";
-    }, 1500);
-  }
+  const footerRef = useCallback((node) => {
+    if (node !== null) {
+      // 값이 넘어오고 나서 footer 보여주기
+      if (start) {
+        setTimeout(() => {
+          node.style.opacity = "1";
+          node.style.zIndex = "1";
+        }, 1500);
+      }
+    }
+  });
 
   const handleScrollTop = () => {
     window.location.href = "#home";
