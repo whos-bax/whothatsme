@@ -5,16 +5,13 @@ import Introduce02 from "../components/Introduce02";
 import "../css/Introduce.css";
 
 function Introduce({ address }) {
+  const [moveTo, setMoveTo] = useState("");
 
-  const [moveTo, setMoveTo] = useState('')
-
-  console.log(moveTo)
+  console.log(moveTo);
   return (
     <Container fluid id="introduce">
-      {/* <Introduce01 setMoveTo={setMoveTo}/> */}
-      <Introduce02 setMoveTo={setMoveTo}/>
-
-      
+      <Introduce01 setMoveTo={setMoveTo} />
+      <Introduce02 setMoveTo={setMoveTo} />
     </Container>
   );
 }

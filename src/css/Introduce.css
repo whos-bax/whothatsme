@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding: 5.5rem 0;
+    padding: 5.8rem 0 4rem 0;
     width: 90%;
     height: 90%;
     transition: all 0.8s linear;
@@ -39,9 +39,9 @@
 
 #introduceBox {
     background-color: #171717;
-    overflow: scroll;
-    gap: 2rem;
-    justify-content: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-content: space-around;
 }
 
 @media (min-width: 768px) {
@@ -62,7 +62,6 @@
     width: fit-content;
     gap: 1rem;
     padding-top: 2rem;
-    bottom: 0 !important;
 }
 
 #moveBtn button {
@@ -90,4 +89,9 @@
     align-items: center;
     gap: 1rem;
     padding: 0 2rem;
+}
+
+#impactText {
+    color: #FFC54D;
+    font-weight: bolder;
 }

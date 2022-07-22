@@ -4,7 +4,7 @@ import { Button, ButtonGroup, Row } from "react-bootstrap";
 function IntroduceButton({ clickMove }) {
 
   return (
-    <Row style={{ justifyContent: "center" }}>
+    <Row style={{ justifyContent: "center"}}>
       <ButtonGroup id="moveBtn">
         <Button id="preMove" onClick={()=>clickMove('pre')}>
           <p>◁</p>

@@ -3,9 +3,9 @@ import { Col, Image, Row } from "react-bootstrap";
 import introduceImg from "../img/introduce.jpg";
 import IntroduceButton from "./IntroduceButton";
 
-function Introduce01({setMoveTo}) {
+function Introduce01({ setMoveTo }) {
   return (
-    <Row id="introduceContent">
+    <Row id="introduceContent" style={{ display: "none" }}>
       <Col md="5">
         <Image src={introduceImg} id="introduceImg" />
       </Col>
@@ -24,13 +24,13 @@ function Introduce01({setMoveTo}) {
           </p>
           <div
             style={{
-              width: "80%",
+              maxWidth: "28rem",
               display: "flex",
               flexDirection: "column",
               gap: "1rem",
             }}
           >
-            <p style={{ color: "#FFC54D" }}>
+            <p id="impactText">
               <b>저를 짧게 소개하면요,</b>
             </p>
             <p>→ 새로운 도전과 변화를 가지는 것을 두려워 하지 않아요.</p>
@@ -50,10 +50,9 @@ function Introduce01({setMoveTo}) {
             <p>→ 음악을 좋아하고, 만드는 재주가 있어요.</p>
 
             <p>→ MBTI 는 ENFP이에요.</p>
-
           </div>
         </div>
-            <IntroduceButton clickMove={setMoveTo}/>
+        <IntroduceButton clickMove={setMoveTo} />
       </Col>
     </Row>
   );
