@@ -26,10 +26,9 @@
     border: 0;
     box-shadow: none;
     border-radius: 50%;
-    background-color: #FF9F29;
+    background-color: #FFC54D;
 }
 
 #scrollTopBtn:active {
-    filter: brightness(90%);
-    border: 1px white solid;
+    border: 2px white solid;
 }

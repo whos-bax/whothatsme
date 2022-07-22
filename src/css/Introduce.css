@@ -43,20 +43,6 @@
     gap: 2rem;
 }
 
-#moveBtn {
-    display: flex;
-    width: fit-content;
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 2rem;
-    bottom: 0;
-}
-#moveBtn button {
-    background-color: #171717;
-    border: none;
-    box-shadow: none;
-}
-
 @media (min-width: 768px) {
 
     .col-md-5,
@@ -69,6 +55,26 @@
         flex-direction: column;
 
     }
+}
+
+#moveBtn {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    bottom: 0;
+}
+
+#moveBtn button {
+    background-color: #171717;
+    border: none;
+    box-shadow: none;
+    transition: all 0.1s ease-in !important;
+}
+
+#moveBtn button:active {
+    color: #FFC54D
 }
 
 #introduceImg {

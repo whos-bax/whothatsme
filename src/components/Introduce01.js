@@ -30,7 +30,7 @@ function Introduce01({setMoveTo}) {
               gap: "1rem",
             }}
           >
-            <p style={{ color: "#F4E06D" }}>
+            <p style={{ color: "#FFC54D" }}>
               <b>저를 짧게 소개하면요,</b>
             </p>
             <p>→ 새로운 도전과 변화를 가지는 것을 두려워 하지 않아요.</p>
