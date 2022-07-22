@@ -5,7 +5,7 @@ import IntroduceButton from "./IntroduceButton";
 
 function Introduce01({ setMoveTo }) {
   return (
-    <Row id="introduceContent" style={{ display: "none" }}>
+    <Row id="introduceContent">
       <Col md="5">
         <Image src={introduceImg} id="introduceImg" />
       </Col>

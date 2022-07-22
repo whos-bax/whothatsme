@@ -16,6 +16,7 @@ function ContentsBox({ show, contents, sendContentClick }) {
       {contents.map((content) => (
         <ListGroup.Item
           action
+          key={content}
           href={`#${content}`}
           onClick={() => sendContentClick(true)}
         >

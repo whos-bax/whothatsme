@@ -2,14 +2,13 @@ import React from "react";
 import { Button, ButtonGroup, Row } from "react-bootstrap";
 
 function IntroduceButton({ clickMove }) {
-
   return (
-    <Row style={{ justifyContent: "center"}}>
+    <Row style={{ justifyContent: "center" }}>
       <ButtonGroup id="moveBtn">
-        <Button id="preMove" onClick={()=>clickMove('pre')}>
+        <Button id="preMove" onClick={() => clickMove("pre")}>
           <p>◁</p>
         </Button>
-        <Button id="postMove" onClick={()=>clickMove('post')}>
+        <Button id="postMove" onClick={() => clickMove("post")}>
           <p>▷</p>
         </Button>
       </ButtonGroup>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
   ButtonGroup,
@@ -15,12 +15,14 @@ function Titlebar({ start, contents }) {
   const menu = useRef();
 
   // 값이 넘어오고 나서 title 보여주기
-  if (start) {
-    setTimeout(() => {
-      titleRef.current.style.opacity = "1";
-      titleRef.current.style.zIndex = "1";
-    }, 1500);
-  }
+  useEffect(() => {
+    if (start) {
+      setTimeout(() => {
+        titleRef.current.style.opacity = "1";
+        titleRef.current.style.zIndex = "1";
+      }, 1500);
+    }
+  }, [titleRef]);
 
   // 타이틀 클릭시 state 값 변화주기
   const [titleClicked, setTitleClicked] = useState(false);
@@ -53,9 +55,7 @@ function Titlebar({ start, contents }) {
 
         <Dropdown.Menu id="menuList" ref={menu}>
           {contents.map((content) => (
-            <Dropdown.Item href={`#${content}`}>
-              {`${content}`}
-            </Dropdown.Item>
+            <Dropdown.Item key={content} href={`#${content}`}>{`${content}`}</Dropdown.Item>
           ))}
         </Dropdown.Menu>
       </Dropdown>

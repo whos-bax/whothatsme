@@ -8,7 +8,7 @@ import Titlebar from "./components/Titlebar";
 import Introduce from "./pages/Introduce";
 
 function App() {
-  const contents = ["introduce", "project"];
+  const contents = ["introduce", "project", "contact"];
   const locationAddress = "http://localhost:3000/";
 
   const blackScreenUp = useRef();
