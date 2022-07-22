@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Image, Row, Table } from "react-bootstrap";
 import introduceImg from "../img/introduce.jpg";
 import IntroduceButton from "./IntroduceButton";
-import Icon from './Icon'
+import * as Icon from "../utils/Icon";
 
 function Introduce02({ setMoveTo }) {
   return (
@@ -19,8 +19,8 @@ function Introduce02({ setMoveTo }) {
           <Table>
             <tbody>
               <tr>
-                <td><Icon icon='html5'/></td>
-                <td><Icon icon='html5'/></td>
+                <td><Icon.Html5 /></td>
+                <td>{/* <Icon icon="Html5" /> */}</td>
                 <td>Otto</td>
                 <td>@mdo</td>
               </tr>
