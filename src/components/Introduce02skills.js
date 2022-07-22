@@ -28,9 +28,9 @@ function Introduce02skills() {
 
   return (
     <Container id="skillsContainer">
-      <Row style={{ gap: ".5rem" }}>
+      <Row style={{ gap: ".rem" }}>
         <Col>
-          <Icon.HtmlSvg />
+          <Icon.HtmlSvg id="iconBlack" />
           <ProgressBar
             animated
             variant={betteryVariant("HtmlSvg")}
@@ -39,7 +39,7 @@ function Introduce02skills() {
           />
         </Col>
         <Col>
-          <Icon.CssSvg />
+          <Icon.CssSvg id="iconBlack" />
           <ProgressBar
             animated
             variant={betteryVariant("CssSvg")}
@@ -48,7 +48,7 @@ function Introduce02skills() {
           />
         </Col>
         <Col>
-          <Icon.JavascriptSvg />
+          <Icon.JavascriptSvg id="iconBlack" />
           <ProgressBar
             animated
             variant={betteryVariant("JavascriptSvg")}
@@ -57,11 +57,110 @@ function Introduce02skills() {
           />
         </Col>
         <Col>
-          <Icon.ReactSvg />
+          <Icon.ReactSvg id="iconBlack" />
           <ProgressBar
             animated
             variant={betteryVariant("ReactSvg")}
             now={languages["ReactSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.GitlabSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("GitlabSvg")}
+            now={languages["GitlabSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.GithubSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("GithubSvg")}
+            now={languages["GithubSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.TypescriptSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("TypescriptSvg")}
+            now={languages["TypescriptSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.VueSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("VueSvg")}
+            now={languages["VueSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.PythonSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("PythonSvg")}
+            now={languages["PythonSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.PhpSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("PhpSvg")}
+            now={languages["PhpSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.MysqlSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("MysqlSvg")}
+            now={languages["MysqlSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.PostgresqlSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("PostgresqlSvg")}
+            now={languages["PostgresqlSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.PhotoshopSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("PhotoshopSvg")}
+            now={languages["PhotoshopSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.PremierproSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("PremierproSvg")}
+            now={languages["PremierproSvg"]}
+            style={show ? { opacity: "1" } : { opacity: "0" }}
+          />
+        </Col>
+        <Col>
+          <Icon.AbletonSvg id="iconBlack" />
+          <ProgressBar
+            animated
+            variant={betteryVariant("AbletonSvg")}
+            now={languages["AbletonSvg"]}
             style={show ? { opacity: "1" } : { opacity: "0" }}
           />
         </Col>
