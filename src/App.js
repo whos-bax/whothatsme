@@ -21,7 +21,7 @@ function App() {
   // start 버튼을 눌렀을 때
   useEffect(() => {
     if (clickStart) {
-    //   startBtn.current.style.width = 0;
+    //   startBtn.current.style.width = 0;  
     // startBtn.current.style.height = 0;
     // blackScreenUp.current.style.transition = "all 1s ease-in-out";
     // blackScreenDown.current.style.transition = "all 1s ease-in-out";
