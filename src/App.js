@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Main from "./pages/Main";
 import Home from "./pages/Home";
 import Introduce from "./pages/Introduce";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const routesInfo = [
@@ -65,19 +66,8 @@ function App() {
                 path="/introduce/*"
                 element={<Introduce contents={contents} />}
               />
+              <Route path='/contact' element={<Contact />}/>
               <Route path="*" element={<NotFound />} />
-
-              {/* {routesInfo.map((route, index) => {
-                {
-                  console.log(routesInfo.path);
-                }
-                if (route) {
-                  <Route
-                    path={`${routesInfo.path}`}
-                    element={<routesInfo.Component />}
-                  ></Route>;
-                }
-              })} */}
             </Routes>
             <Footer contents={contents} />{" "}
           </>

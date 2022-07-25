@@ -17,6 +17,7 @@ function Welcome({ sendWelcomeDown }) {
       }, 3500);
     }
   }, [clickStart]);
+  console.log(clickStart);
 
   return (
     <Container fluid className="App">

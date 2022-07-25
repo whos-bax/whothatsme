@@ -22,11 +22,6 @@
     height: 0%;
 }
 
-.screenAdjust {
-    transition-delay: 0 !important;
-    height: 5rem;
-}
-
 #blackScreenUp {
     top: 0 !important;
 }

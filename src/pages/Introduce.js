@@ -20,7 +20,7 @@ function Introduce({ address }) {
   const introRef = useRef();
   console.log(moveTo, introRef);
   return (
-    <Container fluid className={`${pageEnter ? " pageEnter" : " pageOut"}`} id="introduce" ref={introRef}>
+    <Container fluid className="pageEnter" id="introduce" ref={introRef}>
       {/* <Introduce01 setMoveTo={setMoveTo} introRef={introRef.current} /> */}
       <Introduce02 setMoveTo={setMoveTo} />
     </Container>

@@ -9,7 +9,6 @@ import {
   Modal,
 } from "react-bootstrap";
 
-import introduceImg from "../img/introduce.jpg";
 import IntroduceButton from "./IntroduceButton";
 import * as Icon from "../utils/Icon";
 
@@ -31,7 +30,10 @@ function Introduce02({ setMoveTo }) {
   return (
     <Row id="introduceContent">
       <Col md="5">
-        <Image src={introduceImg} id="introduceImg" />
+        <Image
+          src={"/images/introduce.jpg"}
+          id="introduceImg"
+        />
       </Col>
       <Col md="7" id="introduceBox">
         <div style={{ padding: "1rem" }}>

@@ -1,0 +1,26 @@
+#Contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../../public/images/road.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    backdrop-filter: blur(100px);
+    /* display: flex; */
+}
+
+
+#ContactContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 5.5rem 0;
+    width: 90%;
+    height: 90%;
+    transition: all 0.8s linear;
+    color: white;
+    /* opacity: 0; */
+}
