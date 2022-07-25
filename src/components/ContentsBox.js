@@ -9,12 +9,10 @@ function ContentsBox({ show, contents }) {
       className="contentsGroup"
       style={show ? { opacity: 1 } : { opacity: 0 }}
     >
-      {contents.map((content) => (
-        <ListGroup.Item action key={content}>
-          <Link
-            to={`${content}`}
-          >
-            <p style={{ textAlign: "center" }}>{`${content}`}</p>
+      {contents.map((content, idx) => (
+        <ListGroup.Item action key={idx}>
+          <Link to={`${content}`}>
+            <p>{`${content}`}</p>
           </Link>
         </ListGroup.Item>
       ))}

@@ -13,7 +13,7 @@ function Footer({ start }) {
 
   // 스크롤 클릭시 상위로
   const handleScrollToTop = () => {
-    window.scrollTo(0, 550);
+    window.location.href = "#main";
   };
 
   const welcomeAgain = () => {
@@ -26,30 +26,32 @@ function Footer({ start }) {
       className="footer"
       style={show ? { height: "5rem" } : { height: 0 }}
     >
-      <Button id="welcomeAgainSty" onClick={() => setGoFirst(true)}>
-        ↺
-      </Button>
-      <Modal show={goFirst} onHide={() => setGoFirst(false)} id="backModal">
-        <Modal.Header
-          closeButton={false}
-          style={{ border: 0, justifyContent: "center" }}
-        >
-          <Modal.Title>
-            <p style={{ color: "red" }}>처음부터 다시 보기</p>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body style={{ textAlign: "center" }}>
-          <p>맨 처음으로 돌아가시겠습니까?</p>
-        </Modal.Body>
-        <Modal.Footer style={{ border: 0, justifyContent: "center" }}>
-          <Button variant="secondary" onClick={() => setGoFirst(false)}>
-            닫기
-          </Button>
-          <Button variant="warning" onClick={welcomeAgain}>
-            돌아가기
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <div id="welcomeDiv" style={show ? { opacity: 1 } : { opacity: 0 }}>
+        <Button id="welcomeAgainSty" onClick={() => setGoFirst(true)}>
+          ↺
+        </Button>
+        <Modal show={goFirst} onHide={() => setGoFirst(false)} id="backModal">
+          <Modal.Header
+            closeButton={false}
+            style={{ border: 0, justifyContent: "center" }}
+          >
+            <Modal.Title>
+              <p style={{ color: "red" }}>처음부터 다시 보기</p>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ textAlign: "center" }}>
+            <p>맨 처음으로 돌아가시겠습니까?</p>
+          </Modal.Body>
+          <Modal.Footer style={{ border: 0, justifyContent: "center" }}>
+            <Button variant="secondary" onClick={() => setGoFirst(false)}>
+              닫기
+            </Button>
+            <Button variant="warning" onClick={welcomeAgain}>
+              돌아가기
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
 
       <div id="footerDiv" style={show ? { opacity: 1 } : { opacity: 0 }}>
         <Button id="scrollTopBtn" onClick={handleScrollToTop}>

@@ -9,10 +9,10 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  animation: homeOpen 1.5s ease-in-out forwards;
+  animation: mainOpen 1.5s ease-in-out forwards;
 }
 
-@keyframes homeOpen {
+@keyframes mainOpen {
   from {
     opacity: 0;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-.homeContent {
+.mainContent {
   padding: 1rem;
   margin: auto !important;
   justify-content: center;
@@ -48,10 +48,10 @@
   gap: 0;
 }
 
-.homeContent h1 {
+.mainContent h1 {
   font-size: 3rem;
 }
 
-.homeContent h1 p {
+.mainContent h1 p {
   font-size: 2rem;
 }

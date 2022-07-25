@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Dropdown } from "react-bootstrap";
 import "../css/Titlebar.css";
 
-function Titlebar({ start, contents, blurQuit }) {
+function Titlebar({ start, contents, getBlur }) {
   const [titleClicked, setTitleClicked] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -13,10 +13,8 @@ function Titlebar({ start, contents, blurQuit }) {
 
   // 아래 titleClicked에 의해 메뉴 보이기
   const handleClickTitle = () => {
-    if (blurQuit) setTitleClicked(!titleClicked);
+    if (getBlur) setTitleClicked(!titleClicked);
   };
-
-  console.log(blurQuit);
 
   return (
     <Container
@@ -44,7 +42,6 @@ function Titlebar({ start, contents, blurQuit }) {
           {contents.map((content, idx) => (
             <Dropdown.Item
               key={idx}
-              id={content}
               href={`${content}`}
               disabled={!titleClicked}
             >{`${content}`}</Dropdown.Item>
