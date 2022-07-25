@@ -43,9 +43,9 @@ function App() {
       localStorage.setItem("blurQuit", blurQuit);
     }
     setGetBlur(localStorage.getItem("blurQuit"));
+    console.log(document.getElementsByClassName("App")[0].style)
   }, [blurQuit]);
   
-  console.log(document.getElementsByClassName("App")[0].style.backgroudColor)
   return (
     <Container fluid className="App">
       <BrowserRouter>
