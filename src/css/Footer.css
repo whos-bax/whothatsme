@@ -17,6 +17,8 @@
     height: 100%;
     justify-content: end;
     align-items: center;
+    opacity: 0;
+    transition: all 1s ease-out 2s;
 }
 
 #scrollTopBtn {

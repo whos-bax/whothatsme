@@ -9,6 +9,7 @@ import Welcome from "./pages/Welcome";
 import Titlebar from "./components/Titlebar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const contents = ["home", "introduce", "project", "contact"];
@@ -36,11 +37,11 @@ function App() {
         {!isWelcome ? <Welcome sendWelcomeDown={setWelcomeDown} /> : null}
         {isWelcome ? (
           <>
-            <Titlebar start={isWelcome} contents={contents} />
+            <Titlebar start={isWelcome} contents={contents} blurQuit={blurQuit}/>
             <Routes>
               <Route
                 exact
-                path="/home"
+                path="/"
                 element={
                   <Home
                     start={isWelcome}
@@ -49,6 +50,8 @@ function App() {
                   />
                 }
               ></Route>
+
+              <Route path="*" element={<NotFound />}></Route>
             </Routes>
             <Footer contents={contents} />{" "}
           </>

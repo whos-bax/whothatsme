@@ -13,7 +13,7 @@ function Footer({ start }) {
   }, [start]);
 
   const handleScrollToTop = () => {
-    window.location.href = "#home";
+    window.location.href = "home";
   };
 
   return (
@@ -22,7 +22,7 @@ function Footer({ start }) {
       className="footer"
       style={show ? { height: "5rem" } : { height: 0 }}
     >
-      <Button ref={target} onClick={() => setShow(!show)}>
+      {/* <Button ref={target} onClick={() => setShow(!show)}>
         Click me!
       </Button>
       <Overlay target={target.current} show={show} placement="right">
@@ -31,12 +31,13 @@ function Footer({ start }) {
             My Tooltip
           </Tooltip>
         )}
-      </Overlay>
-      <div id="footerDiv">
+      </Overlay> */}
+
+      <div id="footerDiv" style={show ? { opacity: 1 } : { opacity: 0 }}>
         <Button id="scrollTopBtn" onClick={handleScrollToTop}>
           ↑
         </Button>
-        <p style={{ fontSize: "1rem" }}>
+        <p style={{ fontSize: ".8rem" }}>
           © 2022 whosbax. All rights reserved.{" "}
         </p>
       </div>

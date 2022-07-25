@@ -1,5 +1,6 @@
 .titleBar {
     position: absolute;
+    padding: 0;
     top: 0;
     transition: all 2s ease-out 1s;
     display: flex;
@@ -52,22 +53,25 @@
 }
 
 #menuList {
-    width: 100%;
+    width: 50%;
     margin: auto;
-    transform: translate(0, 5rem) !important;
+    transform: translate(50%, 50%) !important;
     border-radius: 0;
     border: 0;
     transition: all .5s ease-in-out;
     gap: 1rem;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
     background-color: inherit;
+    backdrop-filter: blur(20px);
 }
 
 #menuList a {
-    color: white;
-    width: 100%;
+    color: white !important;
+    width: fit-content;
     padding: auto;
     border: 0;
     letter-spacing: 2px;
@@ -76,6 +80,16 @@
     display: flex;
     transition: all .5s ease-in-out;
     justify-content: center;
+}
+
+@media (min-width: 768px) {
+    #menuList {
+        width: 100%;
+        transform: translate(0, 5rem) !important;
+        flex-direction: row;
+        backdrop-filter: blur(0px);
+        background-color: inherit;
+    }
 }
 
 #menuList a:hover {

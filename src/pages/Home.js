@@ -6,6 +6,7 @@ import "../css/Home.css";
 
 function Home({ start, sendBlurQuit, contents }) {
   const blurPage = useRef();
+
   const [useBlur, setUseBlur] = useState("");
   const [blurQuit, setBlurQuit] = useState(false);
 
@@ -41,7 +42,7 @@ function Home({ start, sendBlurQuit, contents }) {
           <b>늘 새로운 도전을 추구하며, 세상에 좋은 영향을 주는 사람</b>을
           꿈꾸고 있습니다.
         </p>
-        <Link to="/home">
+        <Link to="/">
           <Button
             variant="outline-light"
             className="moreBtn"

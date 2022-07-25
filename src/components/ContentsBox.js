@@ -1,25 +1,21 @@
-import React, { useRef } from "react";
+import React from "react";
 import { ListGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../css/ContentsBox.css";
 
 function ContentsBox({ show, contents }) {
-  const btnGroup = useRef();
-
-  // 컨텐츠 보이기
-  if (show) {
-    setTimeout(() => {
-      btnGroup.current.style.opacity = 1;
-    }, 1500);
-  }
   return (
-    <ListGroup ref={btnGroup}>
+    <ListGroup
+      className="contentsGroup"
+      style={show ? { opacity: 1 } : { opacity: 0 }}
+    >
       {contents.map((content) => (
-        <ListGroup.Item
-          action
-          key={content}
-          href={`#${content}`}
-        >
-          <p style={{ textAlign: "center" }}>{`${content}`}</p>
+        <ListGroup.Item action key={content}>
+          <Link
+            to={`${content}`}
+          >
+            <p style={{ textAlign: "center" }}>{`${content}`}</p>
+          </Link>
         </ListGroup.Item>
       ))}
     </ListGroup>
