@@ -4,31 +4,33 @@ import ContentsBox from "../components/ContentsBox";
 import "../css/Home.css";
 
 function Home({ start, sendBlurQuit, contents }) {
-  const homeContainer = useRef();
-  const useBlur = useRef();
-
+  const [useBlur, setUseBlur] = useState("");
   const [blurQuit, setBlurQuit] = useState(false);
   const [contentClick, setContentClick] = useState(false);
 
-  // start 에 따라 화면 변화
   useEffect(() => {
-    // homeContainer.current.style.opacity = 1;
-    // setTimeout(() => {
-    //   useBlur.current.style.backdropFilter = "blur(12px)";
-    //   useBlur.current.style.opacity = 1;
-    //   useBlur.current.style.gap = "3rem";
-    // }, 1500);
+    //   // start 이후 배경 보여줬다가 블러처리
+    if (start) {
+      setTimeout(() => {
+        setUseBlur(" useBlur");
+      }, 1800);
+    }
   }, [start]);
+  console.log(useBlur);
 
+  // useEffect(() => {
+  //   if (blurQuit) setUseBlur(false);
+  // }, [blurQuit]);
   // 더 알아보기 버튼 클릭 후 다시 닫기
-  if (blurQuit) {
-    useBlur.current.style.backdropFilter = "none";
-    useBlur.current.style.opacity = 0;
-    useBlur.current.style.gap = 0;
-    setTimeout(() => {
-      useBlur.current.remove();
-    }, 1000);
-  }
+
+  // if (blurQuit) {
+  //   useBlur.current.style.backdropFilter = "none";
+  //   useBlur.current.style.opacity = 0;
+  //   useBlur.current.style.gap = 0;
+  //   setTimeout(() => {
+  //     useBlur.current.remove();
+  //   }, 1000);
+  // }
 
   if (contentClick) {
     // homeContainer.current.style.filter = "brightness(0%)";
@@ -39,15 +41,16 @@ function Home({ start, sendBlurQuit, contents }) {
   //   console.log("check", homeContainer.current.getBoundingClientRect());
   // }
 
+  // console.log(blurQuit);
   return (
-    <Container
-      fluid
-      className={"backgroundStudio" + `${start ? " HomeOpen" : ""}`}
-      ref={homeContainer}
-      id="home"
-      // style={{display : `${start ? "" : "none"}`}}
-    >
-      <div className="d-flex m-auto homeContent" ref={useBlur}>
+    <Container fluid className="backgroundStudio" id="home">
+      <div
+        className={
+          "d-flex m-auto homeContent" +
+          `${!blurQuit ? useBlur : " blurQuit"}`
+        }
+        // id={`${!blurQuit ? "delayBlur" : ""}`}
+      >
         <h1>어제보다 오늘 더</h1>
         <p style={{ fontSize: "1.2rem" }}>
           꿈이 많은 어른 아이, <b>박상호</b>입니다. <br />

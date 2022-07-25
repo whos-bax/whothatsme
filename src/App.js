@@ -18,62 +18,70 @@ function App() {
   // start 버튼을 눌렀을 때
   useEffect(() => {
     if (clickStart) {
+      // welcome 글 삭제
       setWelcomeDel(false);
+      // start css 전부 처리 이후
       setTimeout(() => {
         setAfterStart(true);
       }, 2000);
     }
   }, [clickStart]);
 
-  // 블러 페이지 닫고 나서
-  // if (blurQuit) {
-  //   setTimeout(() => {
-  //     blackScreenUp.current.style.height = "5rem";
-  //     blackScreenDown.current.style.height = "5rem";
-  //   }, 1000);
-
-  //   // body 내 overflow 통제
-  //   const bodyOverFlow = document.querySelector(".App");
-  //   bodyOverFlow.style.overflowY = "auto";
-  // }
-
   return (
     <Container fluid className="App">
       <div
-        className={"blackScreen" + `${clickStart ? " screenOut" : ""}`}
-        id="blackScreenUp"
+        className={
+          "blackScreen" +
+          `${
+            clickStart && !blurQuit
+              ? " screenOut"
+              : clickStart && blurQuit
+              ? " screenAdjust"
+              : ""
+          }`
+        }
+        id={"blackScreenUp" + `${blurQuit ? " screenHeight" : ""}`}
       >
         {blurQuit ? <Titlebar start={clickStart} contents={contents} /> : null}
       </div>
 
-      {
-        !afterStart ? (
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "flex",
-            }}
+      {!afterStart ? (
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+          }}
+        >
+          <Button
+            className={"startBtn" + `${clickStart ? " startBtnOut" : ""}`}
+            variant="outline-light"
+            onClick={() => setClickStart(true)}
           >
-            <Button
-              className={"startBtn" + `${clickStart ? " startBtnOut" : ""}`}
-              variant="outline-light"
-              onClick={() => setClickStart(true)}
-            >
-              {welcomeDel ? <p>WELCOME</p> : null}
-            </Button>
-          </div>
-        ) : (
+            {welcomeDel ? <p>WELCOME</p> : null}
+          </Button>
+        </div>
+      ) : (
+        <>
           <Home
-            start={clickStart}
+            start={afterStart}
             sendBlurQuit={setBlurQuit}
             contents={contents}
           />
-        )
-        // <Introduce />
-      }
+          <Introduce />
+        </>
+      )}
       <div
-        className={"blackScreen" + `${clickStart ? " screenOut" : ""}`}
+        className={
+          "blackScreen" +
+          `${
+            clickStart && !blurQuit
+              ? " screenOut"
+              : clickStart && blurQuit
+              ? " screenAdjust"
+              : ""
+          }`
+        }
         id="blackScreenDown"
       >
         {blurQuit ? <Footer start={clickStart} /> : null}

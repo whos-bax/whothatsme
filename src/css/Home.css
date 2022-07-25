@@ -9,7 +9,7 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  animation: homeOpen 2s 1s ease-in-out forwards;
+  animation: homeOpen 1.5s ease-in-out forwards;
 }
 
 @keyframes homeOpen {
@@ -19,7 +19,6 @@
 
   to {
     opacity: 1;
-    /* display: block; */
   }
 }
 
@@ -28,15 +27,42 @@
   margin: auto !important;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  transition: all 0.8s linear;
+  width: 100vw;
+  height: 100vh;
   color: white;
   opacity: 0;
   gap: 0;
-  display: hidden;
   flex-direction: column;
+  transition: all 1s linear;
+  /* transition-delay: 2s; */
 }
+
+.useBlur {
+  padding: 0;
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  gap: 3rem;
+}
+
+.blurQuit {
+  opacity: 0;
+  backdrop-filter: none;
+  gap: 0;
+}
+
+/* 
+@keyframes useBlur {
+  from {
+    gap: 0;
+  }
+
+  to {
+    backdrop-filter: blur(15px);
+    opacity: 1;
+    gap: 3rem;
+  }
+} */
+
 
 .homeContent h1 {
   font-size: 3rem;

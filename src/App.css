@@ -59,6 +59,10 @@ p {
   height: 0%;
 }
 
+.screenAdjust {
+  height: 5rem;
+}
+
 #blackScreenUp {
   top: 0 !important;
 }
@@ -92,7 +96,7 @@ p {
   border: none;
   width: 0%;
   height: 0%;
-  animation : buttonOut 2s .5s ease-in-out forwards;
+  animation: buttonOut 2s ease-in-out .5s forwards;
 }
 
 @keyframes buttonOut {
@@ -100,9 +104,11 @@ p {
     width: 0%;
     height: 0%;
   }
+
   50% {
     width: 100%;
   }
+
   100% {
     width: 100%;
     opacity: 0;
