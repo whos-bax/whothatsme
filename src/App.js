@@ -19,6 +19,9 @@ function App() {
   useEffect(() => {
     if (clickStart) {
       setWelcomeDel(false);
+      setTimeout(() => {
+        setAfterStart(true);
+      }, 2000);
     }
   }, [clickStart]);
 
@@ -40,36 +43,40 @@ function App() {
         className={"blackScreen" + `${clickStart ? " screenOut" : ""}`}
         id="blackScreenUp"
       >
-        {blurQuit ? <Titlebar start={afterStart} contents={contents} /> : null}
+        {blurQuit ? <Titlebar start={clickStart} contents={contents} /> : null}
       </div>
-      {!afterStart ? (
-        <div
-          style={{ width: "100%", height: "100%", display: "flex" }}
-        >
-          <Button
-            className={"startBtn" + `${clickStart ? " startBtnOut" : ""}`}
-            variant="outline-light"
-            onClick={() => setClickStart(true)}
+
+      {
+        !afterStart ? (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+            }}
           >
-            {welcomeDel ? <p>WELCOME</p> : null}
-          </Button>
-        </div>
-      ) : (
-        <>
+            <Button
+              className={"startBtn" + `${clickStart ? " startBtnOut" : ""}`}
+              variant="outline-light"
+              onClick={() => setClickStart(true)}
+            >
+              {welcomeDel ? <p>WELCOME</p> : null}
+            </Button>
+          </div>
+        ) : (
           <Home
-            start={afterStart}
+            start={clickStart}
             sendBlurQuit={setBlurQuit}
             contents={contents}
           />
-          <Introduce />
-        </>
-      )}
-
+        )
+        // <Introduce />
+      }
       <div
         className={"blackScreen" + `${clickStart ? " screenOut" : ""}`}
         id="blackScreenDown"
       >
-        {blurQuit ? <Footer start={afterStart} /> : null}
+        {blurQuit ? <Footer start={clickStart} /> : null}
       </div>
     </Container>
   );

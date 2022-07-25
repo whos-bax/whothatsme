@@ -4,11 +4,23 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 0 !important;
-  transition: all 2s ease-in-out;
+  /* transition: all 2s 3s ease-in-out; */
   opacity: 0;
   width: 100%;
   height: 100%;
   justify-content: center;
+  animation: homeOpen 2s 1s ease-in-out forwards;
+}
+
+@keyframes homeOpen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    /* display: block; */
+  }
 }
 
 .homeContent {

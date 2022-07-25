@@ -12,12 +12,12 @@ function Home({ start, sendBlurQuit, contents }) {
 
   // start 에 따라 화면 변화
   useEffect(() => {
-    homeContainer.current.style.opacity = 1;
-    setTimeout(() => {
-      useBlur.current.style.backdropFilter = "blur(12px)";
-      useBlur.current.style.opacity = 1;
-      useBlur.current.style.gap = "3rem";
-    }, 1500);
+    // homeContainer.current.style.opacity = 1;
+    // setTimeout(() => {
+    //   useBlur.current.style.backdropFilter = "blur(12px)";
+    //   useBlur.current.style.opacity = 1;
+    //   useBlur.current.style.gap = "3rem";
+    // }, 1500);
   }, [start]);
 
   // 더 알아보기 버튼 클릭 후 다시 닫기
@@ -40,7 +40,13 @@ function Home({ start, sendBlurQuit, contents }) {
   // }
 
   return (
-    <Container fluid className="backgroundStudio" ref={homeContainer} id="home">
+    <Container
+      fluid
+      className={"backgroundStudio" + `${start ? " HomeOpen" : ""}`}
+      ref={homeContainer}
+      id="home"
+      // style={{display : `${start ? "" : "none"}`}}
+    >
       <div className="d-flex m-auto homeContent" ref={useBlur}>
         <h1>어제보다 오늘 더</h1>
         <p style={{ fontSize: "1.2rem" }}>
