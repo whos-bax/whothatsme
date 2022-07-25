@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { ListGroup } from "react-bootstrap";
 import "../css/ContentsBox.css";
 
-function ContentsBox({ show, contents, sendContentClick }) {
+function ContentsBox({ show, contents }) {
   const btnGroup = useRef();
 
   // 컨텐츠 보이기
@@ -18,7 +18,6 @@ function ContentsBox({ show, contents, sendContentClick }) {
           action
           key={content}
           href={`#${content}`}
-          onClick={() => sendContentClick(true)}
         >
           <p style={{ textAlign: "center" }}>{`${content}`}</p>
         </ListGroup.Item>

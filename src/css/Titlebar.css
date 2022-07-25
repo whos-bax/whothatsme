@@ -1,27 +1,31 @@
 .titleBar {
     position: absolute;
     top: 0;
-    transition: all 2s ease-out 1.5s;
+    transition: all 2s ease-out 1s;
     display: flex;
     align-items: center;
     height: 0;
     background-color: #171717;
+    z-index: 10;
+}
+
+.titleBar .dropdown {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    transition: all 1s ease-out 2s;
 }
 
 #titleNameBtn {
     font-family: 'LeferiPoint-WhiteObliqueA';
-    width: 100%;
-    height: 100%;
+    margin: auto;
     color: white;
     border: 0;
     font-size: x-large;
-    transition: all 1s ease-out !important;
     background-color: inherit;
     border-radius: 0;
     letter-spacing: 2px;
-    /* z-index: 9; */
-    display: flex;
-    justify-content: center;
 }
 
 #titleNameBtn:hover {
@@ -50,12 +54,13 @@
 #menuList {
     width: 100%;
     margin: auto;
-    transform: translate(0, 4.5rem) !important;
+    transform: translate(0, 5rem) !important;
     border-radius: 0;
     border: 0;
     transition: all .5s ease-in-out;
-    gap: 2rem;
+    gap: 1rem;
     flex-direction: row;
+    flex-wrap: wrap;
     display: flex;
     background-color: inherit;
 }
