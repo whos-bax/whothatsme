@@ -4,52 +4,40 @@ import ContentsBox from "../components/ContentsBox";
 import "../css/Home.css";
 
 function Home({ start, sendBlurQuit, contents }) {
+  const blurPage = useRef();
   const [useBlur, setUseBlur] = useState("");
   const [blurQuit, setBlurQuit] = useState(false);
   const [contentClick, setContentClick] = useState(false);
 
   useEffect(() => {
-    //   // start 이후 배경 보여줬다가 블러처리
+    // start 이후 배경 보여줬다가 블러처리, 시간을 이용한 시각적인 처리
     if (start) {
       setTimeout(() => {
         setUseBlur(" useBlur");
       }, 1800);
     }
   }, [start]);
-  console.log(useBlur);
 
-  // useEffect(() => {
-  //   if (blurQuit) setUseBlur(false);
-  // }, [blurQuit]);
-  // 더 알아보기 버튼 클릭 후 다시 닫기
-
-  // if (blurQuit) {
-  //   useBlur.current.style.backdropFilter = "none";
-  //   useBlur.current.style.opacity = 0;
-  //   useBlur.current.style.gap = 0;
-  //   setTimeout(() => {
-  //     useBlur.current.remove();
-  //   }, 1000);
-  // }
+  useEffect(() => {
+    // 블러페이지 닫은 이후 제거하기 => ContentsBox 보여주기
+    if (blurQuit) {
+      setTimeout(() => {
+        blurPage.current.remove();
+      }, 1000);
+    }
+  }, [blurQuit]);
 
   if (contentClick) {
     // homeContainer.current.style.filter = "brightness(0%)";
   }
 
-  // const isHome = homeContainer.current;
-  // if (isHome) {
-  //   console.log("check", homeContainer.current.getBoundingClientRect());
-  // }
-
-  // console.log(blurQuit);
   return (
     <Container fluid className="backgroundStudio" id="home">
       <div
         className={
-          "d-flex m-auto homeContent" +
-          `${!blurQuit ? useBlur : " blurQuit"}`
+          "d-flex m-auto homeContent" + `${!blurQuit ? useBlur : " blurQuit"}`
         }
-        // id={`${!blurQuit ? "delayBlur" : ""}`}
+        ref={blurPage}
       >
         <h1>어제보다 오늘 더</h1>
         <p style={{ fontSize: "1.2rem" }}>
@@ -61,7 +49,7 @@ function Home({ start, sendBlurQuit, contents }) {
           variant="outline-light"
           className="moreBtn"
           onClick={() => {
-            sendBlurQuit(true);
+            sendBlurQuit(true); // 부모로 블러페이지가 닫혔음을 알려주기
             setBlurQuit(true);
           }}
         >

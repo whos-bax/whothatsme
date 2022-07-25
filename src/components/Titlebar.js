@@ -1,73 +1,48 @@
-import React, {
-  createRef,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import {
-  Button,
-  ButtonGroup,
-  Container,
-  Dropdown,
-  DropdownButton,
-  ListGroup,
-  Nav,
-} from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Dropdown } from "react-bootstrap";
 import "../css/Titlebar.css";
 
 function Titlebar({ start, contents }) {
-  const menu = useRef();
-
-  // 타이틀 클릭시 state 값 변화주기
   const [titleClicked, setTitleClicked] = useState(false);
+  const [show, setShow] = useState(false);
 
+  // start 값 받은 후 titlebar 보이기
+  useEffect(() => {
+    setShow(true);
+  }, [start]);
+
+  // 아래 titleClicked에 의해 메뉴 보이기
   const handleClickTitle = () => {
     setTitleClicked(!titleClicked);
-    // 아래 titleClicked에 의해 메뉴 보이기
   };
 
-  
-  // 값이 넘어오고 나서 title 보여주기
-  const titleRef = useCallback((node) => {
-    if (node !== null) {
-      setTimeout(() => {
-        node.style.opacity = "1";
-        node.style.zIndex = "1";
-      }, 1500);
-    }
-  }, []);
-
-  const menuRef = useCallback((node) => {
-    if (node !== null) {
-      titleClicked
-        ? (node.style.opacity = "0")
-        : (node.style.opacity = "1");
-
-    }
-  })
-
   return (
-    <Container className="titleBar" ref={titleRef}>
+    <Container
+      className="titleBar"
+      style={show ? { opacity: 1 } : { opacity: 0 }}
+    >
       <Dropdown
+        style={{ width: "100%" }}
         onClick={(e) => {
           if (e.target.id === "titleNameBtn") {
-            console.log(e);
             handleClickTitle();
           }
         }}
-        style={{ width: "100%" }}
         className={`${titleClicked ? " titleClick" : ""}`}
       >
         <Dropdown.Toggle variant="outline-light" id="titleNameBtn">
-          <p>꿈이 많은 어른 아이</p>
+          꿈이 많은 어른 아이
         </Dropdown.Toggle>
 
-        <Dropdown.Menu id="menuList" ref={menuRef}>
+        <Dropdown.Menu
+          id="menuList"
+          style={titleClicked ? { opacity: 1 } : { opacity: 0 }}
+        >
           {contents.map((content) => (
             <Dropdown.Item
               key={content}
               href={`#${content}`}
+              disabled={!titleClicked}
             >{`${content}`}</Dropdown.Item>
           ))}
         </Dropdown.Menu>

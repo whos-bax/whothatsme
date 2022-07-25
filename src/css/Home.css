@@ -34,7 +34,6 @@
   gap: 0;
   flex-direction: column;
   transition: all 1s linear;
-  /* transition-delay: 2s; */
 }
 
 .useBlur {
@@ -49,20 +48,6 @@
   backdrop-filter: none;
   gap: 0;
 }
-
-/* 
-@keyframes useBlur {
-  from {
-    gap: 0;
-  }
-
-  to {
-    backdrop-filter: blur(15px);
-    opacity: 1;
-    gap: 3rem;
-  }
-} */
-
 
 .homeContent h1 {
   font-size: 3rem;

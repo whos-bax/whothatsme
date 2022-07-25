@@ -18,9 +18,9 @@ function App() {
   // start 버튼을 눌렀을 때
   useEffect(() => {
     if (clickStart) {
-      // welcome 글 삭제
+      // welcome 텍스트 삭제
       setWelcomeDel(false);
-      // start css 전부 처리 이후
+      // start css 전부 처리 이후 완료된 값 자녀에게 넘겨주기
       setTimeout(() => {
         setAfterStart(true);
       }, 2000);
@@ -34,13 +34,13 @@ function App() {
           "blackScreen" +
           `${
             clickStart && !blurQuit
-              ? " screenOut"
+              ? " screenDelay screenOut"
               : clickStart && blurQuit
               ? " screenAdjust"
-              : ""
+              : " screenDelay"
           }`
         }
-        id={"blackScreenUp" + `${blurQuit ? " screenHeight" : ""}`}
+        id="blackScreenUp"
       >
         {blurQuit ? <Titlebar start={clickStart} contents={contents} /> : null}
       </div>
@@ -76,10 +76,10 @@ function App() {
           "blackScreen" +
           `${
             clickStart && !blurQuit
-              ? " screenOut"
+              ? " screenDelay screenOut"
               : clickStart && blurQuit
               ? " screenAdjust"
-              : ""
+              : " screenDelay"
           }`
         }
         id="blackScreenDown"
