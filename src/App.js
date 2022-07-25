@@ -27,9 +27,11 @@ function App() {
   const [blurQuit, setBlurQuit] = useState(false);
   const [getBlur, setGetBlur] = useState(false);
 
+  // welcome 버튼 누른 이후
   useEffect(() => {
     if (welcomeDown) {
       localStorage.setItem("welcome", welcomeDown);
+      document.getElementsByClassName("App")[0].style.backgroudColor = "#171717";
     }
     setIsWelcome(localStorage.getItem("welcome"));
   }, [welcomeDown]);
@@ -42,7 +44,8 @@ function App() {
     }
     setGetBlur(localStorage.getItem("blurQuit"));
   }, [blurQuit]);
-
+  
+  console.log(document.getElementsByClassName("App")[0].style.backgroudColor)
   return (
     <Container fluid className="App">
       <BrowserRouter>

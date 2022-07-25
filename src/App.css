@@ -21,7 +21,7 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  background-color: #171717;
+  /* background-color: #171717; */
 }
 
 .App::-webkit-scrollbar {
