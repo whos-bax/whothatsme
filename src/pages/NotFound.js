@@ -3,7 +3,7 @@ import { Container, Spinner } from "react-bootstrap";
 
 export default function NotFound() {
   useEffect(() => {
-    setTimeout(() => (window.location.href = "/"), 1500);
+    setTimeout(() => (window.location.href = "/home"), 1500);
   });
 
   const notfoundStyle = {
@@ -18,7 +18,7 @@ export default function NotFound() {
   };
 
   return (
-    <Container fluid style={notfoundStyle}>
+    <Container fluid className="pageEnter" style={notfoundStyle}>
       <p style={{ fontSize: "1.5rem" }}>
         <b>잘못된 접근</b>입니다.
         <br />

@@ -13,10 +13,6 @@
   animation: mainOpen 1.5s ease-in-out forwards;
 }
 
-.pageChange {
-  animation: mainOpen .1s forwards;
-}
-
 @keyframes mainOpen {
   from {
     opacity: 0;

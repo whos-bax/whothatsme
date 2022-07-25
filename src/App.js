@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 import Introduce from "./pages/Introduce";
 import NotFound from "./pages/NotFound";
 
-const routes = [
+const routesInfo = [
   { path: "/home", Component: Home },
   { path: "/introduce", Component: Introduce },
   { path: "*", Component: NotFound },
@@ -54,7 +54,6 @@ function App() {
                 path="/"
                 element={
                   <Main
-                    key={0}
                     start={isWelcome}
                     sendBlurQuit={setBlurQuit}
                     contents={contents}
@@ -63,17 +62,21 @@ function App() {
               />
               <Route path="/home" element={<Home contents={contents} />} />
               <Route
-                path="/introduce"
+                path="/introduce/*"
                 element={<Introduce contents={contents} />}
               />
               <Route path="*" element={<NotFound />} />
 
-              {/* {routes.map((route, index) => {
-                <Route
-                  key={index + 1}
-                  path={`${route.path}`}
-                  element={<route.Component contents={contents} />}
-                ></Route>;
+              {/* {routesInfo.map((route, index) => {
+                {
+                  console.log(routesInfo.path);
+                }
+                if (route) {
+                  <Route
+                    path={`${routesInfo.path}`}
+                    element={<routesInfo.Component />}
+                  ></Route>;
+                }
               })} */}
             </Routes>
             <Footer contents={contents} />{" "}

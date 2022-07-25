@@ -32,9 +32,15 @@
 
 .contentsGroup .list-group-item a {
     width: 100%;
+    height: 100%;
+    display: flex;
 }
 
-.contentsGroup .list-group-item:hover{
+.contentsGroup .list-group-item a p {
+    margin: auto !important;
+}
+
+.contentsGroup .list-group-item:hover {
     color: #171717;
 }
 
