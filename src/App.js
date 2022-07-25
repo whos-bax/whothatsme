@@ -27,6 +27,12 @@ function App() {
     }
   }, [clickStart]);
 
+  // 블러 닫힌 후 스크롤 가능
+  useEffect(() => {
+    if (blurQuit)
+      document.getElementsByClassName("App")[0].style.overflowY = "auto";
+  }, [blurQuit]);
+
   return (
     <Container fluid className="App">
       <div

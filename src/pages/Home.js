@@ -26,11 +26,7 @@ function Home({ start, sendBlurQuit, contents }) {
       }, 1000);
     }
   }, [blurQuit]);
-
-  if (contentClick) {
-    // homeContainer.current.style.filter = "brightness(0%)";
-  }
-
+  
   return (
     <Container fluid className="backgroundStudio" id="home">
       <div
