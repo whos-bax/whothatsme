@@ -9,6 +9,7 @@ function Titlebar({ start, contents }) {
   // start 값 받은 후 titlebar 보이기
   useEffect(() => {
     setShow(true);
+    console.log('first')
   }, [start]);
 
   // 아래 titleClicked에 의해 메뉴 보이기
@@ -18,8 +19,9 @@ function Titlebar({ start, contents }) {
 
   return (
     <Container
+      fluid
       className="titleBar"
-      style={show ? { opacity: 1 } : { opacity: 0 }}
+      style={show ? { height: "5rem" } : { height: 0 }}
     >
       <Dropdown
         style={{ width: "100%" }}

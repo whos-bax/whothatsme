@@ -3,12 +3,12 @@ import { Button, Container } from "react-bootstrap";
 import "../css/Footer.css";
 
 function Footer({ start }) {
-
   const [show, setShow] = useState(false);
 
   // start 값 받은 후 footer 보이기
   useEffect(() => {
     setShow(true);
+    console.log('second')
   }, [start]);
 
   const handleScrollToTop = () => {
@@ -17,8 +17,9 @@ function Footer({ start }) {
 
   return (
     <Container
+      fluid
       className="footer"
-      style={show ? { opacity: 1 } : { opacity: 0 }}
+      style={show ? { height: "5rem" } : { height: 0 }}
     >
       <div id="footerDiv">
         <Button id="scrollTopBtn" onClick={handleScrollToTop}>

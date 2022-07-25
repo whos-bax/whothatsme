@@ -1,0 +1,36 @@
+.blackScreen {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #171717;
+    height: 50vh;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+    transition: all 1.5s ease-in-out 2s;
+}
+
+#startDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.screenOut {
+    height: 0%;
+}
+
+.screenAdjust {
+    transition-delay: 0 !important;
+    height: 5rem;
+}
+
+#blackScreenUp {
+    top: 0 !important;
+}
+
+#blackScreenDown {
+    bottom: 0 !important;
+}
