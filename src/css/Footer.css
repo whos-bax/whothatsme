@@ -7,7 +7,7 @@
     align-items: center;
     background-color: #171717;
     color: white;
-    justify-content: end;
+    justify-content: space-between;
     cursor: default;
     z-index: 10;
 }
@@ -15,10 +15,33 @@
 .footer #footerDiv {
     display: flex;
     height: 100%;
-    justify-content: end;
     align-items: center;
     opacity: 0;
     transition: all 1s ease-out 2s;
+}
+
+#welcomeAgainSty {
+    font-size: 1.5rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0%;
+    margin-left: 5px;
+    color: #FFC54D;
+    background-color: inherit;
+    border: 0;
+    box-shadow: none;
+}
+
+#welcomeAgainSty:active {
+    color: white
+}
+
+#backModal {
+    width: 20rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    top: 30%;
 }
 
 #scrollTopBtn {

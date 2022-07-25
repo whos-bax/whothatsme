@@ -201,7 +201,7 @@ function Introduce02({ setMoveTo }) {
               <Button id="svgHelpBtn" onClick={() => setHelp(true)}>
                 ?
               </Button>
-              <Modal show={help} onHide={() => setHelp(false)}>
+              <Modal show={help} onHide={() => setHelp(false)} id="helpModal">
                 <Modal.Body>
                   <p>
                     <ProgressBar

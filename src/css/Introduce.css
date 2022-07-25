@@ -161,7 +161,7 @@
     font-size: small;
 }
 
-.modal-dialog {
+#helpModal {
     top: 50%;
     margin: auto;
     background-color: white;
@@ -170,7 +170,7 @@
     width: fit-content;
 }
 
-.modal-dialog .progress {
+#helpModal .progress {
     cursor: default;
     width: 6rem;
     height: 2rem;
@@ -178,7 +178,7 @@
 }
 
 @media (min-width: 768px) {
-    .modal-dialog {
+    #helpModal {
         top: 38%;
         left: 19%;
     }

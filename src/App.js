@@ -9,21 +9,22 @@ import Welcome from "./pages/Welcome";
 import Titlebar from "./components/Titlebar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Introduce from "./pages/Introduce";
 import NotFound from "./pages/NotFound";
 
 function App() {
   const contents = ["home", "introduce", "project", "contact"];
 
   const [welcomeDown, setWelcomeDown] = useState(false);
+  const [isWelcome, setIsWelcome] = useState("second");
   const [blurQuit, setBlurQuit] = useState(false);
 
   useEffect(() => {
     if (welcomeDown) {
       localStorage.setItem("welcome", welcomeDown);
     }
+    setIsWelcome(localStorage.getItem("welcome"));
   }, [welcomeDown]);
-
-  const isWelcome = localStorage.getItem("welcome");
 
   // 블러 닫힌 후 스크롤 가능
   useEffect(() => {
@@ -37,17 +38,24 @@ function App() {
         {!isWelcome ? <Welcome sendWelcomeDown={setWelcomeDown} /> : null}
         {isWelcome ? (
           <>
-            <Titlebar start={isWelcome} contents={contents} blurQuit={blurQuit}/>
+            <Titlebar
+              start={isWelcome}
+              contents={contents}
+              blurQuit={blurQuit}
+            />
             <Routes>
               <Route
                 exact
                 path="/"
                 element={
-                  <Home
-                    start={isWelcome}
-                    sendBlurQuit={setBlurQuit}
-                    contents={contents}
-                  />
+                  <>
+                    <Home
+                      start={isWelcome}
+                      sendBlurQuit={setBlurQuit}
+                      contents={contents}
+                    />
+                    <Introduce />
+                  </>
                 }
               ></Route>
 
