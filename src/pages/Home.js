@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Container, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ContentsBox from "../components/ContentsBox";
 import "../css/Home.css";
 
@@ -26,7 +27,7 @@ function Home({ start, sendBlurQuit, contents }) {
       }, 1000);
     }
   }, [blurQuit]);
-  
+
   return (
     <Container fluid className="backgroundStudio" id="home">
       <div
@@ -41,16 +42,18 @@ function Home({ start, sendBlurQuit, contents }) {
           <b>늘 새로운 도전을 추구하며, 세상에 좋은 영향을 주는 사람</b>을
           꿈꾸고 있습니다.
         </p>
-        <Button
-          variant="outline-light"
-          className="moreBtn"
-          onClick={() => {
-            sendBlurQuit(true); // 부모로 블러페이지가 닫혔음을 알려주기
-            setBlurQuit(true);
-          }}
-        >
-          더 알아보기
-        </Button>
+        <Link to="/">
+          <Button
+            variant="outline-light"
+            className="moreBtn"
+            onClick={() => {
+              sendBlurQuit(true); // 부모로 블러페이지가 닫혔음을 알려주기
+              setBlurQuit(true);
+            }}
+          >
+            더 알아보기
+          </Button>
+        </Link>
       </div>
       <ContentsBox
         show={blurQuit}

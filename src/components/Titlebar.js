@@ -41,7 +41,7 @@ function Titlebar({ start, contents }) {
           {contents.map((content) => (
             <Dropdown.Item
               key={content}
-              href={`#${content}`}
+              href={`${content}`}
               disabled={!titleClicked}
             >{`${content}`}</Dropdown.Item>
           ))}
