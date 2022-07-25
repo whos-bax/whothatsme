@@ -4,12 +4,17 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 0 !important;
-  /* transition: all 2s 3s ease-in-out; */
-  opacity: 0;
   width: 100%;
   height: 100%;
   justify-content: center;
+}
+
+.backgroudAnima {
   animation: mainOpen 1.5s ease-in-out forwards;
+}
+
+.pageChange {
+  animation: mainOpen .1s forwards;
 }
 
 @keyframes mainOpen {

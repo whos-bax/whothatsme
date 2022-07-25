@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Dropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../css/Titlebar.css";
 
 function Titlebar({ start, contents, getBlur }) {
@@ -40,11 +41,9 @@ function Titlebar({ start, contents, getBlur }) {
           style={titleClicked ? { opacity: 1 } : { opacity: 0 }}
         >
           {contents.map((content, idx) => (
-            <Dropdown.Item
-              key={idx}
-              href={`${content}`}
-              disabled={!titleClicked}
-            >{`${content}`}</Dropdown.Item>
+            <Dropdown.Item key={idx} disabled={!titleClicked}>
+              <Link to={`/${content}`}>{`${content}`}</Link>
+            </Dropdown.Item>
           ))}
         </Dropdown.Menu>
       </Dropdown>

@@ -29,7 +29,7 @@ function Main({ start, sendBlurQuit, contents }) {
   }, [blurQuit]);
 
   return (
-    <Container fluid className="backgroundStudio" id="main">
+    <Container fluid className="backgroundStudio backgroudAnima" id="main">
       <div
         className={
           "d-flex m-auto mainContent" + `${!blurQuit ? useBlur : " blurQuit"}`

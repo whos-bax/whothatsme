@@ -11,7 +11,7 @@ function ContentsBox({ show, contents }) {
     >
       {contents.map((content, idx) => (
         <ListGroup.Item action key={idx}>
-          <Link to={`${content}`}>
+          <Link to={`/${content}`}>
             <p>{`${content}`}</p>
           </Link>
         </ListGroup.Item>
