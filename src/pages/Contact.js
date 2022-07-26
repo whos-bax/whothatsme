@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import React, { useEffect, useState, useRef } from "react";
 import {
   Button,
   Card,
@@ -31,6 +32,17 @@ function Contact() {
         password: form.password.value,
         message: form.message.value,
       });
+      // emailjs로 매일 보내기
+      emailjs
+        .sendForm("gmail", "template_junuqj3", form, "jWp538r539cdW3WKW")
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     }
     setValidated(true);
   };
@@ -107,7 +119,6 @@ function Contact() {
               id="contactForm"
               noValidate
               validated={validated}
-              onChange={(e) => console.log(e.target.id, e.target.value)}
               onSubmit={handleSubmit}
             >
               <Row id="nameEmail">
@@ -116,6 +127,7 @@ function Contact() {
                     type="text"
                     placeholder="Title"
                     id="title"
+                    name="title"
                     required
                   />
                 </Col>
@@ -126,6 +138,7 @@ function Contact() {
                         type="text"
                         placeholder="Name"
                         id="name"
+                        name="name"
                         required
                       />
                     </Form.Group>
@@ -145,6 +158,7 @@ function Contact() {
                 placeholder="Message"
                 as="textarea"
                 id="message"
+                name="message"
                 required
               />
               <Button variant="outline-light" type="submit">
