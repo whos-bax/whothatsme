@@ -31,6 +31,7 @@ function Contact() {
         name: form.name.value,
         password: form.password.value,
         message: form.message.value,
+        email: form.email.value,
       });
       // emailjs로 매일 보내기
       emailjs
@@ -122,15 +123,6 @@ function Contact() {
               onSubmit={handleSubmit}
             >
               <Row id="nameEmail">
-                <Col md="8">
-                  <Form.Control
-                    type="text"
-                    placeholder="Title"
-                    id="title"
-                    name="title"
-                    required
-                  />
-                </Col>
                 <Col md="4">
                   <Row>
                     <Form.Group>
@@ -152,17 +144,35 @@ function Contact() {
                     </Form.Group>
                   </Row>
                 </Col>
+                <Col>
+                  <Form.Control
+                    type="email"
+                    placeholder="Email"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </Col>
               </Row>
 
-              <Form.Control
-                placeholder="Message"
-                as="textarea"
-                id="message"
-                name="message"
-                required
-              />
+              <Row style={{ width: "100%" }}>
+                <Form.Control
+                  type="text"
+                  placeholder="Title"
+                  id="title"
+                  name="title"
+                  required
+                />
+                <Form.Control
+                  placeholder="Message"
+                  as="textarea"
+                  id="message"
+                  name="message"
+                  required
+                />
+              </Row>
               <Button variant="outline-light" type="submit">
-                Send
+                Save {"&"} Send
               </Button>
               <Link to="/contact/contact-list">
                 <p>목록</p>
