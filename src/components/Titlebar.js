@@ -41,8 +41,8 @@ function Titlebar({ start, contents, getBlur }) {
           style={titleClicked ? { opacity: 1 } : { opacity: 0 }}
         >
           {contents.map((content, idx) => (
-            <Dropdown.Item key={idx} disabled={!titleClicked}>
-              <Link to={`/${content}`}>{`${content}`}</Link>
+            <Dropdown.Item key={idx} disabled={!titleClicked} as="div" id="dropdown-item">
+              <Link key={idx} to={`/${content}`}>{`${content}`}</Link>
             </Dropdown.Item>
           ))}
         </Dropdown.Menu>

@@ -31,7 +31,6 @@ function App() {
   useEffect(() => {
     if (welcomeDown) {
       localStorage.setItem("welcome", welcomeDown);
-      document.getElementsByClassName("App")[0].style.backgroudColor = "#171717";
     }
     setIsWelcome(localStorage.getItem("welcome"));
   }, [welcomeDown]);
@@ -43,11 +42,15 @@ function App() {
       localStorage.setItem("blurQuit", blurQuit);
     }
     setGetBlur(localStorage.getItem("blurQuit"));
-    console.log(document.getElementsByClassName("App")[0].style)
+    console.log(document.getElementsByClassName("App")[0].style);
   }, [blurQuit]);
-  
+
   return (
-    <Container fluid className="App">
+    <Container
+      fluid
+      className="App"
+      style={isWelcome ? { backgroundColor: "#171717" } : null}
+    >
       <BrowserRouter>
         {!isWelcome ? <Welcome sendWelcomeDown={setWelcomeDown} /> : null}
         {isWelcome ? (
@@ -69,7 +72,7 @@ function App() {
                 path="/introduce/*"
                 element={<Introduce contents={contents} />}
               />
-              <Route path='/contact' element={<Contact />}/>
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer contents={contents} />{" "}

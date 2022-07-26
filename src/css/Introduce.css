@@ -28,7 +28,6 @@
 .col-md-5 {
     height: 40%;
     padding: 1rem;
-    backdrop-filter: blur(20px);
 }
 
 .col-md-7 {
@@ -41,7 +40,6 @@
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 1rem;
-    justify-content: space-around;
 }
 
 .progress {
