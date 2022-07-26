@@ -9,10 +9,31 @@ import {
   Modal,
   Row,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../css/Contact.css";
 
 function Contact() {
   const [show, setShow] = useState(false);
+  const [validated, setValidated] = useState(false);
+  const [contactMessage, setContactMessage] = useState({});
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      console.log("Fill in all your content");
+    } else {
+      event.preventDefault();
+      setContactMessage({
+        title: form.title.value,
+        name: form.name.value,
+        password: form.password.value,
+        message: form.message.value,
+      });
+    }
+    setValidated(true);
+  };
 
   return (
     <Container fluid className="pageEnter" id="contact">
@@ -81,36 +102,57 @@ function Contact() {
         <Col md="7" id="contactBox">
           <Row style={{ margin: "1rem", display: "flex", height: "100%" }}>
             <p style={{ fontSize: "1.8rem" }}>Contact Me</p>
-
+            <p id="impactText">하고 싶은 말을 남겨주세요</p>
             <Form
               id="contactForm"
+              noValidate
+              validated={validated}
               onChange={(e) => console.log(e.target.id, e.target.value)}
+              onSubmit={handleSubmit}
             >
               <Row id="nameEmail">
                 <Col md="8">
-                  <Form.Control type="text" placeholder="Title" id="title" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Title"
+                    id="title"
+                    required
+                  />
                 </Col>
                 <Col md="4">
                   <Row>
                     <Form.Group>
-                      <Form.Control type="text" placeholder="Name" id="name" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Name"
+                        id="name"
+                        required
+                      />
                     </Form.Group>
                     <Form.Group>
                       <Form.Control
                         type="password"
                         placeholder="Password"
                         id="password"
+                        required
                       />
                     </Form.Group>
                   </Row>
                 </Col>
               </Row>
-              {/* <Form.Group> */}
-              <Form.Control placeholder="Message" as="textarea" id="message" />
-              {/* </Form.Group> */}
+
+              <Form.Control
+                placeholder="Message"
+                as="textarea"
+                id="message"
+                required
+              />
               <Button variant="outline-light" type="submit">
                 Send
               </Button>
+              <Link to="/contact/contact-list">
+                <p>목록</p>
+              </Link>
             </Form>
           </Row>
         </Col>

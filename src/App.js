@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import Introduce from "./pages/Introduce";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ContactList from "./components/ContactList";
 
 const routesInfo = [
   { path: "/home", Component: Home },
@@ -42,14 +43,13 @@ function App() {
       localStorage.setItem("blurQuit", blurQuit);
     }
     setGetBlur(localStorage.getItem("blurQuit"));
-    console.log(document.getElementsByClassName("App")[0].style);
   }, [blurQuit]);
 
   return (
     <Container
       fluid
       className="App"
-      style={isWelcome ? { backgroundColor: "#171717" } : null}
+      style={getBlur ? { backgroundColor: "#171717" } : null}
     >
       <BrowserRouter>
         {!isWelcome ? <Welcome sendWelcomeDown={setWelcomeDown} /> : null}
@@ -73,6 +73,7 @@ function App() {
                 element={<Introduce contents={contents} />}
               />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/contact/contact-list" element={<ContactList />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer contents={contents} />{" "}
