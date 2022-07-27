@@ -23,5 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 package-lock.json
-# 개인사진 업로드 X
+# 개인사진
 /public/images/introduce
+
+#emailjs 정보
+/src/utils/emailjsForm.js

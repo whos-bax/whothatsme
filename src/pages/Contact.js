@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../css/Contact.css";
+import emailjsForm from "../utils/emailjsForm";
 
 function Contact() {
   const [show, setShow] = useState(false);
@@ -25,7 +26,6 @@ function Contact() {
       event.stopPropagation();
       console.log("Fill in all your content");
     } else {
-      event.preventDefault();
       setContactMessage({
         title: form.title.value,
         name: form.name.value,
@@ -33,9 +33,10 @@ function Contact() {
         message: form.message.value,
         email: form.email.value,
       });
+      
       // emailjs로 매일 보내기
       emailjs
-        .sendForm("gmail", "template_junuqj3", form, "jWp538r539cdW3WKW")
+        .sendForm(emailjsForm.serviceId, emailjsForm.templateId, form, emailjsForm.publicKey)
         .then(
           (result) => {
             console.log(result.text);
@@ -60,7 +61,13 @@ function Contact() {
               border: "#FFC54D solid",
             }}
           >
-            <div style={{ paddingBottom: "1rem" }}>
+            <div
+              style={{
+                padding: "1rem 0",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <p id="impactText">LINK</p>
             </div>
             <Card.Header>
@@ -185,6 +192,7 @@ function Contact() {
           <p id="impactText">LINK</p>
         </Button>
         <Modal
+          id="linkModal"
           show={show}
           onHide={() => setShow(false)}
           style={{ top: "15%", margin: "auto" }}
@@ -204,7 +212,13 @@ function Contact() {
                 margin: "auto",
               }}
             >
-              <div style={{ padding: "5px" }}>
+              <div
+                style={{
+                  padding: "1rem 0",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <p id="impactText">LINK</p>
               </div>
               <Card.Header>
