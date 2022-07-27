@@ -1,10 +1,9 @@
 #introduce {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../public/images/introducebg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../public/images/studio.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 0 !important;
-    /* transition: all 2s ease-in-out; */
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -22,12 +21,11 @@
     height: 90%;
     transition: all 0.8s linear;
     color: white;
-    /* opacity: 0; */
 }
 
 .col-md-5 {
     height: 40%;
-    padding: 1rem;
+    padding: 0;
 }
 
 .col-md-7 {
@@ -63,8 +61,7 @@
 
     .col-md-5,
     .col-md-7 {
-        padding: 0;
-        height: 100% !important;
+        height: 100%;
     }
 
     #introduceBox {
@@ -183,13 +180,13 @@
 }
 
 .contentEnter {
-    animation: contentEnter .5s ease-out forwards;
+    animation: contentEnter .5s linear;
 }
 
 @keyframes contentEnter {
     from {
-        opacity: 0.5;
-        transform: translateY(50px);
+        opacity: 0;
+        transform: translate3d(0, -10%, 0);
     }
 
     to {
