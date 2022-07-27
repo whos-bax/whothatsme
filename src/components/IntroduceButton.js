@@ -16,7 +16,11 @@ function IntroduceButton({ clickMove }) {
         >
           <p>◁</p>
         </Button>
-        <Button id="postMove" onClick={() => clickMove("post")}>
+        <Button
+          id="postMove"
+          onClick={() => clickMove("post")}
+          style={nowPageNum === 3 ? { display: "none" } : null}
+        >
           <p>▷</p>
         </Button>
       </ButtonGroup>

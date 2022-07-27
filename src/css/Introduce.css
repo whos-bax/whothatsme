@@ -21,6 +21,7 @@
     height: 90%;
     transition: all 0.8s linear;
     color: white;
+    animation: pageChange 1.5s ease-in-out forwards;
 }
 
 .col-md-5 {
@@ -35,8 +36,7 @@
 
 #introduceBox {
     background-color: #171717;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: auto;
     padding: 1rem;
     justify-content: center;
 }
@@ -49,14 +49,14 @@
     transition: all .3s ease-out;
 }
 
+#progressFont {
+    font-size: .9rem;
+    white-space: nowrap;
+}
 
 @media (min-width: 768px) {
     .progress {
         width: 4rem;
-    }
-
-    #progressFont {
-        font-size: 1rem;
     }
 
     .col-md-5,
@@ -93,7 +93,7 @@
     color: #FFC54D
 }
 
-#introduceFirst {
+#introduceContentBody {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -174,6 +174,8 @@
 
 .contentEnter {
     animation: contentEnter .4s ease-out;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 @keyframes contentEnter {
@@ -206,5 +208,4 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 25% center;
 }
