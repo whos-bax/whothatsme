@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+package-lock.json
+# 개인사진 업로드 X
+/public/images/introduce

@@ -5,9 +5,15 @@ export default function IntroduceImg() {
 
   return (
     <Col md="5" id="introduceImgDiv">
-      <Carousel>
+      <Carousel interval={3000}>
         <Carousel.Item>
-          <Image src={"/images/introduce.jpg"} id="introduceImg" />
+          <Image src={"/images/introduce/introduce01.jpg"} id="introduceImg" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <Image src={"/images/introduce/introduce02.jpg"} id="introduceImg" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <Image src={"/images/introduce/startup.jpg"} id="introduceImg" />
         </Carousel.Item>
       </Carousel>
     </Col>
