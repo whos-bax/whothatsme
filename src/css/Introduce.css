@@ -79,7 +79,7 @@
 #moveBtn {
     width: fit-content;
     gap: 1rem;
-    padding-top: 2rem;
+    padding-top: 3rem;
 }
 
 #moveBtn button {
@@ -204,8 +204,27 @@
     height: 100%;
 }
 
-#introduceImgDiv #introduceImg {
+#introduceImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+#introduceContentBody ul {
+    padding: 0;
+}
+
+#introduceContentBody li {
+    list-style: none;
+    margin: 1rem;
+}
+
+.detailStyle {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: 1px solid;
 }

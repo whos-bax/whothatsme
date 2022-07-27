@@ -4,15 +4,12 @@ import { Carousel, Col, Image } from "react-bootstrap";
 export default function IntroduceImg() {
   return (
     <Col md="5" id="introduceImgDiv">
-      <Carousel interval={5000}>
+      <Carousel interval={500000}>
         <Carousel.Item>
           <Image src={"/images/introduce/introduce01.jpg"} id="introduceImg" />
         </Carousel.Item>
         <Carousel.Item>
           <Image src={"/images/introduce/introduce02.jpg"} id="introduceImg" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image src={"/images/introduce/introduce03.jpg"} id="introduceImg" />
         </Carousel.Item>
         <Carousel.Item>
           <Image src={"/images/introduce/startup.jpg"} id="introduceImg" 
@@ -22,7 +19,7 @@ export default function IntroduceImg() {
           <Image
             src={"/images/introduce/whosbax.png"}
             id="introduceImg"
-            style={{ objectPosition: "10% 35%" }}
+            style={{ objectPosition: "left" }}
           />
         </Carousel.Item>
       </Carousel>
