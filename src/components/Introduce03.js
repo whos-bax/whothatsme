@@ -5,6 +5,9 @@ import IntroduceButton from "./IntroduceButton";
 export default function Introduce03({ setMoveTo }) {
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
+  const [third, setThird] = useState(false);
+  const [fourth, setFourth] = useState(false);
+  const [fifth, setFifth] = useState(false);
 
   return (
     <div className="contentEnter">
@@ -28,7 +31,14 @@ export default function Introduce03({ setMoveTo }) {
                   <p id="impactText">▷ 음악 들어보기</p>
                 </a>
                 <p>→ 작사, 작곡, 편곡, 엔지니어링 참여</p>
+                <p>→ 음원플랫폼 뿐만 아니라 사운드클라우드를 통해 무료곡 공개</p>
 
+                <Image
+                  src={"/images/introduce/whosbax.png"}
+                  id="introduceImg"
+                  style={{ margin: "auto" }}
+                />
+                <br/>
                 <p>
                   <b>발매 및 참여 음원 (음원플랫폼)</b>
                 </p>
@@ -112,6 +122,86 @@ export default function Introduce03({ setMoveTo }) {
                 <Image
                   src={"/images/introduce/kustartup-youtube.png"}
                   id="introduceImg"
+                />
+              </div>
+            )}
+          </li>
+          <li>
+            <Button
+              id="listBtn"
+              variant="outline-light"
+              onClick={() => setThird(!third)}
+            >
+              <p>세종 UNION 창업캠프</p>
+            </Button>
+            {third && (
+              <div className="detailStyle">
+                <p>
+                  → <b>세종 UNION 창업캠프</b>에 참여하여, 팀원들과 함께{" "}
+                  <b>최우수상을 수상</b>
+                </p>
+                <p>
+                  → 명품을 대여해주는 시스템으로, 구독 시스템을 이용하여 수익을
+                  낼 수 있는 아이템 구상
+                </p>
+                <Image
+                  src={"/images/introduce/startup-최우수상.jpg"}
+                  id="introduceImg"
+                  style={{ width: "40%", height: "40%", margin: "auto" }}
+                />
+              </div>
+            )}
+          </li>
+          <li>
+            <Button
+              id="listBtn"
+              variant="outline-light"
+              onClick={() => setFourth(!fourth)}
+            >
+              <p>푸른나무재단</p>
+            </Button>
+            {fourth && (
+              <div className="detailStyle">
+                <a href="https://btf.or.kr/" target={"_blank"}>
+                  <p id="impactText">▷ 푸른나무재단 홈페이지</p>
+                </a>
+                <p>
+                  → 청소년들의 앞날과 더 좋은 세상을 위해서 조금이나마 기부 시작
+                </p>
+                <Image
+                  src={"/images/introduce/blue-tree-foundation.png"}
+                  id="introduceImg"
+                  style={{ width: "40%", height: "40%", margin: "auto" }}
+                />
+              </div>
+            )}
+          </li>
+          <li>
+            <Button
+              id="listBtn"
+              variant="outline-light"
+              onClick={() => setFifth(!fifth)}
+            >
+              <p>정보처리기사</p>
+            </Button>
+            {fifth && (
+              <div className="detailStyle">
+                <a href="https://whothatsme.tistory.com/19" target={"_blank"}>
+                  <p id="impactText">▷ 티스토리 블로그내 공부 기록</p>
+                </a>
+                <a
+                  href="https://www.notion.so/whosbax/5d4fd29b74974a9a8117038c22d656e1"
+                  target={"_blank"}
+                >
+                  <p id="impactText">▷ 정보처리기사 필기 오답노트</p>
+                </a>
+                <p>
+                  → 정보처리기사 <b>필기</b> 합격 (8월 10일 합격증 수령 예정)
+                </p>
+                <Image
+                  src={"/images/introduce/blue-tree-foundation.png"}
+                  id="introduceImg"
+                  style={{ width: "40%", height: "40%", margin: "auto" }}
                 />
               </div>
             )}
