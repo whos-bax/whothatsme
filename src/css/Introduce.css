@@ -93,13 +93,6 @@
     color: #FFC54D
 }
 
-#introduceImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 25% center;
-}
-
 #introduceFirst {
     display: flex;
     flex-direction: column;
@@ -180,7 +173,7 @@
 }
 
 .contentEnter {
-    animation: contentEnter .5s linear;
+    animation: contentEnter .4s ease-out;
 }
 
 @keyframes contentEnter {
@@ -193,4 +186,25 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+#introduceImgDiv .carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#introduceImgDiv .carousel-inner {
+    height: 100%;
+}
+
+#introduceImgDiv .carousel-item {
+    height: 100%;
+}
+
+#introduceImgDiv #introduceImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 25% center;
 }
