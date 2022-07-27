@@ -4,12 +4,9 @@ import IntroduceButton from "./IntroduceButton";
 
 function Introduce01({ setMoveTo }) {
   return (
-    <Row id="introduceContent">
+    <Row className="contentEnter" id="introduceContent">
       <Col md="5">
-        <Image
-          src={"/images/introduce.jpg"}
-          id="introduceImg"
-        />
+        <Image src={"/images/introduce.jpg"} id="introduceImg" />
       </Col>
       <Col md="7" id="introduceBox">
         <div style={{ padding: "1rem" }}>

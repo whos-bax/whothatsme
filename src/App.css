@@ -124,7 +124,6 @@ a {
   box-shadow: none !important;
 }
 
-
 .pageEnter {
   animation: pageChange 1s ease-in-out forwards;
 }

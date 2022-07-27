@@ -40,6 +40,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 1rem;
+    justify-content: center;
 }
 
 .progress {
@@ -178,5 +179,21 @@
     #helpModal {
         top: 38%;
         left: 19%;
+    }
+}
+
+.contentEnter {
+    animation: contentEnter .5s ease-out forwards;
+}
+
+@keyframes contentEnter {
+    from {
+        opacity: 0.5;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

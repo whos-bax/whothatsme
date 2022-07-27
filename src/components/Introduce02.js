@@ -28,7 +28,7 @@ function Introduce02({ setMoveTo }) {
   };
 
   return (
-    <Row id="introduceContent">
+    <Row className="contentEnter" id="introduceContent">
       <Col md="5">
         <Image
           src={"/images/introduce.jpg"}
