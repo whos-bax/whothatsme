@@ -29,14 +29,15 @@ function Titlebar({ start, contents, getBlur }) {
             handleClickTitle();
           }
         }}
-        className={`${titleClicked ? " titleClick" : ""}`}
+        id="titleClick"
         style={show ? { opacity: "1" } : { opacity: 0 }}
+        show={titleClicked}
       >
         <Dropdown.Toggle variant="outline-light" id="titleNameBtn">
           꿈이 많은 어른 아이
         </Dropdown.Toggle>
 
-        <Dropdown.Menu show={titleClicked} id="menuList">
+        <Dropdown.Menu id="menuList">
           {contents.map((content, idx) => (
             <Dropdown.Item
               key={idx}

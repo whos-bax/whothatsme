@@ -43,13 +43,12 @@
     outline: 0;
 }
 
-.titleClick #titleNameBtn {
+#titleClick.show #titleNameBtn {
     letter-spacing: .4rem;
     margin: auto;
     width: fit-content;
-    transition: all .3s ease-out !important;
-    border-top: 3px white solid !important;
-    border-bottom: 3px white solid !important;
+    border-top: 2px white solid !important;
+    border-bottom: 2px white solid !important;
 }
 
 #menuList {
