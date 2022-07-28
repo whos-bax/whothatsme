@@ -37,7 +37,9 @@ export default function Introduce03({ setMoveTo }) {
                   </p>
 
                   <Image
-                    src={"/images/introduce/whosbax.png"}
+                    src={
+                      process.env.PUBLIC_URL + "/images/introduce/whosbax.png"
+                    }
                     id="introduceImg"
                     style={{ margin: "auto" }}
                   />
@@ -124,7 +126,10 @@ export default function Introduce03({ setMoveTo }) {
                     창업아이디어경진대회, 청년창업특강 등 총 8개의 영상
                   </p>
                   <Image
-                    src={"/images/introduce/kustartup-youtube.png"}
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/images/introduce/kustartup-youtube.png"
+                    }
                     id="introduceImg"
                   />
                 </div>
@@ -149,7 +154,10 @@ export default function Introduce03({ setMoveTo }) {
                     수익을 낼 수 있는 아이템 구상
                   </p>
                   <Image
-                    src={"/images/introduce/startup-최우수상.jpg"}
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/images/introduce/startup-최우수상.jpg"
+                    }
                     id="introduceImg"
                     style={{ width: "40%", height: "40%", margin: "auto" }}
                   />
@@ -174,7 +182,10 @@ export default function Introduce03({ setMoveTo }) {
                     시작
                   </p>
                   <Image
-                    src={"/images/introduce/blue-tree-foundation.png"}
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/images/introduce/blue-tree-foundation.png"
+                    }
                     id="introduceImg"
                     style={{ width: "40%", height: "40%", margin: "auto" }}
                   />
