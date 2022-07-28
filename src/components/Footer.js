@@ -17,7 +17,7 @@ function Footer({ start }) {
   };
 
   const welcomeAgain = () => {
-    window.location.href = "/";
+    window.location.replace("/");
     localStorage.clear();
   };
   return (

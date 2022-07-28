@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
 import Welcome from "./pages/Welcome";
 import Titlebar from "./components/Titlebar";
@@ -24,7 +24,7 @@ const routesInfo = [
 function App() {
   const contents = ["home", "introduce", "project", "contact"];
   const [welcomeDown, setWelcomeDown] = useState(false);
-  const [isWelcome, setIsWelcome] = useState("");
+  const [isWelcome, setIsWelcome] = useState(false);
   const [blurQuit, setBlurQuit] = useState(false);
   const [getBlur, setGetBlur] = useState(false);
 
@@ -33,7 +33,11 @@ function App() {
     if (welcomeDown) {
       localStorage.setItem("welcome", welcomeDown);
     }
-    setIsWelcome(localStorage.getItem("welcome"));
+    setIsWelcome(Boolean(localStorage.getItem("welcome")));
+    
+    if (isWelcome) {
+      window.location.href = "/";
+    }
   }, [welcomeDown]);
 
   // 블러 닫힌 후 스크롤 가능
@@ -52,8 +56,9 @@ function App() {
       style={getBlur ? { backgroundColor: "#171717" } : null}
     >
       <BrowserRouter>
-        {!isWelcome ? <Welcome sendWelcomeDown={setWelcomeDown} /> : null}
-        {isWelcome ? (
+        {!isWelcome ? (
+          <Welcome sendWelcomeDown={setWelcomeDown} />
+        ) : (
           <>
             <Titlebar start={isWelcome} contents={contents} getBlur={getBlur} />
             <Routes>
@@ -78,7 +83,7 @@ function App() {
             </Routes>
             <Footer contents={contents} />{" "}
           </>
-        ) : null}
+        )}
       </BrowserRouter>
     </Container>
   );

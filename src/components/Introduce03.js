@@ -198,11 +198,6 @@ export default function Introduce03({ setMoveTo }) {
                 <p>
                   → 정보처리기사 <b>필기</b> 합격 (8월 10일 합격증 수령 예정)
                 </p>
-                <Image
-                  src={"/images/introduce/blue-tree-foundation.png"}
-                  id="introduceImg"
-                  style={{ width: "40%", height: "40%", margin: "auto" }}
-                />
               </div>
             )}
           </li>
