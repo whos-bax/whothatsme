@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import Intro from "../components/Intro";
 import Introduce01 from "../components/Introduce01";
 import Introduce02 from "../components/Introduce02";
 import Introduce03 from "../components/Introduce03";
@@ -11,13 +12,18 @@ function Introduce() {
   const navigate = useNavigate();
   const search = useLocation();
   const [moveTo, setMoveTo] = useState();
+  const [introImg, setIntroImg] = useState(false);
 
-  // introduce 들어온 이후 1번 페이지 보여주기
+  // introduce 들어온 이후 intro -> 1번 페이지 보여주기
   useEffect(() => {
     if (search.pathname === "/introduce") {
-      navigate("/introduce/1");
-    }
-  }, [navigate]);
+      setIntroImg(false);
+      setTimeout(() => {
+        navigate("1");
+        setIntroImg(true);
+      }, 2500);
+    } else setIntroImg(true);
+  }, [search.pathname]);
 
   // 페이지 번호 알기
   let nowPageNum = Number(search.pathname.slice(-1));
@@ -44,15 +50,13 @@ function Introduce() {
   return (
     <Container fluid className="pageEnter" id="introduce">
       <Row id="introduceContent">
-        <IntroduceImg />
-        <Col md="7" id="introduceBox">
-          <Routes>
-            <Route path="1" element={<Introduce01 setMoveTo={setMoveTo} />} />
-            <Route path="2" element={<Introduce02 setMoveTo={setMoveTo} />} />
-            <Route path="3" element={<Introduce03 setMoveTo={setMoveTo} />} />
-            {/* <Route path="/*" element={<NotFound />} /> */}
-          </Routes>
-        </Col>
+        {introImg && <IntroduceImg />}
+        <Routes>
+          <Route path="/" element={<Intro />} />
+          <Route path="1" element={<Introduce01 setMoveTo={setMoveTo} />} />
+          <Route path="2" element={<Introduce02 setMoveTo={setMoveTo} />} />
+          <Route path="3" element={<Introduce03 setMoveTo={setMoveTo} />} />
+        </Routes>
       </Row>
     </Container>
   );

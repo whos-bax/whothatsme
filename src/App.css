@@ -133,8 +133,17 @@ a {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+#bigName {
+  animation: pageChange 1s ease alternate;
+  animation-iteration-count: 2;
+  text-transform: capitalize;
+  letter-spacing: .2rem;
+  opacity: 0;
 }

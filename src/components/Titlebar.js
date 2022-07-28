@@ -16,7 +16,7 @@ function Titlebar({ start, contents, getBlur }) {
   const handleClickTitle = () => {
     if (getBlur) setTitleClicked(!titleClicked);
   };
-
+  
   return (
     <Container
       fluid
@@ -45,7 +45,10 @@ function Titlebar({ start, contents, getBlur }) {
               as="div"
               id="dropdown-item"
             >
-              <Link key={idx} to={`/${content}`}>{`${content}`}</Link>
+              <Link
+                key={idx}
+                to={`/${content}`}
+              >{`${content}`}</Link>
             </Dropdown.Item>
           ))}
         </Dropdown.Menu>

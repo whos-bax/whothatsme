@@ -1,11 +1,14 @@
 import React from "react";
-import "../css/Project.css"
-import { Container } from "react-bootstrap";
+import "../css/Project.css";
+import { Container, Row } from "react-bootstrap";
+import Intro from "../components/Intro";
 
 function Project() {
   return (
     <Container fluid className="pageEnter" id="project">
-      <h1>Nothing yet</h1>
+      <Row id="introduceContent">
+        <Intro />
+      </Row>
     </Container>
   );
 }
