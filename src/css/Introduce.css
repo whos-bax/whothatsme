@@ -1,5 +1,5 @@
 #introduce {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../public/images/studio.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('../../public/images/studio.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

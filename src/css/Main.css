@@ -1,5 +1,5 @@
 .backgroundStudio {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../../public/images/road.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('../../public/images/road.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

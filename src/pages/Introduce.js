@@ -13,17 +13,15 @@ function Introduce() {
   const search = useLocation();
   const [moveTo, setMoveTo] = useState();
   const [introImg, setIntroImg] = useState(false);
+  const [bigName, setBigName] = useState(false);
 
-  // introduce 들어온 이후 intro -> 1번 페이지 보여주기
+  // introduce 들어온 이후 intro('/') -> 1번('1') 페이지 보여주기
   useEffect(() => {
-    if (search.pathname === "/introduce") {
-      setIntroImg(false);
-      setTimeout(() => {
-        navigate("1");
-        setIntroImg(true);
-      }, 2500);
-    } else setIntroImg(true);
-  }, [search.pathname]);
+    if (search.pathname === "/introduce" && bigName === true) {
+      navigate("1");
+      setIntroImg(true);
+    }
+  });
 
   // 페이지 번호 알기
   let nowPageNum = Number(search.pathname.slice(-1));
@@ -52,7 +50,7 @@ function Introduce() {
       <Row id="introduceContent">
         {introImg && <IntroduceImg />}
         <Routes>
-          <Route path="/" element={<Intro />} />
+          <Route path="/" element={<Intro setBigName={setBigName} />} />
           <Route path="1" element={<Introduce01 setMoveTo={setMoveTo} />} />
           <Route path="2" element={<Introduce02 setMoveTo={setMoveTo} />} />
           <Route path="3" element={<Introduce03 setMoveTo={setMoveTo} />} />
