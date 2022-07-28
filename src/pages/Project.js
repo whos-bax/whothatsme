@@ -7,6 +7,7 @@ import ProjectList from "../components/ProjectList";
 import Project01 from "../components/Project01";
 import Project02 from "../components/Project02";
 import Project03 from "../components/Project03";
+import Project04 from "../components/Project04";
 
 function Project() {
   const search = useLocation();
@@ -33,6 +34,7 @@ function Project() {
               <Project01 />
               <Project02 />
               <Project03 />
+              <Project04 />
 
               <Button id="scrollBtn">
                 <a href="#list">↑</a>
