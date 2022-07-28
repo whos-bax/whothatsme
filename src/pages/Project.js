@@ -4,6 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import Intro from "../components/Intro";
 import { useLocation } from "react-router-dom";
 import Project01 from "../components/Project01";
+import Project02 from "../components/Project02";
 
 function Project() {
   const search = useLocation();
@@ -24,10 +25,12 @@ function Project() {
         </Container>
       ) : (
         <Container fluid id="project">
-          <Row className="afterIntro" id="projectContent">
-            <Project01 />
-            
-          </Row>
+          <Container className="afterIntro" id="projectContainer">
+            <Row id="projectRow">
+              <Project01 />
+              <Project02 />
+            </Row>
+          </Container>
         </Container>
       )}
     </>

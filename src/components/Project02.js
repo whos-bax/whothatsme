@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-function Project01() {
+function Project02() {
   return (
-    <Row id="projectBox" >
+    <Row id="projectBox" style={{ backgroundColor: "white" }}>
       <div className="contentEnter">
         <div style={{ padding: "1rem" }}>
           <h1>꿈이 많은 어른 아이</h1>
@@ -59,4 +59,4 @@ function Project01() {
   );
 }
 
-export default Project01;
+export default Project02;
