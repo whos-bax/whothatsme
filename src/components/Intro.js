@@ -7,7 +7,7 @@ export default function Intro({ setBigName }) {
   useEffect(() => {
     setTimeout(() => {
       setBigName(true);
-    },2500);
+    }, 2500);
   }, [introText]);
   return (
     <div>

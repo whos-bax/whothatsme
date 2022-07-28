@@ -17,20 +17,21 @@ function Project() {
 
   return (
     <>
-      {!bigName ? (
+      {true ? (
         <Container fluid className="pageEnter" id="project">
-          <Row id="projectContent">
+          <Row id="projectContainer">
             <Intro setBigName={setBigName} />
+            안여
           </Row>
         </Container>
       ) : (
         <Container fluid id="project">
-          <Container className="afterIntro" id="projectContainer">
+          {/* <Container className="afterIntro" id="projectContainer">
             <Row id="projectRow">
               <Project01 />
               <Project02 />
             </Row>
-          </Container>
+          </Container> */}
         </Container>
       )}
     </>

@@ -20,7 +20,7 @@
     height: 90%;
     transition: all 0.8s linear;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #projectRow {
