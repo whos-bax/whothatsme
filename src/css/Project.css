@@ -20,7 +20,6 @@
     height: 90%;
     transition: all 0.8s linear;
     color: white;
-    /* overflow: hidden; */
 }
 
 #projectRow {
@@ -35,6 +34,11 @@
 }
 
 .projectBox {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('../../public/images/wolves.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: blur(12px);
     scroll-snap-align: start;
     background-color: #171717;
     overflow: auto;
@@ -44,6 +48,15 @@
     justify-content: center;
     height: 100%;
     width: 100%;
+    border-top: 3rem white solid;
+    border-bottom: 3rem white solid;
+}
+
+#list {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('../../public/images/wolves.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #scrollBtn {
@@ -71,4 +84,38 @@
         width: 45px;
         height: 45px;
     }
+}
+
+#projectImg {
+    width: 100%;
+    object-fit: contain;
+}
+
+#projectBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+#projectSummary {
+    width: 100%;
+    margin: auto;
+}
+
+#projectDropdown {
+    width: 100%;
+    margin: 1rem auto;
+    display: flex;
+    gap: .5rem;
+}
+
+#project-hash-link:hover {
+    letter-spacing: 2px;
+    transition: all .2s linear;
+}
+
+#linkText {
+    color: #F94C66;
+    font-weight: bold;
 }

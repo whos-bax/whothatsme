@@ -1,61 +1,127 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Dropdown, Image, ListGroup, Row } from "react-bootstrap";
 import { projectListArr } from "./ProjectList";
 
 function Project01() {
-  console.log(projectListArr[0].id);
   return (
     <Row className="projectBox" id={projectListArr[0].id}>
       <div className="contentEnter">
-        <div style={{ padding: "1rem" }}>
-          <h1 id="impactText"><b>{projectListArr[0].name}</b> {projectListArr[0].date}</h1>
+        <div style={{ padding: "1rem 0" }}>
+          <h1 id="impactText">
+            <b>{projectListArr[0].name}</b>{" "}
+          </h1>
+          <p>{projectListArr[0].date}</p>
         </div>
-        <div id="introduceContentBody">
-          <p>
-            안녕하세요, <b>박상호</b> 입니다.
-          </p>
-          <p>늘 새로운 도전을 추구하며 꿈꾸는 하루하루를 살고 있습니다.</p>
-          <p>
-            나이는 어른이지만, 늘 어린 아이처럼 호기심 가득한 마음으로 세상을
-            바라보고 싶기에
-          </p>
-          <p>
-            <b>꿈이 많은 어른 아이</b> 라고 생각해요.
-          </p>
-          <div
-            style={{
-              maxWidth: "28rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-            }}
-          >
-            <p id="impactText">
-              <b>저를 짧게 소개하면요,</b>
-            </p>
-            <p>
-              → <b>새로운 도전과 변화</b>를 가지는 것을 두려워 하지 않아요.
-            </p>
+        <Row id="projectBody">
+          <Col md={6}>
+            <Image
+              src={process.env.PUBLIC_URL + "/images/project/project01.png"}
+              id="projectImg"
+            />
+          </Col>
+          <Col md={6}>
+            <Row id="projectSummary">
+              <ListGroup variant="flush" style={{ padding: 0 }}>
+                <ListGroup.Item>
+                  <p id="impactText">
+                    추천 알고리즘을 제시하여 사용자의 편의성을 맞춘 쇼핑몰 제작
+                  </p>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <p>
+                    <b>팀원</b> : 김수빈, 박상호, 윤지원, 이재연 (총 4명)
+                  </p>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <p>
+                    <b>주요기능</b> : 관리자/사용자 기반의 쇼핑몰 운영 및 UI,
+                    상품등록/삭제/수정, 장바구니, 카카오페이를 이용한 결제
+                  </p>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <p>
+                    <b>Frontend</b> : React, JavaScript, axios, bootstrap
+                  </p>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <p>
+                    <b>Backend</b> : Node.js
+                  </p>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <p>
+                    <b>Database</b> : MongoDB
+                  </p>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <p id="linkText">
+                    <a
+                      href="https://compmath.korea.ac.kr/gitlab/students/shopping-mall"
+                      target={"_blank"}
+                    >
+                      Gitlab Link
+                    </a>
+                  </p>
+                </ListGroup.Item>
+              </ListGroup>
+            </Row>
+            <Row id="projectDropdown">
+            <Dropdown drop='up'>
+                <Dropdown.Toggle variant="success">
+                  배경
+                </Dropdown.Toggle>
 
-            <p>
-              → <b>빠르게 학습하고 이해</b>하며,{" "}
-              <b>흥미를 느끼는 분야에서는 뛰어난 집중력과 성장력</b>을 보여요.
-            </p>
+                <Dropdown.Menu style={{border: "3px #171717 solid"}}>
+                  <Dropdown.ItemText>
+                    <p>
+                      대학교 1학년 시절 잠깐 배웠던 C언어를 제외하곤 프로그래밍
+                      언어를 전혀 접해본 적이 없던 제게 새로운 길을 알려준 첫
+                      프로젝트이자 공부였습니다. 이미 1-2년 공부를 진행했던
+                      친구들과 함께 프로젝트를 하기에는 배워야 하는 것부터
+                      스스로 공부해야 하는 양이 정말 산더미 같았지만, 하나씩
+                      이해하고 배워가다 보니 속도도 붙고 점점 자신감이 생기는
+                      것을 배울 수 있었습니다. 운이 좋게도 처음부터{" "}
+                      <b>Git을 이용해서 협업 작업을 진행</b>하게 되었고,{" "}
+                      <b>
+                        다른 사람들과 호흡을 맞춰가며 방향성을 설계하는 방법
+                      </b>
+                      도 알아갈 수 있었습니다. 이 프로젝트를 계기로{" "}
+                      <b>웹 개발자의 꿈을 꾸게 되는 첫 발자국</b>이 될 수
+                      있었습니다.
+                    </p>
+                  </Dropdown.ItemText>
+                </Dropdown.Menu>
+              </Dropdown>
 
-            <p>
-              → 보이는 것이 아닌 <b>본질</b>을 알기를 원해요.
-            </p>
+              <Dropdown drop='down'>
+                <Dropdown.Toggle variant="warning">
+                  의의
+                </Dropdown.Toggle>
 
-            <p>
-              → 사색에 잠겨 있을 때가 종종 있으며, 생각을 정리하는 것을
-              좋아해요.
-            </p>
-
-            <p>→ 음악을 좋아하고, 만드는 재주가 있어요.</p>
-
-            <p>→ MBTI 는 ENFP이에요.</p>
-          </div>
-        </div>
+                <Dropdown.Menu style={{border: "3px #171717 solid"}}>
+                  <Dropdown.ItemText>
+                    <p>
+                      대학교 1학년 시절 잠깐 배웠던 C언어를 제외하곤 프로그래밍
+                      언어를 전혀 접해본 적이 없던 제게 새로운 길을 알려준 첫
+                      프로젝트이자 공부였습니다. 이미 1-2년 공부를 진행했던
+                      친구들과 함께 프로젝트를 하기에는 배워야 하는 것부터
+                      스스로 공부해야 하는 양이 정말 산더미 같았지만, 하나씩
+                      이해하고 배워가다 보니 속도도 붙고 점점 자신감이 생기는
+                      것을 배울 수 있었습니다. 운이 좋게도 처음부터{" "}
+                      <b>Git을 이용해서 협업 작업을 진행</b>하게 되었고,{" "}
+                      <b>
+                        다른 사람들과 호흡을 맞춰가며 방향성을 설계하는 방법
+                      </b>
+                      도 알아갈 수 있었습니다. 이 프로젝트를 계기로{" "}
+                      <b>웹 개발자의 꿈을 꾸게 되는 첫 발자국</b>이 될 수
+                      있었습니다.
+                    </p>
+                  </Dropdown.ItemText>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Row>
+          </Col>
+        </Row>
       </div>
     </Row>
   );
