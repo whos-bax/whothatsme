@@ -1,0 +1,11 @@
+#project {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('../../public/images/wolves.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}

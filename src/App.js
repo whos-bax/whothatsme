@@ -14,6 +14,7 @@ import Introduce from "./pages/Introduce";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ContactList from "./components/ContactList";
+import Project from "./pages/Project";
 
 const routesInfo = [
   { path: "/home", Component: Home },
@@ -34,7 +35,7 @@ function App() {
       localStorage.setItem("welcome", welcomeDown);
     }
     setIsWelcome(Boolean(localStorage.getItem("welcome")));
-    
+
     if (isWelcome) {
       window.location.href = "/";
     }
@@ -79,6 +80,7 @@ function App() {
               />
               <Route path="/contact" element={<Contact />} />
               <Route path="/contact/contact-list" element={<ContactList />} />
+              <Route path="/project" element={<Project />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer contents={contents} />{" "}
