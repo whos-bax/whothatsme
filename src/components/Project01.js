@@ -1,10 +1,9 @@
 import React from "react";
 import { Col } from "react-bootstrap";
-import IntroduceButton from "./IntroduceButton";
 
-export default function Introduce01({ setMoveTo }) {
+function Project01() {
   return (
-    <Col md="7" id="introduceBox">
+    <Col id="projectBox">
       <div className="contentEnter">
         <div style={{ padding: "1rem" }}>
           <h1>꿈이 많은 어른 아이</h1>
@@ -55,8 +54,9 @@ export default function Introduce01({ setMoveTo }) {
             <p>→ MBTI 는 ENFP이에요.</p>
           </div>
         </div>
-        <IntroduceButton clickMove={setMoveTo} />
       </div>
     </Col>
   );
 }
+
+export default Project01;

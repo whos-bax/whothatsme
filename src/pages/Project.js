@@ -3,7 +3,7 @@ import "../css/Project.css";
 import { Container, Row } from "react-bootstrap";
 import Intro from "../components/Intro";
 import { useLocation } from "react-router-dom";
-import Introduce01 from "../components/Introduce01";
+import Project01 from "../components/Project01";
 
 function Project() {
   const search = useLocation();
@@ -18,14 +18,15 @@ function Project() {
     <>
       {!bigName ? (
         <Container fluid className="pageEnter" id="project">
-          <Row id="introduceContent">
+          <Row id="projectContent">
             <Intro setBigName={setBigName} />
           </Row>
         </Container>
       ) : (
         <Container fluid id="project">
-          <Row className="afterIntro" id="introduceContent">
-            <Introduce01 />
+          <Row className="afterIntro" id="projectContent">
+            <Project01 />
+            
           </Row>
         </Container>
       )}

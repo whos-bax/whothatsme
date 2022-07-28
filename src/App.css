@@ -142,7 +142,7 @@ a {
 
 .afterIntro {
   animation: afterIntro 1s ease-out forwards;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px);
 
 }
 
