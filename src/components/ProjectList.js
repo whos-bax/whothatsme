@@ -4,7 +4,7 @@ import { Col, Row } from "react-bootstrap";
 export const projectListArr = [
   { id: "kushop", name: "KU# 쇼핑몰 홈페이지", date: "(20.12 ~ 21.02)" },
   { id: "lotus-shop", name: "Lotus Shop", date: "(21.03 ~ 21.06)" },
-  { id: "eue", name: "EUE", date: "(21.07 ~ 21.08)" },
+  { id: "eue", name: "EUE (Efficient Usage of Electricity)", date: "(21.07 ~ 21.08)" },
   { id: "whos-mometum", name: "whos-momentum", date: "(21.08 ~ 21.09)" },
   { id: "music-survey", name: "Music Survey", date: "(21.09 ~ 21.12)" },
   {

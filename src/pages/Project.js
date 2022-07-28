@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import ProjectList from "../components/ProjectList";
 import Project01 from "../components/Project01";
 import Project02 from "../components/Project02";
+import Project03 from "../components/Project03";
 
 function Project() {
   const search = useLocation();
@@ -31,6 +32,7 @@ function Project() {
               <ProjectList id="list" />
               <Project01 />
               <Project02 />
+              <Project03 />
 
               <Button id="scrollBtn">
                 <a href="#list">↑</a>
