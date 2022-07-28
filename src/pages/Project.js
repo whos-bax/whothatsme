@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../css/Project.css";
-import { Container, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import Intro from "../components/Intro";
 import { useLocation } from "react-router-dom";
+import ProjectList from "../components/ProjectList";
 import Project01 from "../components/Project01";
 import Project02 from "../components/Project02";
 
@@ -17,21 +18,25 @@ function Project() {
 
   return (
     <>
-      {true ? (
+      {!bigName ? (
         <Container fluid className="pageEnter" id="project">
           <Row id="projectContainer">
             <Intro setBigName={setBigName} />
-            안여
           </Row>
         </Container>
       ) : (
         <Container fluid id="project">
-          {/* <Container className="afterIntro" id="projectContainer">
+          <Container className="afterIntro" id="projectContainer">
             <Row id="projectRow">
+              <ProjectList id="list" />
               <Project01 />
               <Project02 />
+
+              <Button id="scrollBtn">
+                <a href="#list">↑</a>
+              </Button>
             </Row>
-          </Container> */}
+          </Container>
         </Container>
       )}
     </>

@@ -30,9 +30,11 @@
     height: 100%;
     width: 100%;
     overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
-#projectBox {
+.projectBox {
     scroll-snap-align: start;
     background-color: #171717;
     overflow: auto;
@@ -42,4 +44,31 @@
     justify-content: center;
     height: 100%;
     width: 100%;
+}
+
+#scrollBtn {
+    position: fixed;
+    right: 1rem;
+    bottom: 7rem;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    border-radius: 50%;
+    background-color: #FFC54D;
+}
+
+#scrollBtn:active {
+    border: 2px white solid;
+}
+
+@media (min-width: 768px) {
+
+    #scrollBtn {
+        right: 1.4rem;
+        bottom: 8rem;
+        width: 45px;
+        height: 45px;
+    }
 }

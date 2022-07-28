@@ -48,30 +48,3 @@
     justify-content: center;
     top: 30%;
 }
-
-#scrollTopBtn {
-    position: fixed;
-    right: .5rem;
-    bottom: 5.5rem;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    border: 0;
-    box-shadow: none;
-    border-radius: 50%;
-    background-color: #FFC54D;
-}
-
-#scrollTopBtn:active {
-    border: 2px white solid;
-}
-
-@media (min-width: 768px) {
-
-    #scrollTopBtn {
-        right: 1.4rem;
-        bottom: 6rem;
-        width: 45px;
-        height: 45px;
-    }
-}

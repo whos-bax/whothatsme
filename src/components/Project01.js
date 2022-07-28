@@ -1,12 +1,14 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { projectListArr } from "./ProjectList";
 
 function Project01() {
+  console.log(projectListArr[0].id);
   return (
-    <Row id="projectBox" >
+    <Row className="projectBox" id={projectListArr[0].id}>
       <div className="contentEnter">
         <div style={{ padding: "1rem" }}>
-          <h1>꿈이 많은 어른 아이</h1>
+          <h1 id="impactText"><b>{projectListArr[0].name}</b> {projectListArr[0].date}</h1>
         </div>
         <div id="introduceContentBody">
           <p>

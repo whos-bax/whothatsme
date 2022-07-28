@@ -1,9 +1,9 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 function Project02() {
   return (
-    <Row id="projectBox" style={{ backgroundColor: "white" }}>
+    <Row className="projectBox" id="lotusshop">
       <div className="contentEnter">
         <div style={{ padding: "1rem" }}>
           <h1>꿈이 많은 어른 아이</h1>

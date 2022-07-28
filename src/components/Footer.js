@@ -11,11 +11,7 @@ function Footer({ start }) {
     setShow(true);
   }, [start]);
 
-  // 스크롤 클릭시 상위로
-  const handleScrollToTop = () => {
-    window.location.href = "#main";
-  };
-
+  // 모두 지우고 welcome이 나오는 첫 페이지로 다시 이동
   const welcomeAgain = () => {
     window.location.replace("/");
     localStorage.clear();
@@ -54,9 +50,6 @@ function Footer({ start }) {
       </div>
 
       <div id="footerDiv" style={show ? { opacity: 1 } : { opacity: 0 }}>
-        <Button id="scrollTopBtn" onClick={handleScrollToTop}>
-          ↑
-        </Button>
         <p style={{ fontSize: "14px" }}>
           © 2022 whosbax. All rights reserved.{" "}
         </p>
