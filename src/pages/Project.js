@@ -15,12 +15,21 @@ function Project() {
   }, [bigName]);
 
   return (
-    <Container fluid className="pageEnter" id="project">
-      <Row id="introduceContent">
-        <Intro setBigName={setBigName} />
-        <Introduce01/>
-      </Row>
-    </Container>
+    <>
+      {!bigName ? (
+        <Container fluid className="pageEnter" id="project">
+          <Row id="introduceContent">
+            <Intro setBigName={setBigName} />
+          </Row>
+        </Container>
+      ) : (
+        <Container fluid id="project">
+          <Row className="afterIntro" id="introduceContent">
+            <Introduce01 />
+          </Row>
+        </Container>
+      )}
+    </>
   );
 }
 

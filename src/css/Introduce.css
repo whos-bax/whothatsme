@@ -186,7 +186,6 @@
 
 #introduceImgDiv .carousel-inner {
     height: 100%;
-    animation: contentEnter .5s ease-out;
 }
 
 #introduceImgDiv .carousel-item {

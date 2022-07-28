@@ -46,17 +46,26 @@ function Introduce() {
   }, [nowPageNum]);
 
   return (
-    <Container fluid className="pageEnter" id="introduce">
-      <Row id="introduceContent">
-        {introImg && <IntroduceImg />}
-        <Routes>
-          <Route path="/" element={<Intro setBigName={setBigName} />} />
-          <Route path="1" element={<Introduce01 setMoveTo={setMoveTo} />} />
-          <Route path="2" element={<Introduce02 setMoveTo={setMoveTo} />} />
-          <Route path="3" element={<Introduce03 setMoveTo={setMoveTo} />} />
-        </Routes>
-      </Row>
-    </Container>
+    <>
+      {!bigName ? (
+        <Container fluid className="pageEnter" id="introduce">
+          <Row id="introduceContent">
+            <Intro setBigName={setBigName} />
+          </Row>
+        </Container>
+      ) : (
+        <Container fluid id="introduce">
+          <Row className="afterIntro" id="introduceContent">
+            <IntroduceImg />
+            <Routes>
+              <Route path="1" element={<Introduce01 setMoveTo={setMoveTo} />} />
+              <Route path="2" element={<Introduce02 setMoveTo={setMoveTo} />} />
+              <Route path="3" element={<Introduce03 setMoveTo={setMoveTo} />} />
+            </Routes>
+          </Row>
+        </Container>
+      )}
+    </>
   );
 }
 

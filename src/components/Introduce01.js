@@ -4,7 +4,8 @@ import IntroduceButton from "./IntroduceButton";
 
 export default function Introduce01({ setMoveTo }) {
   return (
-    <Col md="7" id="introduceBox">
+
+    <Col md="7"id="introduceBox">
       <div className="contentEnter">
         <div style={{ padding: "1rem" }}>
           <h1>꿈이 많은 어른 아이</h1>
