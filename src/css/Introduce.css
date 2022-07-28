@@ -7,7 +7,6 @@
     width: 100%;
     height: 100%;
     justify-content: center;
-    backdrop-filter: blur(100px);
     display: flex;
 }
 
@@ -21,7 +20,6 @@
     height: 90%;
     transition: all 0.8s linear;
     color: white;
-    animation: pageChange 1.5s ease-in-out forwards;
 }
 
 .col-md-5 {
@@ -55,6 +53,13 @@
 }
 
 @media (min-width: 768px) {
+
+    #introduceContent {
+        padding: 8.5rem;
+        width: 100%;
+        height: 100%;
+    }
+
     .progress {
         width: 4rem;
     }
@@ -172,32 +177,16 @@
     }
 }
 
-.contentEnter {
-    animation: contentEnter .4s ease-out;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-@keyframes contentEnter {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -10%, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 #introduceImgDiv .carousel {
     display: flex;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 #introduceImgDiv .carousel-inner {
     height: 100%;
+    animation: contentEnter .5s ease-out;
 }
 
 #introduceImgDiv .carousel-item {
