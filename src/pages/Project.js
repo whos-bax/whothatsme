@@ -10,7 +10,7 @@ import Project03 from "../components/Project03";
 import Project04 from "../components/Project04";
 import Project05 from "../components/Project05";
 import Project06 from "../components/Project06";
-// import Project07 from "../components/Project07";
+import Project07 from "../components/Project07";
 
 const projectListArr = [
   { id: "kushop", name: "KU# 쇼핑몰 홈페이지", date: "(20.12 ~ 21.02)" },
@@ -82,10 +82,10 @@ function Project() {
                   path={`/${projectListArr[5].id}`}
                   element={<Project06 projectListArr={projectListArr} />}
                 />
-                {/* <Route
+                <Route
                   path={`/${projectListArr[6].id}`}
                   element={<Project07 projectListArr={projectListArr} />}
-                /> */}
+                />
               </Routes>
 
               <DropdownButton id="projectListBtn" title="">

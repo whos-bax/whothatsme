@@ -3,13 +3,13 @@ import { Col, Image, ListGroup, Row } from "react-bootstrap";
 
 function Project07({ projectListArr }) {
   return (
-    <Row className="projectBox" id={projectListArr[6].id}>
+    <Row className="projectBox" id={projectListArr[7].id}>
       <div className="contentEnter">
         <div style={{ padding: "1rem 0" }}>
           <h1 id="impactText">
-            <b>{projectListArr[6].name}</b>{" "}
+            <b>{projectListArr[7].name}</b>{" "}
           </h1>
-          <p>{projectListArr[6].date} * 중도 취소</p>
+          <p>{projectListArr[7].date}</p>
         </div>
         <Row id="projectBody">
           <Col md={6}>
