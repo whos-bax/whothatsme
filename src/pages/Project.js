@@ -9,6 +9,8 @@ import Project02 from "../components/Project02";
 import Project03 from "../components/Project03";
 import Project04 from "../components/Project04";
 import Project05 from "../components/Project05";
+import Project06 from "../components/Project06";
+// import Project07 from "../components/Project07";
 
 const projectListArr = [
   { id: "kushop", name: "KU# 쇼핑몰 홈페이지", date: "(20.12 ~ 21.02)" },
@@ -19,8 +21,8 @@ const projectListArr = [
     date: "(21.07 ~ 21.08)",
   },
   { id: "whos-mometum", name: "whos-momentum", date: "(21.08 ~ 21.09)" },
-  { id: "music-survey", name: "Music Survey", date: "(21.09 ~ 21.12)" },
   { id: "dbcrud-php", name: "DBcrud-php", date: "(21.09 ~ 21.12)" },
+  { id: "music-survey", name: "Music Survey", date: "(21.09 ~ 21.12)" },
   {
     id: "kids-well",
     name: "Kids-well 어린이집 홈페이지",

@@ -111,6 +111,11 @@
 }
 
 #linkText {
+    font-weight: bold;
+}
+
+
+#meaningText {
     color: #F94C66;
     font-weight: bold;
 }

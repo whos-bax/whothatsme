@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Dropdown, Image, ListGroup, Row } from "react-bootstrap";
+import { Col, Image, ListGroup, Row } from "react-bootstrap";
 
 function Project01({ projectListArr }) {
   return (
@@ -63,7 +63,7 @@ function Project01({ projectListArr }) {
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p className="my-2" id="impactText">
+                  <p className="my-2" id="meaningText">
                     의의
                   </p>
                   <p>

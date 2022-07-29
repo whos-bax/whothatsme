@@ -1,15 +1,15 @@
 import React from "react";
 import { Col, Image, ListGroup, Row } from "react-bootstrap";
 
-function Project05({ projectListArr }) {
+function Project06({ projectListArr }) {
   return (
-    <Row className="projectBox" id={projectListArr[4].id}>
+    <Row className="projectBox" id={projectListArr[5].id}>
       <div className="contentEnter">
         <div style={{ padding: "1rem 0" }}>
           <h1 id="impactText">
-            <b>{projectListArr[4].name}</b>{" "}
+            <b>{projectListArr[5].name}</b>{" "}
           </h1>
-          <p>{projectListArr[4].date}</p>
+          <p>{projectListArr[5].date}</p>
         </div>
         <Row id="projectBody">
           <Col md={6}>
@@ -88,4 +88,4 @@ function Project05({ projectListArr }) {
   );
 }
 
-export default Project05;
+export default Project06;
