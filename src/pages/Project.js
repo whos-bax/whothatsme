@@ -11,6 +11,7 @@ import Project04 from "../components/Project04";
 import Project05 from "../components/Project05";
 import Project06 from "../components/Project06";
 import Project07 from "../components/Project07";
+import Project08 from "../components/Project08";
 
 const projectListArr = [
   { id: "kushop", name: "KU# 쇼핑몰 홈페이지", date: "(20.12 ~ 21.02)" },
@@ -85,6 +86,10 @@ function Project() {
                 <Route
                   path={`/${projectListArr[6].id}`}
                   element={<Project07 projectListArr={projectListArr} />}
+                />
+                <Route
+                  path={`/${projectListArr[7].id}`}
+                  element={<Project08 projectListArr={projectListArr} />}
                 />
               </Routes>
 

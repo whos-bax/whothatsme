@@ -14,11 +14,15 @@ function Project07({ projectListArr }) {
         <Row id="projectBody">
           <Col md={6}>
             <Image
-              src={process.env.PUBLIC_URL + "/images/project/project07-1.gif"}
+              src={process.env.PUBLIC_URL + "/images/project/project08-1.png"}
               id="projectImg"
             />
             <Image
-              src={process.env.PUBLIC_URL + "/images/project/project07.png"}
+              src={process.env.PUBLIC_URL + "/images/project/project08-2.png"}
+              id="projectImg"
+            />
+            <Image
+              src={process.env.PUBLIC_URL + "/images/project/project08-3.png"}
               id="projectImg"
             />
           </Col>
@@ -27,12 +31,12 @@ function Project07({ projectListArr }) {
               <ListGroup variant="flush" style={{ padding: 0 }}>
                 <ListGroup.Item>
                   <p className="my-2" id="impactText">
-                  어린이집 회원관리와 안내를 위한 사용자/관리자 홈페이지 제작
+                  포트폴리오 제작
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>
-                    <b>팀장</b> : 윤대기 교수님, <b>팀원</b> : 박상호 외 2명 (총 4명)
+                    <b>팀원</b> : 박상호 (총 1명)
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -42,7 +46,7 @@ function Project07({ projectListArr }) {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>
-                    <b>Frontend</b> : React, TypeScript, Tailwind
+                    <b>Frontend</b> : React, JavaScript, React-Bootstrap, React-Router-Dom
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -58,7 +62,7 @@ function Project07({ projectListArr }) {
                 <ListGroup.Item>
                   <p id="linkText">
                     <a
-                      href="https://github.com/whos-bax/music-survey"
+                      href="https://github.com/whos-bax/whothatsme"
                       target={"_blank"}
                     >
                       Github
@@ -68,7 +72,7 @@ function Project07({ projectListArr }) {
                 <ListGroup.Item>
                   <p id="linkText">
                     <a
-                      href="https://whos-bax.github.io/music-survey/public/index.html"
+                      href="https://whos-bax.github.io/whothatsme/"
                       target={"_blank"}
                     >
                       Pages
