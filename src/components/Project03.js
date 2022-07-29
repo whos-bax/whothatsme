@@ -1,8 +1,7 @@
 import React from "react";
 import { Col, Dropdown, Image, ListGroup, Row } from "react-bootstrap";
-import { projectListArr } from "./ProjectList";
 
-function Project03() {
+function Project03({ projectListArr }) {
   return (
     <Row className="projectBox" id={projectListArr[2].id}>
       <div className="contentEnter">

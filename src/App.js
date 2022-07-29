@@ -80,7 +80,7 @@ function App() {
               />
               <Route path="/contact" element={<Contact />} />
               <Route path="/contact/contact-list" element={<ContactList />} />
-              <Route path="/project" element={<Project />} />
+              <Route path="/project/*" element={<Project />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer contents={contents} />{" "}
