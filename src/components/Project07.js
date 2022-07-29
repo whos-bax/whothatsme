@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Image, ListGroup, Row } from "react-bootstrap";
 
-function Project06({ projectListArr }) {
+function Project07({ projectListArr }) {
   return (
     <Row className="projectBox" id={projectListArr[5].id}>
       <div className="contentEnter">
@@ -14,11 +14,15 @@ function Project06({ projectListArr }) {
         <Row id="projectBody">
           <Col md={6}>
             <Image
-              src={process.env.PUBLIC_URL + "/images/project/project06.png"}
+              src={process.env.PUBLIC_URL + "/images/project/project07.png"}
               id="projectImg"
             />
             <Image
-              src={process.env.PUBLIC_URL + "/images/project/project06-1.png"}
+              src={process.env.PUBLIC_URL + "/images/project/project07-1.png"}
+              id="projectImg"
+            />
+            <Image
+              src={process.env.PUBLIC_URL + "/images/project/project07-2.png"}
               id="projectImg"
             />
           </Col>
@@ -88,4 +92,4 @@ function Project06({ projectListArr }) {
   );
 }
 
-export default Project06;
+export default Project07;

@@ -78,6 +78,14 @@ function Project() {
                   path={`/${projectListArr[4].id}`}
                   element={<Project05 projectListArr={projectListArr} />}
                 />
+                <Route
+                  path={`/${projectListArr[5].id}`}
+                  element={<Project06 projectListArr={projectListArr} />}
+                />
+                {/* <Route
+                  path={`/${projectListArr[6].id}`}
+                  element={<Project07 projectListArr={projectListArr} />}
+                /> */}
               </Routes>
 
               <DropdownButton id="projectListBtn" title="">
