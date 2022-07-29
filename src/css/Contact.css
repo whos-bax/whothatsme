@@ -42,6 +42,10 @@
         top: 4.5rem !important;
         width: 20% !important;
     }
+
+    #contactBox {
+        padding: 3rem;
+    }
 }
 
 #linkBtn {
@@ -60,7 +64,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 3rem;
     height: 100%;
     background-color: #171717;
 
@@ -112,4 +115,19 @@
     align-items: center;
     background-color: #FFC54D;
     border: 1px #FFC54D solid;
+}
+
+#email-switch {
+    box-shadow: none;
+    border: 0;
+    outline: 0;
+    color: white;
+    min-width: 10px;
+}
+
+#email-switch:checked {
+    background-color: #FFC54D;
+    color: #FFC54D;
+    border: #FFC54D;
+    box-shadow: none;
 }
