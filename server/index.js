@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-// const mysql = require("mysql");
-const os = require("os");
+const mysql = require("mysql");
+// const os = require("os");
 const PORT = process.env.port || 8000;
 
 const db = mysql.createPool({
@@ -10,8 +10,12 @@ const db = mysql.createPool({
   password: "mariadb",
   database: "test",
 });
+
 app.get("/", (req, res) => {
-  console.log("first");
+  const sqlQuery = "INSERT INTO requested (rowno) VALUES (1)"
+  db.query(sqlQuery, (err, result) => {
+    res.send("success!");
+  });
 });
 
 app.listen(PORT, () => {
