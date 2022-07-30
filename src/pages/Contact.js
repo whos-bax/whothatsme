@@ -18,18 +18,36 @@ import emailjsForm from "../utils/emailjsForm";
 function Contact() {
   const [show, setShow] = useState(false);
   const [validated, setValidated] = useState(false);
-  const [contactMessage, setContactMessage] = useState({});
+  const [contactMessage, setContactMessage] = useState();
 
   const search = useLocation();
   const [bigName, setBigName] = useState(false);
   const [canContact, setCanContact] = useState(false);
   const [emailSwitch, setEmailSwitch] = useState(false);
 
+  const [getEntries, setGetEntries] = useState();
+  
+  const date = new Date();
   useEffect(() => {
     if (search.pathname === "/contact" && bigName === true) {
       setCanContact(true);
     }
   });
+
+  useEffect(() => {
+    if (contactMessage !== undefined) {
+      setGetEntries(Object.entries(contactMessage));
+      
+    }
+  }, [contactMessage]);
+
+  useEffect(() => {
+    if (getEntries !== undefined) {
+      getEntries.map((ele) => {
+        localStorage.setItem("contact", ele);
+      });
+    }
+  }, [getEntries]);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -47,8 +65,6 @@ function Contact() {
         email: form.email.value,
       });
       event.preventDefault();
-
-      console.log(form.email.value === "")
       // emailjs로 매일 보내기
       // emailjs
       //   .sendForm(
