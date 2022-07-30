@@ -3,6 +3,7 @@
 세상을 밝게 비추고 싶은 꿈이 많은 어른 아이🙏✌
 
 프론트엔드 포트폴리오 제작
+
 1. Creat-React-App
 2. React-bootstrap
 3. React-Router-Dom
@@ -10,14 +11,15 @@
 <hr/>
 
 ### 0. 프로젝트 구조
-```
+
 whothatsme
+
 > client
->> build
->> public
->> src
-README.md
-```
+>
+> > build
+> > public
+> > src
+> > README.md
 
 ### 1. 프로젝트 설치
 
@@ -28,31 +30,34 @@ https://github.com/whos-bax/whothatsme.git
 ```
 
 ### 2. 패키지 설치
+
 다음은 깃 클론 이후 **한번만** 실행합니다.
+
 1. 서버 패키지 설치
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 2. 클라이언트 패키지 설치
-    ```bash
-    cd client
-    npm install
-    ```
+   ```bash
+   cd client
+   npm install
+   ```
 
 ### 3. 프로젝트 실행
+
 1. 서버
-    ```
-    npm
-    ```
+   ```
+   npm
+   ```
 2. 클라이언트
-    ```
-    cd client
-    npm start
-    ```
+   ```
+   cd client
+   npm start
+   ```
 
 ### 이 외 더 자세히 알아보기
+
 1. [티스토리 블로그](https://whothatsme.tistory.com/)
 2. [노션](https://whosbax.notion.site/0d558da814ad41efbf31fede4f410a5a)
 
 <hr/>
-
