@@ -25,23 +25,28 @@ README.md
 
 프로젝트를 다운 받을 경로로 이동한 뒤 다음 명령어를 복사 / 붙여넣기
 
-```bash
+```
 https://github.com/whos-bax/whothatsme.git
 ```
+
 
 ## 2. 패키지 설치
 
 다음은 깃 클론 이후 **한번만** 실행합니다.
 
 1. 서버 패키지 설치
-   ```bash
+
+   ```
    npm install
    ```
+
 2. 클라이언트 패키지 설치
-   ```bash
+
+   ```
    cd client
    npm install
    ```
+
 
 ## 3. 프로젝트 실행
 
