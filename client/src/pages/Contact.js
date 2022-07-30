@@ -14,6 +14,8 @@ import { Link, useLocation } from "react-router-dom";
 import Intro from "../components/Intro";
 import "../css/Contact.css";
 import emailjsForm from "../utils/emailjsForm";
+import Axios from "axios";
+
 
 function Contact() {
   const [show, setShow] = useState(false);
@@ -26,7 +28,7 @@ function Contact() {
   const [emailSwitch, setEmailSwitch] = useState(false);
 
   const [getEntries, setGetEntries] = useState();
-  
+
   const date = new Date();
   useEffect(() => {
     if (search.pathname === "/contact" && bigName === true) {
@@ -37,7 +39,6 @@ function Contact() {
   useEffect(() => {
     if (contactMessage !== undefined) {
       setGetEntries(Object.entries(contactMessage));
-      
     }
   }, [contactMessage]);
 
@@ -85,6 +86,12 @@ function Contact() {
     setValidated(true);
   };
 
+  const submitTest = () => {
+    Axios.get("http://localhost:8000/", {}).then(() => {
+      alert("등록 완료!");
+    });
+  };
+
   return (
     <>
       {!canContact ? (
@@ -95,6 +102,7 @@ function Contact() {
         </Container>
       ) : (
         <Container fluid id="contact">
+          <Button onClick={submitTest}>test</Button>
           <Row className="afterIntro" id="contactContent">
             <Button variant="light" id="linkBtn" onClick={() => setShow(true)}>
               <p>LINK</p>
