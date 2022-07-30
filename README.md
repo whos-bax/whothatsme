@@ -12,22 +12,24 @@
 
 ## 0. 프로젝트 구조
 
+```
 whothatsme
-
 > client
 >
 > > build
 > > public
 > > src
 README.md
+```
+
 
 ## 1. 프로젝트 설치
 
 프로젝트를 다운 받을 경로로 이동한 뒤 다음 명령어를 복사 / 붙여넣기
 
-```
-https://github.com/whos-bax/whothatsme.git
-```
+    ```bash
+    git clone https://github.com/whos-bax/whothatsme.git
+    ```
 
 
 ## 2. 패키지 설치
