@@ -40,29 +40,31 @@ function Contact() {
       console.log("Fill in all your content");
     } else {
       setContactMessage({
-        title: form.title.value,
         name: form.name.value,
         password: form.password.value,
+        title: form.title.value,
         message: form.message.value,
         email: form.email.value,
       });
+      event.preventDefault();
 
+      console.log(form.email.value === "")
       // emailjs로 매일 보내기
-      emailjs
-        .sendForm(
-          emailjsForm.serviceId,
-          emailjsForm.templateId,
-          form,
-          emailjsForm.publicKey
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      // emailjs
+      //   .sendForm(
+      //     emailjsForm.serviceId,
+      //     emailjsForm.templateId,
+      //     form,
+      //     emailjsForm.publicKey
+      //   )
+      //   .then(
+      //     (result) => {
+      //       console.log(result.text);
+      //     },
+      //     (error) => {
+      //       console.log(error.text);
+      //     }
+      //   );
     }
     setValidated(true);
   };
@@ -213,11 +215,12 @@ function Contact() {
                           <Form.Check
                             type="switch"
                             id="email-switch"
+                            id="emailSwitch"
                             label="이메일 전송 없이 저장"
-                            style={{ 
+                            style={{
                               width: "100%",
                               gap: "5px",
-                              justifyContent: "end"
+                              justifyContent: "end",
                             }}
                             onClick={() => setEmailSwitch(!emailSwitch)}
                           />
