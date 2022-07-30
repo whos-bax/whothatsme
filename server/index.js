@@ -20,9 +20,11 @@ const db = mysql.createPool({
 });
 
 app.get("/", (req, res) => {
-  const sqlQuery = "INSERT INTO requested (rowno) VALUES (1)";
+  const sqlQuery = "select * from requested";
   db.query(sqlQuery, (err, result) => {
     res.send("success!");
+    console.log(err);
+    console.log(JSON.stringify(result));
   });
 });
 
