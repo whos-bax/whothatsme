@@ -19,7 +19,7 @@ whothatsme
 > > build
 > > public
 > > src
-> > README.md
+README.md
 
 ### 1. 프로젝트 설치
 
