@@ -1,8 +1,12 @@
 const express = require("express");
 const app = express();
 
-const port = 5000;
+const PORT = process.env.port || 8000;
 
-app.listen(5000, function () {
-  console.log("5000");
+app.get('/', (req, res) => {
+    console.log("first")
+})
+
+app.listen(PORT, () => {
+  console.log(`running on port ${PORT}`);
 });
