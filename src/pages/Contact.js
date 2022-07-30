@@ -214,7 +214,7 @@ function Contact() {
                             type="switch"
                             id="email-switch"
                             label="이메일 전송 없이 저장"
-                            style={{
+                            style={{ 
                               width: "100%",
                               gap: "5px",
                               justifyContent: "end"
