@@ -1,0 +1,133 @@
+#contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('../../public/images/lantern.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+#contact .card-header p,
+#contact .list-group-item p {
+    color: #171717;
+}
+
+#contact .list-group-item-action.active p {
+    color: white;
+}
+
+#contactContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    padding: 5.5rem 1rem 4rem 1rem;
+    transition: all 0.8s linear;
+    color: white;
+    gap: 0;
+}
+
+@media (min-width: 768px) {
+    #contactContent {
+        padding: 7rem 5rem 5rem 5rem;
+        width: 100%;
+    }
+
+    #linkBtn {
+        top: 4.5rem !important;
+        width: 20% !important;
+    }
+
+    #contactBox {
+        padding: 3rem;
+    }
+}
+
+#linkBtn {
+    position: absolute;
+    top: 4rem;
+    border: 0;
+    box-shadow: none;
+    width: 30%;
+    background-color: #FFC54D;
+}
+
+#contactBox {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    background-color: #171717;
+
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+#contactForm div {
+    display: flex;
+}
+
+#contactForm #title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#contactForm .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    height: 100%;
+}
+
+#contactForm #nameEmail {
+    height: 20%;
+    display: flex;
+}
+
+#contactForm textarea {
+    height: 12rem !important;
+}
+
+#contactForm .btn {
+    width: 60%;
+    backdrop-filter: blur(12px);
+}
+
+#backContactBtn {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFC54D;
+    border: 1px #FFC54D solid;
+}
+
+#emailSwitch {
+    box-shadow: none;
+    border: 0;
+    outline: 0;
+    color: white;
+    min-width: 10px;
+}
+
+#emailSwitch:checked {
+    background-color: #FFC54D;
+    color: #FFC54D;
+    border: #FFC54D;
+    box-shadow: none;
+}

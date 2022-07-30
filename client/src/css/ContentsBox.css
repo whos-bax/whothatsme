@@ -1,0 +1,69 @@
+.contentsGroup {
+    width: 100%;
+    height: 100vh;
+    gap: 5rem;
+    padding: 5.5rem 0;
+    transition: all .8s ease-in-out 1s;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+}
+
+.contentsGroup .list-group-item {
+    display: flex;
+    width: 15rem !important;
+    height: 3rem;
+    padding: 0;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+    background-color: inherit;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    background-color: #171717;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+
+.contentsGroup .list-group-item a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.contentsGroup .list-group-item a p {
+    margin: auto !important;
+}
+
+.contentsGroup .list-group-item:hover {
+    color: #171717;
+}
+
+
+.contentsGroup .list-group-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: all .5s ease-in-out
+}
+
+.contentsGroup .list-group-item:hover::before {
+    letter-spacing: 4rem;
+    opacity: 1;
+    background-color: white;
+    transform: scaleX(1);
+    transition: all .5s ease-in-out;
+}
