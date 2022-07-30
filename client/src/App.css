@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LeferiPoint-BlackA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.App {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  text-align: center;
+  height: 100vh;
+  margin: auto;
+  padding: 0 !important;
+  overflow: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  /* background-color: #171717; */
+}
+
+.App::-webkit-scrollbar {
+  display: none;
+}
+
+.container-fluid {
+  scroll-snap-align: start;
+}
+
+h1 {
+  font-family: 'LeferiPoint-BlackA';
+}
+
+p {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  margin: 0 !important;
+}
+
+.btn {
+  transition: all .5s ease-out !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.row,
+.col {
+  padding: 0;
+  margin: 0;
+}
+
+.startBtn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50% !important;
+  z-index: 10;
+  margin: auto;
+  padding: 0 !important;
+  animation: blinker 1s infinite ease-in-out alternate;
+  box-shadow: none;
+}
+
+.startBtnOut {
+  border: none;
+  width: 0%;
+  height: 0%;
+  animation: buttonOut 2s ease-in-out .5s forwards;
+}
+
+@keyframes buttonOut {
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+.startBtn p {
+  color: #fff;
+  margin: auto;
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1.0;
+  }
+
+  to {
+    opacity: 0.0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.startBtn:hover {
+  background-color: #171717 !important;
+  border: 5px solid rgba(255, 255, 255, .3) !important;
+  border-top-color: #fff !important;
+  animation: spin 1.5s ease-in-out infinite;
+  box-shadow: none !important;
+}
+
+.startBtn:active,
+.startBtn:focus {
+  box-shadow: none !important;
+}
+
+.pageEnter {
+  animation: pageChange 1s ease-in-out forwards;
+}
+
+@keyframes pageChange {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.afterIntro {
+  animation: afterIntro 1s ease-out forwards;
+  backdrop-filter: blur(5px);
+
+}
+
+@keyframes afterIntro {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: none;
+  }
+}
+
+.contentEnter {
+  animation: contentEnter .5s ease-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@keyframes contentEnter {
+  from {
+      opacity: 0;
+      transform: translate3d(0, -10%, 0);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#bigName {
+  animation: pageChange 1s ease alternate;
+  animation-iteration-count: 2;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  opacity: 0;
+}
