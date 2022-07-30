@@ -27,7 +27,7 @@ README.md
 
 프로젝트를 다운 받을 경로로 이동한 뒤 다음 명령어를 복사 / 붙여넣기
 
-    ```bash
+    ```
     git clone https://github.com/whos-bax/whothatsme.git
     ```
 
