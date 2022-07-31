@@ -16,15 +16,13 @@ const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "mariadb",
-  database: "test",
+  database: "contact",
 });
 
 app.get("/", (req, res) => {
-  const sqlQuery = "select * from requested";
+  const sqlQuery = "select * from board";
   db.query(sqlQuery, (err, result) => {
-    res.send("success!");
-    console.log(err);
-    console.log(JSON.stringify(result));
+    res.send(result);
   });
 });
 

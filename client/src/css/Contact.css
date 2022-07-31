@@ -114,7 +114,12 @@
     justify-content: center;
     align-items: center;
     background-color: #FFC54D;
-    border: 1px #FFC54D solid;
+    border: 3px white solid;
+}
+
+#backContactBtn p {
+    color: #171717;
+
 }
 
 #emailSwitch {
@@ -130,4 +135,12 @@
     color: #FFC54D;
     border: #FFC54D;
     box-shadow: none;
+}
+
+#contactTable td {
+    vertical-align: baseline;
+}
+
+#contactTable button {
+    font-family: 'LeferiPoint-BlackA';
 }

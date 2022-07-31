@@ -14,8 +14,6 @@ import { Link, useLocation } from "react-router-dom";
 import Intro from "../components/Intro";
 import "../css/Contact.css";
 import emailjsForm from "../utils/emailjsForm";
-import Axios from "axios";
-
 
 function Contact() {
   const [show, setShow] = useState(false);
@@ -86,12 +84,6 @@ function Contact() {
     setValidated(true);
   };
 
-  const submitTest = () => {
-    Axios.get("http://localhost:8000/", {}).then(() => {
-      alert("등록 완료!");
-    });
-  };
-
   return (
     <>
       {!canContact ? (
@@ -102,7 +94,6 @@ function Contact() {
         </Container>
       ) : (
         <Container fluid id="contact">
-          <Button onClick={submitTest}>test</Button>
           <Row className="afterIntro" id="contactContent">
             <Button variant="light" id="linkBtn" onClick={() => setShow(true)}>
               <p>LINK</p>
@@ -226,8 +217,10 @@ function Contact() {
                         <Form.Group>
                           <Form.Control
                             type="password"
-                            placeholder="Password"
+                            placeholder="Password(4자리 문자 및 숫자)"
                             id="password"
+                            maxLength={4}
+                            minLength={4}
                             required
                           />
                         </Form.Group>
