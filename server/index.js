@@ -12,7 +12,7 @@ let corsOption = {
 
 app.use(cors(corsOption));
 app.use(express.json());
-  
+
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
@@ -22,7 +22,7 @@ const db = mysql.createPool({
 
 app.get("/", (req, res) => {
   const sqlQuery =
-    "SELECT Board_title, Board_message, Author_name, Author_password, DATE_FORMAT(Register_date, '%Y-%m-%d') AS Register_date FROM BOARD";
+    "SELECT _id, Board_title, Board_message, Author_name, Author_password, DATE_FORMAT(Register_date, '%Y-%m-%d') AS Register_date, DATE_FORMAT(Update_date, '%Y-%m-%d') AS Update_date FROM contactBoards";
   db.query(sqlQuery, (err, result) => {
     res.send(result);
   });

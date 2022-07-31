@@ -180,7 +180,6 @@ function Contact() {
               </Modal.Body>
             </Modal>
 
-            {/* Form 형태 */}
             <Col md="7" id="contactBox">
               <Row
                 style={{
@@ -196,6 +195,7 @@ function Contact() {
                 <div style={{ height: "fit-content" }}>
                   <p id="impactText">하고 싶은 말을 남겨주세요</p>
                 </div>
+                {/* Form 형태 */}
                 <Form
                   id="contactForm"
                   noValidate
@@ -249,6 +249,7 @@ function Contact() {
                             id="email"
                             name="email"
                             disabled={emailSwitch}
+                            required={!emailSwitch}
                           />
                         </Form.Group>
                       </Row>
