@@ -1,4 +1,5 @@
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
@@ -18,14 +19,11 @@ import emailjsForm from "../utils/emailjsForm";
 function Contact() {
   const [show, setShow] = useState(false);
   const [validated, setValidated] = useState(false);
-  const [contactMessage, setContactMessage] = useState();
 
   const search = useLocation();
   const [bigName, setBigName] = useState(false);
   const [canContact, setCanContact] = useState(false);
   const [emailSwitch, setEmailSwitch] = useState(false);
-
-  const [getEntries, setGetEntries] = useState();
 
   const date = new Date();
   useEffect(() => {
@@ -33,20 +31,6 @@ function Contact() {
       setCanContact(true);
     }
   });
-
-  useEffect(() => {
-    if (contactMessage !== undefined) {
-      setGetEntries(Object.entries(contactMessage));
-    }
-  }, [contactMessage]);
-
-  useEffect(() => {
-    if (getEntries !== undefined) {
-      getEntries.map((ele) => {
-        localStorage.setItem("contact", ele);
-      });
-    }
-  }, [getEntries]);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -56,13 +40,17 @@ function Contact() {
       event.stopPropagation();
       console.log("Fill in all your content");
     } else {
-      setContactMessage({
-        name: form.name.value,
-        password: form.password.value,
-        title: form.title.value,
-        message: form.message.value,
-        email: form.email.value,
-      });
+      // 글쓰기 -> 서버로 보내기
+      axios
+        .post("http://localhost:8000/insert", {
+          title: form.title.value,
+          message: form.message.value,
+          name: form.name.value,
+          password: Number(form.password.value),
+        })
+        .then((res) => console.log(res.statusText))
+        .catch((err) => console.error(err));
+        
       event.preventDefault();
       // emailjs로 매일 보내기
       // emailjs
@@ -216,7 +204,7 @@ function Contact() {
                         </Form.Group>
                         <Form.Group>
                           <Form.Control
-                            type="password"
+                            type="number"
                             placeholder="Password(4자리 문자 및 숫자)"
                             id="password"
                             maxLength={4}
