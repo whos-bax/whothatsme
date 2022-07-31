@@ -48,11 +48,22 @@ app.post("/insert", (req, res) => {
 });
 
 // UPDATE
+app.post("/update", (req, res) => {
+  const _id = req.body._id;
+  const title = req.body.title;
+  const message = req.body.message;
+  const name = req.body.name;
+  console.log(title, message, name, _id)
+
+  const sqlQuery =
+    "UPDATE contactBoards SET Board_title = ?, Board_message = ?, Author_name = ?, Update_date = curdate() WHERE _id = ?;";
+  db.query(sqlQuery, [title, message, name, _id], (err, result) => {
+    res.send(result);
+  });
+});
 
 // DELETE
 app.post("/delete", (req, res) => {
-  console.log(req.body.id);
-
   const sqlQuery = "DELETE FROM contactBoards WHERE _id = ?";
   db.query(sqlQuery, [req.body.id], (err, result) => {
     res.send(result);

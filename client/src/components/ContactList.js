@@ -9,10 +9,9 @@ import {
   Table,
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { deleteDB, getDB } from "../apis/contact.api";
+import { deleteDB, getDB, updateDB } from "../apis/contact.api";
 
 function ContactList() {
-  const navigate = useNavigate;
   const [show, setShow] = useState(false);
   const [checkId, setCheckId] = useState();
   const [contacts, setContacts] = useState([]);
@@ -24,7 +23,6 @@ function ContactList() {
   const [passwordCheck, setPasswordCheck] = useState();
 
   const [updateValue, setUpdateValue] = useState({
-    _id: "",
     title: "",
     name: "",
     message: "",
@@ -39,6 +37,22 @@ function ContactList() {
       .catch((err) => console.log(err));
   }, [getDB]);
 
+  // 메뉴 이모지 클릭시 밸류값 넣어주기
+  const modalShow = (clickedid) => {
+    setShow(true);
+    setCheckId(clickedid);
+    contacts.map((ele) => {
+      if (ele._id === clickedid) {
+        setUpdateValue({
+          _id: ele._id,
+          title: ele.Board_title,
+          name: ele.Author_name,
+          message: ele.Board_message,
+        });
+      }
+    });
+  };
+
   // 패스워드가 같은지 확인 후 업데이트 진행
   const checkPasswordUpdate = () => {
     contacts.map((ele) => {
@@ -51,6 +65,20 @@ function ContactList() {
         }
       }
     });
+  };
+
+  // 수정할때 입력값 변하기
+  const handleUpdateValue = (event) => {
+    const { name, value } = event.currentTarget;
+    setUpdateValue({ ...updateValue, [name]: value });
+  };
+
+  // 정말로 업데이트하기
+  const handleUpdate = () => {
+    updateDB({ updateValue })
+      .then((res) => console.log(res.statusText))
+      .catch((err) => console.error(err));
+    window.location.reload();
   };
 
   // 패스워드가 같은지 확인 후 삭제 진행
@@ -76,10 +104,6 @@ function ContactList() {
         window.location.reload();
       }
     });
-  };
-
-  const handleUpdateValue = (event) => {
-    const { name, value } = event.currentTarget;
   };
 
   return (
@@ -113,9 +137,8 @@ function ContactList() {
                   <td>
                     <Button
                       variant="outline-light"
-                      onClick={() => {
-                        setShow(true);
-                        setCheckId(ele._id);
+                      onClick={(e) => {
+                        modalShow(ele._id, e);
                       }}
                     >
                       ☰
@@ -152,11 +175,8 @@ function ContactList() {
                             type="text"
                             id="title"
                             name="title"
-                            onChange={(e) => {
-                              // value = e.target.value;
-                              console.log(e.target.value);
-                            }}
-                            value={`${ele.Board_title}`}
+                            onChange={handleUpdateValue}
+                            value={updateValue.title}
                             disabled={!update}
                           ></Form.Control>
                         </h3>
@@ -172,7 +192,8 @@ function ContactList() {
                             type="text"
                             id="name"
                             name="name"
-                            value={`${ele.Author_name}`}
+                            onChange={handleUpdateValue}
+                            value={updateValue.name}
                             disabled={!update}
                           ></Form.Control>
                         </p>
@@ -188,7 +209,8 @@ function ContactList() {
                             as="textarea"
                             id="message"
                             name="message"
-                            value={`${ele.Board_message}`}
+                            onChange={handleUpdateValue}
+                            value={updateValue.message}
                             disabled={!update}
                           ></Form.Control>
                         </p>
@@ -223,7 +245,7 @@ function ContactList() {
                       >
                         취소
                       </Button>
-                      <Button variant="success" onClick={() => setShow(false)}>
+                      <Button variant="success" onClick={handleUpdate}>
                         저장
                       </Button>
                     </>
