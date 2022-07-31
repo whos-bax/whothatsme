@@ -29,23 +29,25 @@ function ContactList() {
     message: "",
   });
 
+  // db에서 파일 받아오기
   useEffect(() => {
     getDB()
       .then((res) => {
         setContacts(res);
-        console.log(res);
       })
       .catch((err) => console.log(err));
   }, [getDB]);
 
+
   useEffect(() => {
     contacts.map((ele) => {
       if (ele._id === checkId) {
-        console.log(ele);
+        console.log(ele, checkId);
       }
     });
   }, [checkId]);
 
+  // 패스워드가 같은지 확인 후 업데이트 진행
   const checkPasswordUpdate = () => {
     contacts.map((ele) => {
       if (ele._id === checkId) {
@@ -59,6 +61,7 @@ function ContactList() {
     });
   };
 
+  // 패스워드가 같은지 확인 후 삭제 진행
   const checkPasswordDelete = () => {
     contacts.map((ele) => {
       if (ele._id === checkId) {
@@ -71,12 +74,7 @@ function ContactList() {
     });
   };
 
-  // useEffect(() => {
-  //   console.log(update)
-  //   if (update === true) {
-  //     setUpdateCheck(true);
-  //   } else setUpdateCheck(false);
-  // }, [update]);
+
   const handleUpdateValue = (event) => {
     const { name, value } = event.currentTarget;
   };
@@ -331,14 +329,14 @@ function ContactList() {
                   <Button
                     variant="light"
                     style={{ width: "fit-content" }}
-                    onClick={()=> setDeleteFile(false)}
+                    onClick={() => setDeleteFile(false)}
                   >
                     취소
-                  </Button>{' '}
+                  </Button>{" "}
                   <Button
                     variant="danger"
                     style={{ width: "fit-content" }}
-                    onClick={()=> setDeleteFile(false)}
+                    onClick={() => setDeleteFile(false)}
                   >
                     삭제
                   </Button>

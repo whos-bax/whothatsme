@@ -1,10 +1,22 @@
 import axios from "axios";
 
 export const getDB = async () => {
-  const res = await axios.get("http://localhost:8000/");
-  return res.data;
+  const result = await axios.get("http://localhost:8000/");
+  return result.data;
 };
 
-export const insertDB = async () => {
+export const insertDB = async ({ form }) => {
+  const reqBody = {
+    title: form.title.value,
+    message: form.message.value,
+    name: form.name.value,
+    password: Number(form.password.value),
+  };
+  const result = await axios.post("http://localhost:8000/insert", reqBody);
+  return result;
+};
 
-}
+export const deleteDB = async ({ id }) => {
+  const result = await axios.post("http://localhost:8000/delete", id);
+  return result;
+};

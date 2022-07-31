@@ -21,15 +21,16 @@ const db = mysql.createPool({
   database: "contact",
 });
 
+// SELECT
 app.get("/", (req, res) => {
   const sqlQuery =
     "SELECT _id, Board_title, Board_message, Author_name, Author_password, DATE_FORMAT(Register_date, '%Y-%m-%d') AS Register_date, DATE_FORMAT(Update_date, '%Y-%m-%d') AS Update_date FROM contactBoards;";
   db.query(sqlQuery, (err, result) => {
     res.send(result);
-    console.log(result);
   });
 });
 
+// INSERT
 app.post("/insert", (req, res) => {
   const title = req.body.title;
   const message = req.body.message;
@@ -40,11 +41,13 @@ app.post("/insert", (req, res) => {
     "INSERT INTO contactBoards(Board_title, Board_message, Author_name, Author_password) VALUES (?,?,?,?);";
   db.query(sqlQuery, [title, message, name, password], (err, result) => {
     res.send(result);
-    console.log(result);
   });
 });
 
-// app.post('')
+// UPDATE
+
+// DELETE
+// app.post('/delete')
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
 });

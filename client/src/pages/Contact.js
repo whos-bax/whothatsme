@@ -12,6 +12,7 @@ import {
   Row,
 } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
+import { insertDB } from "../apis/contact.api";
 import Intro from "../components/Intro";
 import "../css/Contact.css";
 import emailjsForm from "../utils/emailjsForm";
@@ -41,16 +42,9 @@ function Contact() {
       console.log("Fill in all your content");
     } else {
       // 글쓰기 -> 서버로 보내기
-      axios
-        .post("http://localhost:8000/insert", {
-          title: form.title.value,
-          message: form.message.value,
-          name: form.name.value,
-          password: Number(form.password.value),
-        })
+      insertDB({form})
         .then((res) => console.log(res.statusText))
         .catch((err) => console.error(err));
-        
       event.preventDefault();
       // emailjs로 매일 보내기
       // emailjs
