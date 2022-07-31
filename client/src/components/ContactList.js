@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Modal, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { getDB } from "../apis/contact.api";
 
 function ContactList() {
   const [show, setShow] = useState(false);
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    getDB()
+      .then((res) => setInfo(res))
+      .catch((err) => console.log(err));
+  });
+
   return (
     <Container fluid className="pageEnter" id="contact">
       <Row id="contactContent" style={{ flexDirection: "column", gap: "1rem" }}>
@@ -25,29 +34,23 @@ function ContactList() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <p>잘 지내지?</p>
-                </td>
-                <td>박상호</td>
-                <td>2022-07-31</td>
-                <td>
-                  <Button variant="outline-light" onClick={() => setShow(true)}>
-                    ☰
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td colSpan={2}>Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              {info.map((ele) => (
+                <tr key={ele.ID}>
+                  <td>
+                    <b>{ele.Board_title}</b>
+                  </td>
+                  <td>{ele.Author_name}</td>
+                  <td>{ele.Register_date}</td>
+                  <td>
+                    <Button
+                      variant="outline-light"
+                      onClick={() => setShow(true)}
+                    >
+                      ☰
+                    </Button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </Table>
         </Col>

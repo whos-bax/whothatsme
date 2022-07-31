@@ -11,7 +11,8 @@ let corsOption = {
 };
 
 app.use(cors(corsOption));
-
+app.use(express.json());
+  
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
@@ -20,12 +21,14 @@ const db = mysql.createPool({
 });
 
 app.get("/", (req, res) => {
-  const sqlQuery = "select * from board";
+  const sqlQuery =
+    "SELECT Board_title, Board_message, Author_name, Author_password, DATE_FORMAT(Register_date, '%Y-%m-%d') AS Register_date FROM BOARD";
   db.query(sqlQuery, (err, result) => {
     res.send(result);
   });
 });
 
+// app.post('')
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
 });
