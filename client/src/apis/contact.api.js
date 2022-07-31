@@ -16,7 +16,7 @@ export const insertDB = async ({ form }) => {
   return result;
 };
 
-export const deleteDB = async ({ id }) => {
-  const result = await axios.post("http://localhost:8000/delete", id);
+export const deleteDB = async ({ checkId }) => {
+  const result = await axios.post("http://localhost:8000/delete", { id : checkId });
   return result;
 };

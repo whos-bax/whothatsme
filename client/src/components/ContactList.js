@@ -8,10 +8,11 @@ import {
   Row,
   Table,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { getDB } from "../apis/contact.api";
+import { Link, useNavigate } from "react-router-dom";
+import { deleteDB, getDB } from "../apis/contact.api";
 
 function ContactList() {
+  const navigate = useNavigate;
   const [show, setShow] = useState(false);
   const [checkId, setCheckId] = useState();
   const [contacts, setContacts] = useState([]);
@@ -37,15 +38,6 @@ function ContactList() {
       })
       .catch((err) => console.log(err));
   }, [getDB]);
-
-
-  useEffect(() => {
-    contacts.map((ele) => {
-      if (ele._id === checkId) {
-        console.log(ele, checkId);
-      }
-    });
-  }, [checkId]);
 
   // 패스워드가 같은지 확인 후 업데이트 진행
   const checkPasswordUpdate = () => {
@@ -74,6 +66,17 @@ function ContactList() {
     });
   };
 
+  // 정말로 삭제하기
+  const handleDelete = () => {
+    contacts.map((ele) => {
+      if (ele._id === checkId) {
+        deleteDB({ checkId })
+          .then((res) => console.log(res.statusText))
+          .catch((err) => console.error(err));
+        window.location.reload();
+      }
+    });
+  };
 
   const handleUpdateValue = (event) => {
     const { name, value } = event.currentTarget;
@@ -285,7 +288,13 @@ function ContactList() {
         </Modal>
 
         {/* delete Modal */}
-        <Modal show={deleteModal} onHide={() => setDeleteModal(false)}>
+        <Modal
+          show={deleteModal}
+          onHide={() => {
+            setDeleteModal(false);
+            setDeleteFile(false);
+          }}
+        >
           <Modal.Body
             className="d-flex"
             style={{
@@ -325,6 +334,9 @@ function ContactList() {
             ) : (
               <>
                 <p>정말로 삭제하시겠습니까?</p>
+                <p style={{ color: "red" }}>
+                  (삭제 이후에는 다시 복구할 수 없습니다)
+                </p>
                 <Col>
                   <Button
                     variant="light"
@@ -336,7 +348,7 @@ function ContactList() {
                   <Button
                     variant="danger"
                     style={{ width: "fit-content" }}
-                    onClick={() => setDeleteFile(false)}
+                    onClick={handleDelete}
                   >
                     삭제
                   </Button>

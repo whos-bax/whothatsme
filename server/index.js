@@ -12,7 +12,10 @@ let corsOption = {
 
 app.use(cors(corsOption));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+app.listen(PORT, () => {
+  console.log(`running on port ${PORT}`);
+});
 
 const db = mysql.createPool({
   host: "localhost",
@@ -47,7 +50,11 @@ app.post("/insert", (req, res) => {
 // UPDATE
 
 // DELETE
-// app.post('/delete')
-app.listen(PORT, () => {
-  console.log(`running on port ${PORT}`);
+app.post("/delete", (req, res) => {
+  console.log(req.body.id);
+
+  const sqlQuery = "DELETE FROM contactBoards WHERE _id = ?";
+  db.query(sqlQuery, [req.body.id], (err, result) => {
+    res.send(result);
+  });
 });
