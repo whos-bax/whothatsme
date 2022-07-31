@@ -56,7 +56,7 @@ function App() {
       className="App"
       style={getBlur ? { backgroundColor: "#171717" } : null}
     >
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         {!isWelcome ? (
           <Welcome sendWelcomeDown={setWelcomeDown} />
         ) : (
