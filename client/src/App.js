@@ -56,37 +56,35 @@ function App() {
       className="App"
       style={getBlur ? { backgroundColor: "#171717" } : null}
     >
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        {!isWelcome ? (
-          <Welcome sendWelcomeDown={setWelcomeDown} />
-        ) : (
-          <>
-            <Titlebar start={isWelcome} contents={contents} getBlur={getBlur} />
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <Main
-                    start={isWelcome}
-                    sendBlurQuit={setBlurQuit}
-                    contents={contents}
-                  />
-                }
-              />
-              <Route path="/home" element={<Home contents={contents} />} />
-              <Route
-                path="/introduce/*"
-                element={<Introduce contents={contents} />}
-              />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/contact/contact-list" element={<ContactList />} />
-              <Route path="/project/*" element={<Project />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer contents={contents} />{" "}
-          </>
-        )}
-      </BrowserRouter>
+      {!isWelcome ? (
+        <Welcome sendWelcomeDown={setWelcomeDown} />
+      ) : (
+        <>
+          <Titlebar start={isWelcome} contents={contents} getBlur={getBlur} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  start={isWelcome}
+                  sendBlurQuit={setBlurQuit}
+                  contents={contents}
+                />
+              }
+            />
+            <Route path="/home" element={<Home contents={contents} />} />
+            <Route
+              path="/introduce/*"
+              element={<Introduce contents={contents} />}
+            />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact/contact-list" element={<ContactList />} />
+            <Route path="/project/*" element={<Project />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer contents={contents} />{" "}
+        </>
+      )}
     </Container>
   );
 }

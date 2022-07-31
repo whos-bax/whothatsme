@@ -40,7 +40,7 @@ function Contact() {
       event.stopPropagation();
       console.log("Fill in all your content");
     } else {
-      
+
       // 글쓰기 -> 서버로 보내기
       insertDB({ form })
         .then((res) => console.log(res.statusText))
