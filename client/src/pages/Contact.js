@@ -1,6 +1,5 @@
 import emailjs from "@emailjs/browser";
-import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -41,10 +40,12 @@ function Contact() {
       event.stopPropagation();
       console.log("Fill in all your content");
     } else {
+      
       // 글쓰기 -> 서버로 보내기
       insertDB({ form })
         .then((res) => console.log(res.statusText))
         .catch((err) => console.error(err));
+
       // emailjs로 매일 보내기
       emailjs
         .sendForm(
@@ -76,9 +77,15 @@ function Contact() {
       ) : (
         <Container fluid id="contact">
           <Row className="afterIntro" id="contactContent">
-            <Button variant="light" id="linkBtn" onClick={() => setShow(true)}>
-              <p>LINK</p>
-            </Button>
+            <div>
+              <Button
+                variant="light"
+                id="linkBtn"
+                onClick={() => setShow(true)}
+              >
+                <p>LINK</p>
+              </Button>
+            </div>
             {/* Link 모달 띄우기 */}
             <Modal
               id="linkModal"
