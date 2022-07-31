@@ -14,11 +14,20 @@
 
 ```
 whothatsme
-> client
->
-> > build
-> > public
-> > src
+ㄴ client
+    ㄴ public
+        ㄴimages
+        ㄴindex.html
+    ㄴ src
+        ㄴ apis
+        ㄴ components
+        ㄴ css
+        ㄴ pages
+        ㄴ utils
+        ㄴ App.js
+        ㄴ index.js
+ㄴ server
+    ㄴ index.js
 README.md
 ```
 
@@ -54,7 +63,8 @@ git clone https://github.com/whos-bax/whothatsme.git
 
 1. 서버
    ```
-   npm
+   cd server
+   npm run dev
    ```
 2. 클라이언트
    ```
