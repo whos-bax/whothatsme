@@ -42,26 +42,25 @@ function Contact() {
       console.log("Fill in all your content");
     } else {
       // 글쓰기 -> 서버로 보내기
-      insertDB({form})
+      insertDB({ form })
         .then((res) => console.log(res.statusText))
         .catch((err) => console.error(err));
-      event.preventDefault();
       // emailjs로 매일 보내기
-      // emailjs
-      //   .sendForm(
-      //     emailjsForm.serviceId,
-      //     emailjsForm.templateId,
-      //     form,
-      //     emailjsForm.publicKey
-      //   )
-      //   .then(
-      //     (result) => {
-      //       console.log(result.text);
-      //     },
-      //     (error) => {
-      //       console.log(error.text);
-      //     }
-      //   );
+      emailjs
+        .sendForm(
+          emailjsForm.serviceId,
+          emailjsForm.templateId,
+          form,
+          emailjsForm.publicKey
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     }
     setValidated(true);
   };
