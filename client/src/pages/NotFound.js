@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { Container, Spinner } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function NotFound() {
+  const navigate = useNavigate();
   useEffect(() => {
-    setTimeout(() => (window.location.href = "/home"), 1500);
+    setTimeout(() => navigate("/home"), 1500);
   });
 
   const notfoundStyle = {
@@ -14,7 +16,7 @@ export default function NotFound() {
     flexDirection: "column",
     gap: "1rem",
     backgroundColor: "#171717",
-    color: "white"
+    color: "white",
   };
 
   return (

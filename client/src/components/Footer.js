@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "../css/Footer.css";
 
 function Footer({ start }) {
   const [show, setShow] = useState(false);
   const [goFirst, setGoFirst] = useState(false);
+
+  const navigate = useNavigate();
 
   // start 값 받은 후 footer 보이기
   useEffect(() => {
@@ -13,7 +16,8 @@ function Footer({ start }) {
 
   // 모두 지우고 welcome이 나오는 첫 페이지로 다시 이동
   const welcomeAgain = () => {
-    window.location.replace("/");
+    navigate('/');
+    navigate(0);
     localStorage.clear();
   };
   return (

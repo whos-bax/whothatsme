@@ -8,10 +8,12 @@ import {
   Row,
   Table,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { deleteDB, getDB, updateDB } from "../apis/contact.api";
 
 function ContactList() {
+  const navigate = useNavigate();
+
   const [show, setShow] = useState(false);
   const [checkId, setCheckId] = useState();
   const [contacts, setContacts] = useState([]);
@@ -78,7 +80,8 @@ function ContactList() {
     updateDB({ updateValue })
       .then((res) => console.log(res.statusText))
       .catch((err) => console.error(err));
-    window.location.reload();
+    // window.location.reload();
+    navigate(0);
   };
 
   // 패스워드가 같은지 확인 후 삭제 진행
@@ -101,7 +104,8 @@ function ContactList() {
         deleteDB({ checkId })
           .then((res) => console.log(res.statusText))
           .catch((err) => console.error(err));
-        window.location.reload();
+        // window.location.reload();
+        navigate(0);
       }
     });
   };

@@ -3,7 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 import Welcome from "./pages/Welcome";
 import Titlebar from "./components/Titlebar";
@@ -29,6 +35,8 @@ function App() {
   const [blurQuit, setBlurQuit] = useState(false);
   const [getBlur, setGetBlur] = useState(false);
 
+  const navigate = useNavigate();
+
   // welcome 버튼 누른 이후
   useEffect(() => {
     if (welcomeDown) {
@@ -37,7 +45,7 @@ function App() {
     setIsWelcome(Boolean(localStorage.getItem("welcome")));
 
     if (isWelcome) {
-      window.location.href = "/";
+      navigate("/");
     }
   }, [welcomeDown]);
 
