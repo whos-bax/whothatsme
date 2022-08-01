@@ -34,7 +34,7 @@ export default function Introduce02({ setMoveTo }) {
           <h1>꿈이 많은 어른 아이</h1>
         </div>
         <div id="introduceContentBody">
-          <p id="impactText">SKILLS</p>
+          <p id="impactText">What I Can Do</p>
           <Container id="skillsContainer">
             <Row style={{ gap: "1rem" }}>
               <Col>
