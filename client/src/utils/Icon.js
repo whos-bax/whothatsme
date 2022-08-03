@@ -1,6 +1,7 @@
 import { ReactComponent as HtmlSvg } from "./icon-svg/html5.svg";
 import { ReactComponent as CssSvg } from "./icon-svg/css3.svg";
 import { ReactComponent as JavascriptSvg } from "./icon-svg/javascript.svg";
+import { ReactComponent as BootstrapSvg } from "./icon-svg/bootstrap.svg";
 import { ReactComponent as ReactSvg } from "./icon-svg/react.svg";
 import { ReactComponent as GitlabSvg } from "./icon-svg/gitlab.svg";
 import { ReactComponent as GithubSvg } from "./icon-svg/github.svg";
@@ -19,6 +20,7 @@ const proficient = {
   CssSvg: 100,
   JavascriptSvg: 80,
   ReactSvg: 80,
+  BootstrapSvg: 80,
   GitlabSvg: 100,
   GithubSvg: 100,
   TypescriptSvg: 60,
@@ -38,6 +40,7 @@ export {
   CssSvg,
   JavascriptSvg,
   ReactSvg,
+  BootstrapSvg,
   GitlabSvg,
   GithubSvg,
   TypescriptSvg,

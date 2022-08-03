@@ -34,8 +34,8 @@ export default function Introduce02({ setMoveTo }) {
           <h1>꿈이 많은 어른 아이</h1>
         </div>
         <div id="introduceContentBody">
-          <p id="impactText">What I Can Do</p>
           <Container id="skillsContainer">
+            <p id="impactText">할 수 있는</p>
             <Row style={{ gap: "1rem" }}>
               <Col>
                 <p id="progressFont">Html5</p>
@@ -64,6 +64,16 @@ export default function Introduce02({ setMoveTo }) {
                   animated
                   variant={betteryVariant("JavascriptSvg")}
                   now={languages["JavascriptSvg"]}
+                  style={show ? { opacity: "1" } : { opacity: "0" }}
+                />
+              </Col>
+              <Col>
+                <p id="progressFont">bootstrap</p>
+                <Icon.BootstrapSvg id="iconBlack" />
+                <ProgressBar
+                  animated
+                  variant={betteryVariant("BootstrapSvg")}
+                  now={languages["BootstrapSvg"]}
                   style={show ? { opacity: "1" } : { opacity: "0" }}
                 />
               </Col>
@@ -97,6 +107,9 @@ export default function Introduce02({ setMoveTo }) {
                   style={show ? { opacity: "1" } : { opacity: "0" }}
                 />
               </Col>
+            </Row>
+            <p id="impactText">사용한 경험이 있는</p>
+            <Row style={{ gap: "1rem" }}>
               <Col>
                 <p id="progressFont">Typescript</p>
                 <Icon.TypescriptSvg id="iconBlack" />
@@ -157,6 +170,9 @@ export default function Introduce02({ setMoveTo }) {
                   style={show ? { opacity: "1" } : { opacity: "0" }}
                 />
               </Col>
+              </Row>
+            <p id="impactText">이 외에 다른</p>
+            <Row style={{ gap: "1rem" }}>
               <Col>
                 <p id="progressFont">Photoshop</p>
                 <Icon.PhotoshopSvg id="iconBlack" />
