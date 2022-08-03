@@ -33,14 +33,13 @@ function Project02({ projectListArr }) {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>
-                    <b>주요기능</b> : 관리자/사용자 기반의 쇼핑몰 운영 및 UI,
-                    상품등록/삭제/수정, 장바구니
+                    <b>Javascript, React, React-Bootstrap</b>
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>
-                    <b>Frontend</b> : React, JavaScript, axios, React-Bootstrap
-                  </p>
+                  <p>- 관리자/사용자 역할에 따른 쇼핑몰 UI 구분</p>
+                  <p>- React-Bootsrap을 이용한 반응형 UI (웹/앱)</p>
+                  <p>- Localstorage를 이용한 회원가입, 로그인, 로그아웃</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p className="my-2" id="meaningText">

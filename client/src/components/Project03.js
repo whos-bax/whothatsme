@@ -39,30 +39,40 @@ function Project03({ projectListArr }) {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>
-                    <b>주요기능</b> : 사용자 편의를 위한 UI, 반응형 화면,
-                    시/군/구에 따른 위치값 설정, 현재 온도와 이전 온도 값을 받고
-                    미래 값 예측
+                    <b>
+                      Javascript, React, React-Router-Dom, React-Bootstrap,
+                      Axios
+                    </b>
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
+                  <p>- React-Bootstrap을 이용한 반응형 UI (웹/앱)</p>
                   <p>
-                    <b>Frontend</b> : React, JavaScript, axios, React-Bootstrap,
-                    React-router-dom
+                    - React-Router-Dom을 이용하여 페이지 재로딩 없이 다른 페이지
+                    방문
                   </p>
-                </ListGroup.Item>
-                <ListGroup.Item>
                   <p>
-                    <b>Backend</b> : Node.js, express
+                    - 회원가입, 로그인/로그아웃, 마이페이지 등 REST API 구현
                   </p>
-                </ListGroup.Item>
-                <ListGroup.Item>
                   <p>
-                    <b>DataProcessing</b> : Python, TensorFlow, NumPy
+                    - Kakao API를 이용해 카카오톡을 통한 로그인/로그아웃 구현
                   </p>
-                </ListGroup.Item>
-                <ListGroup.Item>
+                  <p>- jwt을 이용한 로그인/로그아웃 관리</p>
                   <p>
-                    <b>Database</b> : PostgreSQL
+                    - islogined 함수를 이용하여 로그인 여부에 따른 Guest/User
+                    UI/기능 구분
+                  </p>
+                  <p>
+                    - DB에 저장된 위치 정보에 따라 시/군/구 구분하여 화면에
+                    나타내기
+                  </p>
+                  <p>
+                    - openweatherAPI를 사용하여 사용자가 지정한 위치의 온도값
+                    나타내기
+                  </p>
+                  <p>
+                    - Chart.js, SweetAlert 라이브러리를 사용하여 데이터 시각화
+                    및 디자인 요소 추가
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -112,11 +122,7 @@ function Project03({ projectListArr }) {
                     DataProcessing, 세 부분을 각각 담당하여 모든 것이 어우러지고
                     조화되도록 하는 것이 주된 목적이었습니다. 거의 매일 같이
                     회의하고 이야기를 나누었고,{" "}
-                    <b>Frontend에 전반적인 부분을 담당</b>하면서 Chart.js,
-                    SweetAlert2 등 다양한 라이브러리를 사용해보고 디자인적으로,
-                    기능적으로 더 잘 어울리는 부분을 고민하게 되는 소중한
-                    시간이었습니다. 또 KakaoAPI를 이용해 보면서 회원가입과
-                    로그인에 직접적으로 관여해보는 시간도 갖을 수 있었습니다.
+                    <b>Frontend에 전반적인 부분을 담당</b>하면서 Chart.js, SweetAlert2 등 다양한 라이브러리를 사용해보고 디자인적으로, 기능적으로 더 잘 어울리는 부분을 고민하게 되었습니다. 회원가입과 로그인에 관련하여서 어떻게 하면 보다 안전하게 정보를 주고 받을 수 있을까 고민하다가 <b>jwt</b>에 대해 공부해보고 접하게 되었습니다. 데이터를 직접 넘기는 것이 아닌 토큰을 주고 받으면서 유효하고 인증 되었는지를 검증하는 방법을 사용하므로써 더 안전하게 진행할 수 있었습니다. 또, KakaoAPI를 이용해 보면서 외부 REST API를 적용하는 방법도 배우는 시간이었습니다.
                   </p>
                 </ListGroup.Item>
               </ListGroup>

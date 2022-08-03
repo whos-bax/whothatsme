@@ -23,7 +23,7 @@ function Project04({ projectListArr }) {
               <ListGroup variant="flush" style={{ padding: 0 }}>
                 <ListGroup.Item>
                   <p className="my-2" id="impactText">
-                    노마드코더를 참고하여, Vanilla JS와 HTML, CSS 만으로
+                    노마드코더 클론코딩하여, Vanilla JS와 HTML, CSS 만으로
                     Momentum 만들기
                   </p>
                 </ListGroup.Item>
@@ -33,14 +33,22 @@ function Project04({ projectListArr }) {
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>HTML, CSS, JavaScript, Open Weather API</p>
+                  <p>
+                    <b>HTML, CSS, JavaScript</b>
+                  </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
+                  <p>- 현재 시각 알려주기</p>
                   <p>
-                    <b>주요기능</b> : 현재시간 알림, 현재위치에 따른 온도 값
-                    알기, 이름 입력 및 저장하기, 초기화, 배경화면 새로고침에
-                    따른 변화{" "}
+                    - geolocation API로 현재위치 값을 알고, fetch 함수와
+                    openweatherAPI 이용하여 현재 위치에 따른 온도 값 받아와서
+                    뿌려주기
                   </p>
+                  <p>
+                    - localstorage를 이용하여 이름 값 저장, 불러오기, 초기화
+                    하기
+                  </p>
+                  <p>- 새로고침이 될 때마다 배경화면 랜덤으로 보여주기</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p id="linkText">

@@ -37,12 +37,13 @@ function Project05({ projectListArr }) {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>
-                    <b>주요기능</b> : 사용자가 입력한 값 데이터에 저장하기,
-                    SQL문 이용해서 데이터 값 저장 및 수정, 삭제
+                    <b>HTML, CSS, Javascript / APM(Apache, PHP, MySQL)</b>
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>HTML, CSS, JavaScript, APM (Apache,Php,Mysql)</p>
+                  <p>- 사용자가 입력한 값 데이터에 저장하기</p>
+                  <p>- ER 모델 생성 후 알맞은 Table 생성</p>
+                  <p>- SQL문을 이용해서 Select, Insert, Update, Delete 수행</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p id="linkText">

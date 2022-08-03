@@ -33,24 +33,20 @@ function Project01({ projectListArr }) {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>
-                    <b>주요기능</b> : 관리자/사용자 기반의 쇼핑몰 운영 및 UI,
-                    상품등록/삭제/수정, 장바구니, 카카오페이를 이용한 결제
+                    <b>Javascript, React, Bootstrap, axios</b>
                   </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
+                  <p>- Bootstrap을 이용한 반응형 UI (웹/앱) </p>
                   <p>
-                    <b>Frontend</b> : React, JavaScript, axios, bootstrap
+                    - React-Router-Dom을 이용하여 페이지 재로딩 없이 다른 페이지
+                    방문 - 회원가입, 로그인, 로그아웃 버튼
                   </p>
-                </ListGroup.Item>
-                <ListGroup.Item>
                   <p>
-                    <b>Backend</b> : Node.js
+                    - 카테고리를 분류하고 카테고리에 해당하는 상품 Client에
+                    뿌려주기{" "}
                   </p>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <p>
-                    <b>Database</b> : MongoDB
-                  </p>
+                  <p>- 장바구니 담은 상품들의 정보를 서버로 보내주기</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p id="linkText">

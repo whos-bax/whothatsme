@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { Link, Route, Routes } from "react-router-dom";
-import Project01 from "./Project01";
+import { Link } from "react-router-dom";
 
 function ProjectList({ projectListArr }) {
   return (
@@ -23,7 +22,10 @@ function ProjectList({ projectListArr }) {
             ))}
           </ul>
           <p id="meaningText">
-            <a href="https://www.notion.so/whosbax/040c71063cd84c938d46e0529ae574cc" target={"_blank"}>
+            <a
+              href="https://www.notion.so/whosbax/040c71063cd84c938d46e0529ae574cc"
+              target={"_blank"}
+            >
               발표자료 PDF 및 정리 링크
             </a>
           </p>
