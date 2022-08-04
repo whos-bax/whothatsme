@@ -43,6 +43,7 @@ function Project06({ projectListArr }) {
                 <ListGroup.Item>
                   <p>- 해시(#)를 이용하여 페이지 지정 값으로 스크롤 기능</p>
                   <p>- HTTP method를 이용하여 설문조사 값을 저장 및 불러오기</p>
+                  <p>- SQLite를 이용한 DB관리</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p id="linkText">

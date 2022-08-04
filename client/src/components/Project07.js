@@ -46,6 +46,7 @@ function Project07({ projectListArr }) {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <p>- Tailwind를 이용한 반응형 UI (웹/앱)</p>
+                  <p>- Typescript를 사용하여 타입에러를 사전에 방지하여 생산성 및 효율 증대</p>
                   <p>
                     - React-Router-Dom을 이용하여 페이지 재로딩 없이 다른 페이지
                     방문
